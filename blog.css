@@ -1,0 +1,114 @@
+
+body{
+    font-family: 'Poppins'
+}
+
+
+select{
+  color: #ffffff;
+  border-radius: 10px;
+  border-color: white
+}
+/* CSS for drop down  */
+.selectdiv select {
+  /* Add some styling */
+  height: 30px;
+  background-color: #f14e4e
+}
+
+/*navigation*/
+.navBarFixed{
+    z-index: 1;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  
+.sticky {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    background-color: #ffffff;
+    box-shadow: 5px 10px 18px #888;
+    z-index: 1;
+  }
+  
+.Logo{
+    max-width:  100%;
+    max-height: 60px;
+    align-self: center
+  }
+
+.topnav {
+      overflow: hidden; 
+    }
+    
+.topnav a {
+      display: inline-block;
+      color: black;
+      text-align: center;
+      padding-right: 30px;
+      text-decoration: none;
+      font-size: 16px;   
+      line-height: 24px;
+      font-weight: 500
+  }
+    
+.topnav a:hover {
+      color:#D83C37;
+    }
+    
+.topnav a.active {
+      color:#D83C37;
+    }
+    
+.topnav .icon {
+      display: none;
+      position: relative;
+      color: #D83C37;
+      
+    }
+
+.title{
+      font-weight: 700;
+      font-size:30px;
+      line-height: 30px;
+     
+    }
+    
+    
+.container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    text-align: center;
+    padding-top: 5%
+
+  }    
+    
+/* blog cards*/
+.wrapper {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: center;
+  
+}
+
+.inner {
+  max-width: 80%;
+  height: 10vh;
+
+}
+
+.inner figure {
+  box-shadow: -6px 6px 2px -3px rgba(100, 100, 100, 0.1);
+
+}
+
+.inner img {
+  height: 20em;
+  width: 100%;
+}
