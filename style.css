@@ -85,12 +85,7 @@ header{
     
   }
   
-  @media screen and (max-width: 725px) {
-    .topnav a{display: none;}
-    .topnav a.icon {
-      display: block;
-    }
-  }
+
   
 
 /* adding navigation of Fullscreen*/
@@ -136,14 +131,7 @@ header{
     font-size: 60px;
   }
   
-  @media screen and (max-height: 450px) {
-    .overlay a {font-size: 20px}
-    .overlay .closebtn {
-    font-size: 40px;
-    top: 15px;
-    right: 35px;
-    }
-  }
+
 
   /* first section*/
 
@@ -157,14 +145,7 @@ header{
   
 }
 
-@media screen and (max-width: 330px) {
-  .myName{
-    font-size: 2rem;
-  }
-  .wordPart{
-    height: 60vh;
-  }
-}
+
 
 
 .me{
@@ -195,36 +176,33 @@ a.button4{
 
 
 /* Second section*/
-@media screen and (min-width: 1000px) {
-  .secondSection,.thirdSection,.fourthSection{
-    height: 110vh;
-    margin-top: -40px;
-  }
-}
+
 .secondSection{
   display: flex;
   text-align: center;
   flex-direction:column;
   justify-content: center; 
+  align-items: center;
+  padding-top: 130px;
+
 }
 
 .secondSection > div{
-  padding-top: 10px;
- 
+  padding-top: 50px;
 }
 
 .projectCard__wrapper{
   display: grid;
-  grid-template-columns: repeat(auto-fit,minmax(21rem,1fr));
-  grid-template-rows: repeat(1,1fr);
-  grid-column-gap: 1rem;
+  grid-template-columns: repeat(3,1fr);
+  grid-template-rows: auto;
+  grid-column-gap: 1.5rem;
   grid-row-gap: 1.5rem;
- 
   
 }
 
 .projectCard{
   height: 21rem;
+  width: 18rem;
   perspective: 1000px;
 }
 
@@ -250,25 +228,37 @@ a.button4{
   box-shadow: 1em 1em 2em rgba(0, 0, 0, 0.2);
   border-radius: 20px;
   overflow: hidden;
-  margin: auto;
- 
-  
 }
 
-.frontInnerProjectCard{
+
+.frontInnerProjectCard,.backInnerProjectCard{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   text-align: center;
   color: black;
- 
+}
+.frontInnerProjectCard > div{
+  margin-bottom: 25px;
+}
 
+.frontInnerProjectCard .title{
+  font-size:30px;
+}
+
+.frontInnerProjectCard .small_title{
+
+}
+.backInnerProjectCard > div{
+  margin-bottom: 50px;
 }
 
 .backInnerProjectCard {
   background-image: linear-gradient(to right bottom, #2998FF, #5643FA);
   color: black;
   transform: rotateY(180deg);
- 
 }
-
 
 /* third section*/
 .thirdSection{
@@ -276,33 +266,43 @@ a.button4{
   text-align: center;
   flex-direction:column;
   justify-content: center;
+  padding-top: 140px;
+  align-items: center;
 }
 
-.thirdSection > div{
-
-}
 
 .titleServices{
+  margin-bottom: 50px;
 }
 
 .serviceCard__wrapper{
   display: grid;
-  grid-template-columns: repeat(auto-fit,minmax(21rem,1fr));
-  align-content: center;
-  grid-gap: 1rem;
+  grid-template-columns: repeat(3,1fr);
+  grid-template-rows: auto;
+  grid-column-gap: 1.2rem;
+  grid-row-gap: 1.5rem;
+ 
   
 }
 
 .card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
   background: #1F2124;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
-  height: 400px;
+  height: 22rem;
+  width: 18rem;
   border-radius: 5px;
   text-align: center;
   color: white;
   overflow: hidden;
-  padding: 1rem;
- 
+}
+
+.card > div{
+  margin-bottom: 22px;
 }
 
 .card .title {
@@ -311,8 +311,6 @@ a.button4{
 
 
 .card .features ul {
-  padding: 0;
-  margin: 20px 0 50px 0;
   list-style-type: none;
 }
 .card .features ul li {
@@ -327,7 +325,8 @@ a.button4{
   text-align: center;
   flex-direction:column;
   justify-content: center;
-  height: 100vh;
+  padding-top: 130px;
+  align-items: center;
 }
 
 .fourthSection > div{
@@ -366,10 +365,11 @@ a.button4{
 }
 
 .educationLine{
-  width: 40px;
-  height: 7px;
+  width: 70px;
+  height: 4px;
   background-color: orangered;
-  border-radius: 10px;
+  border-radius: 5px;
+  margin-left: 60px;
 }
 
 /* fifth section*/
@@ -381,7 +381,7 @@ a.button4{
   align-content: center;
   margin-right: .5rem;
   margin-left: .5rem;
-  height: 91vh;
+  height: 100vh;
   
 }
 
@@ -394,6 +394,9 @@ a.button4{
 
 }
 
+.contactTitle .title{
+  font-size: 22px;
+}
 /* Style inputs with type="text", select elements and textareas */
 input[type=text], select, textarea {
   width: 200px; /* Full width */
@@ -408,7 +411,7 @@ input[type=text], select, textarea {
 
 /* Style the submit button with a specific background color etc */
 input[type=submit] {
-  background-color: #4CAF50;
+  background-color: #7f99c7;
   color: white;
   padding: 12px 20px;
   border: none;
@@ -418,5 +421,84 @@ input[type=submit] {
 
 /* When moving the mouse over the submit button, add a darker green color */
 input[type=submit]:hover {
-  background-color: #45a049
+  background-color: #d83c37
+}
+
+
+/* footer*/
+
+.social-icons li{
+  display: inline-block;
+  text-decoration: none;
+  
+}
+.social-icons a{
+  background-color: #D83C37;
+  color:#ffffff;
+  font-size:16px;
+  display:inline-block;
+  line-height:44px;
+  width:44px;
+  height:44px;
+  text-align:center;
+  margin-right:8px;
+  border-radius:100%;
+  -webkit-transition:all .2s linear;
+  -o-transition:all .2s linear;
+  transition:all .2s linear
+}
+
+.social-icons a.facebook:hover
+{
+  background-color:#3b5998
+}
+.social-icons a.github:hover
+{
+  background-color:black
+}
+.social-icons a.linkedin:hover
+{
+  background-color:#007bb6
+}
+.social-icons a.dribbble:hover
+{
+  background-color:#ea4c89
+}
+
+
+/*media query*/
+
+@media screen and (max-width: 725px) {
+  .topnav a{display: none;}
+  .topnav a.icon {
+    display: block;
+  }
+  .projectCard__wrapper,.serviceCard__wrapper{
+    grid-template-columns: repeat(2,1fr);
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .projectCard__wrapper,.serviceCard__wrapper{
+    grid-template-columns: 1fr;
+  }
+  
+}
+
+@media screen and (max-height: 450px) {
+  .overlay a {font-size: 20px}
+  .overlay .closebtn {
+  font-size: 40px;
+  top: 15px;
+  right: 35px;
+  }
+}
+
+@media screen and (max-width: 330px) {
+  .myName{
+    font-size: 2rem;
+  }
+  .wordPart{
+    height: 60vh;
+  }
 }
