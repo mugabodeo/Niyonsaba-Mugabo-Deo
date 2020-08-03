@@ -1,0 +1,60 @@
+<!doctype html>
+<html len="en">
+<head>
+    <title>myBlog</title>
+    <meta charset="utf-8">
+    <meta charset="utf-8">
+    <meta name="description" content="">
+    <meta name="keywords" content="Tech Blog,Rwanda,East Africa">
+    <meta name="author" content="Niyonsaba Mugabo Deo">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="blogArticle.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Poppins'>
+</head>
+<body>
+  <!-- nvagiation system-->
+  <div id="navBar" class="navBarFixed">
+    <div> <a href="./index.html"><img class="Logo" src="./img/Logo.png"></a> </div>  
+    <div class="topnav" id="myTopnav">
+      <a href="./index.html" class="active">Home</a>
+      <a href="./blog.html">Blog</a>
+    </div>
+  </div>
+
+  <div class="container">
+      <form>
+          <label for="blogArticle">article title</label>
+          <input type="text" id="fullName" name="full name" placeholder="add name of title.."> <br>       
+          <label for="articleCover">article cover</label>
+          <input type="file" name="fileToUpload" id="fileToUpload">  <br>  
+          <label>category:</label>
+          <label>
+              <select>
+                  <option selected>New </option>
+                  <option>Popular</option>
+              </select>
+          </label>     <br>
+          <label for="subject"> description</label>
+          <input  type="text" id="subject" name="description" placeholder="Write something about article.." ><br> 
+          <input type="submit" value="Publish">  <input type="submit" value="Update">  <input type="submit" value="Delete">
+        </form>
+    
+  </div>  
+  <script>
+      window.onscroll = function() {scrollFunction()};
+      var navbar = document.getElementById("navBar");
+      var sticky = navbar.offsetTop;
+
+      function scrollFunction() {
+          if (window.pageYOffset >= sticky) {
+            navbar.classList.add("sticky")
+          } else {
+            navbar.classList.remove("sticky");
+          }
+        }  
+
+       
+</script>
+</body>
+</html>
