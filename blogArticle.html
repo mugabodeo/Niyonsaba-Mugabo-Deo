@@ -1,0 +1,100 @@
+<!doctype html>
+<html len="en">
+<head>
+    <title>myBlog</title>
+    <meta charset="utf-8">
+    <meta charset="utf-8">
+    <meta name="description" content="">
+    <meta name="keywords" content="Tech Blog,Rwanda,East Africa">
+    <meta name="author" content="Niyonsaba Mugabo Deo">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="blogArticle.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Poppins'>
+</head>
+<body>
+  <!-- nvagiation system-->
+  <div id="navBar" class="navBarFixed">
+    <div> <a href="./index.html"><img class="Logo" src="./img/Logo.png"></a> </div>  
+    <div class="topnav" id="myTopnav">
+      <a href="./index.html" class="active">Home</a>
+      <a href="./blog.html">Blog</a>
+    </div>
+  </div>
+
+  <div class="container">
+
+    <div class="hiddenSection">
+      <a href="./newArticle.html"> <i class="fa fa-pencil-square-o" aria-hidden="true" > Edit </i> </a>&nbsp;&nbsp;&nbsp;
+      <a href="./newArticle.html"> <i class="fa fa-minus-circle" aria-hidden="true"></i>Delete </a>
+    </div>
+
+    <div class="blogCover">
+      <div class="title">Html & CSS</div>
+      <div class="smallTitle"><span>FrontEnd</span> &nbsp; &nbsp; <span >1/1/2020</div>
+      <img src="https://stein.rifki.net/scienstein/wp-content/uploads/sites/4/2019/06/freestocks-org-484224-unsplash-960x540.jpg" alt="Nature">
+    </div>
+  
+    <div class="blogSection">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius distinctio nulla voluptates id, ad explicabo necessitatibus est, ipsum perspiciatis facere provident praesentium laboriosam itaque consequuntur dolore 
+      aperiam eveniet recusandae accusantium.
+       Lorem ipsum dolor sit, amet consectetur adipisicing elit. Iste iusto neque laborum eius eaque, veritatis, nam soluta, dignissimos consequatur nesciunt quo dolores? Molestias ab est distinctio, perferendis quidem natus quos.
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque quam aspernatur fuga inventore error tempore repudiandae labore nisi fugit vitae quis, neque dignissimos, eveniet dolorem blanditiis omnis iusto ratione maiores.
+      Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aperiam inventore sit eum odit recusandae a tenetur nam fugit id, beatae minus qui esse earum suscipit dolor veniam, eveniet ipsa perspiciatis.
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae atque inventore, dolorem cupiditate veritatis distinctio aspernatur nulla necessitatibus nostrum iusto eum voluptatem nisi, velit illo! Atque iure sunt eius qui.
+    </div>
+
+    <div class="comments">
+      <div class="commentForm"> 
+        <form>
+          <div class="row">
+          <label for="fname">name</label> 
+          <input  type="text" id="fullName" name="full name" placeholder="Your name.."> 
+          </div>
+          <div>
+           <label  for="lname">E-mail</label> 
+            <input  type="text" id="email" name="email" placeholder="YourEmail.."> 
+          </div>  
+          <div>
+             <label  for="comment"> Comment</label>
+            <textarea  id="comment" name="comment" placeholder="put you comment here.."></textarea>
+          </div>     
+            <div><input type="submit" value="Submit"></div> 
+        </form>
+      </div>
+      <div class="commentList">
+        <span class="smallTitle">comments(1)</span>
+        <div class="eachComment">
+          <div class="commentName"> Fullname &nbsp; &nbsp; Time</div>  
+          <div class="commentDescripton">
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Modi maiores consectetur 
+          </div>
+        </div> 
+        <div class="eachComment">
+          <div class="commentName"> Fullname &nbsp; &nbsp; Time</div>  
+          <div class="commentDescripton">
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Modi maiores consectetur 
+          </div>
+        </div> 
+      </div>
+      
+    </div> 
+  </div>
+         
+  <script>
+    window.onscroll = function() {scrollFunction()};
+    var navbar = document.getElementById("navBar");
+    var sticky = navbar.offsetTop;
+
+    function scrollFunction() {
+      if (window.pageYOffset >= sticky) {
+            navbar.classList.add("sticky")
+          } 
+      else {
+            navbar.classList.remove("sticky");
+          }
+    }  
+
+    </script>
+</body>
+</html>
