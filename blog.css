@@ -243,7 +243,7 @@ i{
   }
 
   .wrapper {
-    grid-template-columns: repeat(1,450px);
+    grid-template-columns: repeat(1,100%);
     grid-template-rows:repeat(4,300px);
   }
   
