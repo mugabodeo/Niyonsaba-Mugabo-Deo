@@ -24,69 +24,65 @@
 
   <div class="container">
 
-<div class="wrapper">
-  <div class="inner">
-    <i class="fa fa-pencil-square-o" aria-hidden="true"> Edit</i>
-    <figure>
-      <img src="https://stein.rifki.net/scienstein/wp-content/uploads/sites/4/2019/06/freestocks-org-484224-unsplash-960x540.jpg" alt="Nature">
-      <figcaption class="title">categoryName</figcaption>
-      <figcaption class="title">Html & CSS</figcaption>
-      <figcaption class="smallTitle">Date</figcaption>
-      <figcaption>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius distinctio nulla voluptates id, ad explicabo necessitatibus est, ipsum perspiciatis facere provident praesentium laboriosam itaque consequuntur dolore aperiam eveniet recusandae accusantium.</figcaption>
-      <p> Lorem ipsum dolor sit, amet consectetur adipisicing elit. Iste iusto neque laborum eius eaque, veritatis, nam soluta, dignissimos consequatur nesciunt quo dolores? Molestias ab est distinctio, perferendis quidem natus quos.</p>
-      <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque quam aspernatur fuga inventore error tempore repudiandae labore nisi fugit vitae quis, neque dignissimos, eveniet dolorem blanditiis omnis iusto ratione maiores.</p>
-      <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aperiam inventore sit eum odit recusandae a tenetur nam fugit id, beatae minus qui esse earum suscipit dolor veniam, eveniet ipsa perspiciatis.</p>
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae atque inventore, dolorem cupiditate veritatis distinctio aspernatur nulla necessitatibus nostrum iusto eum voluptatem nisi, velit illo! Atque iure sunt eius qui.</p>
-      <figcaption class="smallTitle">comments</figcaption>
-      <div class="comments">
-        Fullname:
-        <figcaption>
-          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Modi maiores consectetur 
-        </figcaption>
-        Fullname:
-        <figcaption>
-          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Modi maiores consectetur 
-        </figcaption>
-        Fullname:
-        <figcaption>
-          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Modi maiores consectetur 
-        </figcaption>
-        Fullname:
-        <figcaption>
-          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Modi maiores consectetur 
-        </figcaption>
-      </div>
-      <figcaption>
-        <label for="fname">name
-        </label>
-          <input type="text" id="fullName" name="full name" placeholder="Your name.."> <br>       
-          <label for="lname">E-mail</label>
-          <input type="text" id="email" name="email" placeholder="YourEmail..">  <br>       
-          <label for="subject"> Comment</label>
-          <input  type="text" id="subject" name="subject" placeholder="Write something.." ><br> 
-          <input type="submit" value="Submit">
-        </form>
-      </figcaption>
-    </figure>
-  </div>
-</div>
-                  
-  </div>    
-      
-  <script>
-      window.onscroll = function() {scrollFunction()};
-      var navbar = document.getElementById("navBar");
-      var sticky = navbar.offsetTop;
+    <div>
+      <a href="./newArticle.html"> <i class="fa fa-pencil-square-o" aria-hidden="true" > Edit</i> </a>
+    </div>
 
-      function scrollFunction() {
-          if (window.pageYOffset >= sticky) {
+    <div class="blogCover">
+      <img src="https://stein.rifki.net/scienstein/wp-content/uploads/sites/4/2019/06/freestocks-org-484224-unsplash-960x540.jpg" alt="Nature">
+    </div>
+  
+    <div class="blogSection">
+      <p class="smallTitle">categoryName</p>
+      <p class="title">Html & CSS</p>
+      <p class="smallTitle">Date</p>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius distinctio nulla voluptates id, ad explicabo necessitatibus est, ipsum perspiciatis facere provident praesentium laboriosam itaque consequuntur dolore aperiam eveniet recusandae accusantium.
+       Lorem ipsum dolor sit, amet consectetur adipisicing elit. Iste iusto neque laborum eius eaque, veritatis, nam soluta, dignissimos consequatur nesciunt quo dolores? Molestias ab est distinctio, perferendis quidem natus quos.
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque quam aspernatur fuga inventore error tempore repudiandae labore nisi fugit vitae quis, neque dignissimos, eveniet dolorem blanditiis omnis iusto ratione maiores.
+      Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aperiam inventore sit eum odit recusandae a tenetur nam fugit id, beatae minus qui esse earum suscipit dolor veniam, eveniet ipsa perspiciatis.
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae atque inventore, dolorem cupiditate veritatis distinctio aspernatur nulla necessitatibus nostrum iusto eum voluptatem nisi, velit illo! Atque iure sunt eius qui.</p>
+    </div>
+
+    <div class="comments">
+      <span class="smallTitle">comments</span><br>
+      <span> Fullname:</span>  
+      <p>
+        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Modi maiores consectetur 
+      </p>
+        Fullname:
+      <p>
+        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Modi maiores consectetur 
+      </p>
+    </div> 
+
+    <div class="commentForm"> 
+      <form>
+        <label class="col-25" for="fname">name</label>
+        <input type="text" class="col-75" id="fullName" name="full name" placeholder="Your name.."> <br>       
+        <label class="col-25" for="lname">E-mail</label>
+        <input class="col-75" type="text" id="email" name="email" placeholder="YourEmail..">  <br>       
+        <label class="col-25" for="comment"> Comment</label>
+        <textarea class="col-75" id="comment" name="comment" placeholder="put you comment here.." style="height:200px"></textarea><br> 
+        <input class="col-25" type="submit" value="Submit">
+      </form>
+    </div>
+
+  </div>
+         
+  <script>
+    window.onscroll = function() {scrollFunction()};
+    var navbar = document.getElementById("navBar");
+    var sticky = navbar.offsetTop;
+
+    function scrollFunction() {
+      if (window.pageYOffset >= sticky) {
             navbar.classList.add("sticky")
-          } else {
+          } 
+      else {
             navbar.classList.remove("sticky");
           }
-        }  
+    }  
 
-       
-</script>
+    </script>
 </body>
 </html>

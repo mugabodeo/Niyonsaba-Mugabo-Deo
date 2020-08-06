@@ -8,7 +8,7 @@
     <meta name="keywords" content="Tech Blog,Rwanda,East Africa">
     <meta name="author" content="Niyonsaba Mugabo Deo">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="blogArticle.css">
+  <link rel="stylesheet" href="newArticle.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Poppins'>
 </head>
@@ -22,25 +22,51 @@
     </div>
   </div>
 
-  <div class="container">
-      <form>
-          <label for="blogArticle">article title</label>
-          <input type="text" id="fullName" name="full name" placeholder="add name of title.."> <br>       
+  <div class="wrapper">
+    <form action="/firebase_action">
+      <div class="row">
+        <div class="col-25">
+          <label for="articleTitle">article title</label>
+        </div>
+        <div class="col-75">
+          <input type="text" id="articleTitle" name="articleTitle" placeholder="article title ..">
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-25">
           <label for="articleCover">article cover</label>
-          <input type="file" name="fileToUpload" id="fileToUpload">  <br>  
-          <label>category:</label>
-          <label>
-              <select>
-                  <option selected>New </option>
-                  <option>Popular</option>
-              </select>
-          </label>     <br>
-          <label for="subject"> description</label>
-          <input  type="text" id="subject" name="description" placeholder="Write something about article.." ><br> 
-          <input type="submit" value="Publish">  <input type="submit" value="Update">  <input type="submit" value="Delete">
-        </form>
-    
-  </div>  
+        </div>
+        <div class="col-75">
+          <input type="file" id="filetoUpload" name="filetoUpload">
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-25">
+          <label for="category">Category</label>
+        </div>
+        <div class="col-75">
+          <select id="category" name="category">
+            <option value="australia">frontend dev</option>
+            <option value="canada">backend dev</option>
+            <option value="usa">UX/UI</option>
+          </select>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-25">
+          <label for="subject">description</label>
+        </div>
+        <div class="col-75">
+          <textarea id="description" name="description" placeholder="Write something about an article .." style="height:200px"></textarea>
+        </div>
+      </div>
+      <div class="row">
+        <input type="submit" value="Publish">
+        <input type="submit" value="Edit">
+        <input type="submit" value="Delete">
+      </div>
+    </form>
+  </div>
   <script>
       window.onscroll = function() {scrollFunction()};
       var navbar = document.getElementById("navBar");
