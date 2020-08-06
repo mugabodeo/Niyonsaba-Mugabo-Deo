@@ -3,19 +3,6 @@ body{
     font-family: 'Poppins'
 }
 
-
-select{
-  color: #ffffff;
-  border-radius: 10px;
-  border-color: white
-}
-/* CSS for drop down  */
-.selectdiv select {
-  /* Add some styling */
-  height: 30px;
-  background-color: #f14e4e
-}
-
 /*navigation*/
 .navBarFixed{
     z-index: 1;
@@ -82,65 +69,105 @@ select{
 .container{
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
-    text-align: center;
-  }    
-    
+    margin-left:10px;
+    margin-right:10px;
+    gap: 15px;
+  } 
+
+
+.hiddenSection{
+  align-self: flex-end;
+  margin-right: 30px;
+}   
+
+
 .blogCover img{
   width: 100%;
-  height: auto;
+  height: 23rem;
   object-fit: cover;
+  margin-top: 20px;
 }
+.blogSection{
+text-align: center;
+font-family: 'Lora';
+font-weight: 50;
+font-size:20px;
+line-height: 35px;
+}
+
 .comments{
-  background-color: antiquewhite;
- 
+  margin-top: 20px;
+  align-self: flex-start;
+}
+
+.commentForm{
+  margin-left: 20px;
+  margin-bottom:50px;
 }
 
 input[type=text], textarea {
-  position: relative;
-  padding: 12px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
   resize: vertical;
+  padding: 12px;
+  width: 90%;
 }
 
-label {
-  padding: 12px 12px 12px 0;
-  display: inline-block;
-
-}
 
 input[type=submit] {
   background-color: #7f99c7;;
   color: white;
-  padding: 14px 10px;
-  margin-top: 20px;
+  padding: 14px 90px;
   border: none;
   border-radius: 4px;
   cursor: pointer;
+}
+
+.commentList{
+  margin-left: 10px;
+}
+
+.eachComment{
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  margin-top: 20px;
+ 
   
+}
+
+.commentName{
+  background-color: #d83c37;
+  color: white;
+  padding: 10px;
+  width: 25%;
+  border-radius: 17px 1px;
+  text-align: center;
+ 
+}
+
+.commentDescripton{
+  text-align: center;
+  border: 1px solid black;
+  padding: 10px;
+  width: 75%;
 }
 /* When moving the mouse over the submit button, add a darker green color */
 input[type=submit]:hover {
   background-color: #d83c37
 }
 
-.col-25 {
-  width: 15%;
-  margin-top: 6px;
-}
 
-.col-75 {
-  width: 30%;
-  margin-top: 6px;
-}
 
  /* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */
  @media screen and (max-width: 600px) {
-  .col-25, .col-75, input[type=submit] {
-    width: 90%;
-    margin-top: 10px;
+  input[type=submit],input[type=text], textarea {
+    width: 85%;
+  }
+  .commentName{
+    width: 55%;
+  }
+  .commentDescripton{
+    width: 85%;
   }
   
 }

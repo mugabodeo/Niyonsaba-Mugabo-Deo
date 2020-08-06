@@ -88,7 +88,6 @@ select{
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
     text-align: center;
   }    
 
@@ -223,6 +222,32 @@ i{
   margin-left: 4%;
   text-align: start;
 }
+
+
+.SecondWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  
+}
+
+
+.inner figure  {
+  box-shadow: -6px 6px 2px -3px rgba(100, 100, 100, 0.1);
+  width: 70%;
+  margin:auto;
+  margin-bottom:20px
+
+} 
+
+
+
+.inner img {
+  height: 20em;
+  width: 100%;
+  object-fit: cover;
+}
+
 
 @media (max-width: 550px) {
 

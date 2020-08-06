@@ -24,49 +24,61 @@
 
   <div class="container">
 
-    <div>
-      <a href="./newArticle.html"> <i class="fa fa-pencil-square-o" aria-hidden="true" > Edit</i> </a>
+    <div class="hiddenSection">
+      <a href="./newArticle.html"> <i class="fa fa-pencil-square-o" aria-hidden="true" > Edit </i> </a>&nbsp;&nbsp;&nbsp;
+      <a href="./newArticle.html"> <i class="fa fa-minus-circle" aria-hidden="true"></i>Delete </a>
     </div>
 
     <div class="blogCover">
+      <div class="title">Html & CSS</div>
+      <div class="smallTitle"><span>FrontEnd</span> &nbsp; &nbsp; <span >1/1/2020</div>
       <img src="https://stein.rifki.net/scienstein/wp-content/uploads/sites/4/2019/06/freestocks-org-484224-unsplash-960x540.jpg" alt="Nature">
     </div>
   
     <div class="blogSection">
-      <p class="smallTitle">categoryName</p>
-      <p class="title">Html & CSS</p>
-      <p class="smallTitle">Date</p>
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius distinctio nulla voluptates id, ad explicabo necessitatibus est, ipsum perspiciatis facere provident praesentium laboriosam itaque consequuntur dolore aperiam eveniet recusandae accusantium.
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius distinctio nulla voluptates id, ad explicabo necessitatibus est, ipsum perspiciatis facere provident praesentium laboriosam itaque consequuntur dolore 
+      aperiam eveniet recusandae accusantium.
        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Iste iusto neque laborum eius eaque, veritatis, nam soluta, dignissimos consequatur nesciunt quo dolores? Molestias ab est distinctio, perferendis quidem natus quos.
       Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque quam aspernatur fuga inventore error tempore repudiandae labore nisi fugit vitae quis, neque dignissimos, eveniet dolorem blanditiis omnis iusto ratione maiores.
       Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aperiam inventore sit eum odit recusandae a tenetur nam fugit id, beatae minus qui esse earum suscipit dolor veniam, eveniet ipsa perspiciatis.
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae atque inventore, dolorem cupiditate veritatis distinctio aspernatur nulla necessitatibus nostrum iusto eum voluptatem nisi, velit illo! Atque iure sunt eius qui.</p>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae atque inventore, dolorem cupiditate veritatis distinctio aspernatur nulla necessitatibus nostrum iusto eum voluptatem nisi, velit illo! Atque iure sunt eius qui.
     </div>
 
     <div class="comments">
-      <span class="smallTitle">comments</span><br>
-      <span> Fullname:</span>  
-      <p>
-        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Modi maiores consectetur 
-      </p>
-        Fullname:
-      <p>
-        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Modi maiores consectetur 
-      </p>
+      <div class="commentForm"> 
+        <form>
+          <div class="row">
+          <label for="fname">name</label> 
+          <input  type="text" id="fullName" name="full name" placeholder="Your name.."> 
+          </div>
+          <div>
+           <label  for="lname">E-mail</label> 
+            <input  type="text" id="email" name="email" placeholder="YourEmail.."> 
+          </div>  
+          <div>
+             <label  for="comment"> Comment</label>
+            <textarea  id="comment" name="comment" placeholder="put you comment here.."></textarea>
+          </div>     
+            <div><input type="submit" value="Submit"></div> 
+        </form>
+      </div>
+      <div class="commentList">
+        <span class="smallTitle">comments(1)</span>
+        <div class="eachComment">
+          <div class="commentName"> Fullname &nbsp; &nbsp; Time</div>  
+          <div class="commentDescripton">
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Modi maiores consectetur 
+          </div>
+        </div> 
+        <div class="eachComment">
+          <div class="commentName"> Fullname &nbsp; &nbsp; Time</div>  
+          <div class="commentDescripton">
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Modi maiores consectetur 
+          </div>
+        </div> 
+      </div>
+      
     </div> 
-
-    <div class="commentForm"> 
-      <form>
-        <label class="col-25" for="fname">name</label>
-        <input type="text" class="col-75" id="fullName" name="full name" placeholder="Your name.."> <br>       
-        <label class="col-25" for="lname">E-mail</label>
-        <input class="col-75" type="text" id="email" name="email" placeholder="YourEmail..">  <br>       
-        <label class="col-25" for="comment"> Comment</label>
-        <textarea class="col-75" id="comment" name="comment" placeholder="put you comment here.." style="height:200px"></textarea><br> 
-        <input class="col-25" type="submit" value="Submit">
-      </form>
-    </div>
-
   </div>
          
   <script>
