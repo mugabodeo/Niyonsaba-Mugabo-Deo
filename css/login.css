@@ -1,51 +1,99 @@
 body {font-family: 'Poppins'}
 
-input[type=text], input[type=password] {
-
-  padding: 12px;
-  margin: 25px 0px;
-  display: inline-block;
+/*navigation*/
+.navBarFixed{
+  z-index: 1;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  height: 60px;
 }
 
+.sticky {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  background-color: #ffffff;
+  box-shadow: 5px 10px 18px #888;
+  z-index: 1;
+}
 
+.Logo{
+  max-width:  100%;
+  max-height: 60px;
+  align-self: center
+}
+.topnav {
+  overflow: hidden; 
+}
+
+.topnav a {
+  display: inline-block;
+  color: black;
+  text-align: center;
+  padding-right: 30px;
+  text-decoration: none;
+  font-size: 16px;   
+  line-height: 24px;
+  font-weight: 500
+}
+
+.topnav a:hover {
+  color:#D83C37;
+}
+
+.topnav a.active {
+  color:#D83C37;
+}
+
+.topnav .icon {
+  display: none;
+  position: relative;
+  color: #D83C37;
+  
+}
 .container {
-  display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;  
-  align-content: center;
-  justify-content: center;
+text-align: center;
+padding:5rem 0px
+}
+
+input[type=text], input[type=password] {
+  width: 30%;
+  padding: 12px;
+  margin: 13px 0px;
 }
 
 label{
-  padding: 20px;
-}
-
-input[type=text],input[type=password]{
-  padding: 12px;
-  width: 90%;
+ display: block;
 }
 
 
 input[type=submit]{
   background-color: #7f99c7;
-  padding: 20px;
+  padding: 15px;
   color: white;
   border: none;
   border-radius: 4px;
   cursor: pointer;
-  width: 150px;
+  width: 15%;
 }
 
+input[type=submit]:hover{
+  background-color: #f14e4e;
+}
 
-
- #Error{
+#Error{
   color: red;
 }
 
 /* Change styles for span and cancel button on extra small screens */
 @media screen and (max-width: 450px) {
-
-  input[type=text], input[type=password] ,input[type=submit]{
-   width: 100%;
+  input[type=text], input[type=password]{
+   width: 85%;
+  }
+  input[type=submit]{
+    width: 93%;
   }
 }

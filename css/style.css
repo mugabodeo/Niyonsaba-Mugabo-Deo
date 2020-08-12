@@ -21,7 +21,7 @@ body {
 
 
 header{
-  background: url('./img/Bg.png') center;
+  background: url('../img/Bg.png') center;
   background-size: cover;
   
 } 
@@ -144,9 +144,9 @@ header{
   font-weight: 700;
   
 }
-
-
-
+.hireMeButton{
+  background-color:#f14e4e ;
+}
 
 .me{
   padding-top:5rem
@@ -159,7 +159,7 @@ header{
   color: #7f99c7;
 }
 
-a.button4{
+a.hireMeButton{
   display:inline-block;
   margin:0 0.1em 0.1em 0;
   border:0.16em solid rgba(255,255,255,0);
@@ -398,20 +398,25 @@ a.button4{
   font-size: 22px;
 }
 /* Style inputs with type="text", select elements and textareas */
-input[type=text], select, textarea {
-  width: 200px; /* Full width */
+
+label{
+  display: block;
+}
+input[type=text],textarea {
+  width: 35%; /* Full width */
   padding: 12px; /* Some padding */ 
   border: 1px solid #ccc; /* Gray border */
   border-radius: 4px; /* Rounded borders */
   box-sizing: border-box; /* Make sure that padding and width stays in place */
-  margin-top: 20px; /* Add a top margin */
-  margin-bottom: 16px; /* Bottom margin */
+  margin-top: 5px; /* Add a top margin */
+  margin-bottom: 5px; /* Bottom margin */
   resize: vertical /* Allow the user to vertically resize the textarea (not horizontally) */
 }
 
 /* Style the submit button with a specific background color etc */
 input[type=submit] {
   background-color: #7f99c7;
+  width: 25%;
   color: white;
   padding: 12px 20px;
   border: none;
@@ -478,11 +483,17 @@ input[type=submit]:hover {
   .projectCard__wrapper,.serviceCard__wrapper{
     grid-template-columns: repeat(2,1fr);
   }
+  input[type=text],textarea,input[type=submit]{
+    width:60%;
+  }
 }
 
 @media screen and (max-width: 500px) {
   .projectCard__wrapper,.serviceCard__wrapper{
     grid-template-columns: 1fr;
+  }
+  input[type=text],textarea,input[type=submit]{
+    width:100%;
   }
   
 }

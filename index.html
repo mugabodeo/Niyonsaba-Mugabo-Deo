@@ -8,7 +8,7 @@
     <meta name="keywords" content="Tech Blog,Rwanda,East Africa">
     <meta name="author" content="Niyonsaba Mugabo Deo">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="./css/style.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Poppins'>
 </head>
@@ -23,7 +23,7 @@
         <a href="#3">Services</a>
         <a href="#4">Education</a>
         <a href="#5">Contact me</a>
-        <a href="./blog.html">Blog</a>
+        <a href="./templates/blog.html">Blog</a>
         <a href="javascript:void(0);" class="icon" onclick="myFunction()">
           <i class="fa fa-bars"></i>
         </a>
@@ -39,7 +39,7 @@
         <a href="#3" onclick="closeNav()">Services</a>
         <a href="#4" onclick="closeNav()">Education</a>
         <a href="#5" onclick="closeNav()">Contact me</a>
-        <a href="./blog.html" onclick="closeNav()">Blog</a>
+        <a href="./templates/blog.html" onclick="closeNav()">Blog</a>
       </div>
     </nav>
 
@@ -52,7 +52,7 @@
           <span class="fullStck">a Fullstack </span><br>  Web  <span class="dev">Developer</span>
         </div>  
         <div>
-          <a href="something" class="button4" style="background-color:#f14e4e">Hire me</a>
+          <a href="something" class="hireMeButton">Hire me</a>
         </div> 
       </div>               
     </header>   
@@ -200,16 +200,23 @@
         Contact me
       </div>
       <div class="container">
-        
         <form id="contactForm"  action=""> 
           <div id="contactError"></div>
-          <label for="fullname">Name</label>
-          <input type="text" id="name" name="name" placeholder="Your name.." required> <br>       
-          <label for="email">email</label>
-          <input type="text" id="email" name="email" placeholder="Your last name.." required>  <br>       
-          <label for="subject"> Subjects &NonBreakingSpace; &NonBreakingSpace;</label>
-          <input  type="text" id="subject" name="subject" placeholder="Write something.." ><br> 
-          <input type="submit" value="Submit" onclick="contactValidation()">
+          <div>
+            <label for="fullname">Name</label>
+            <input type="text" id="name" name="name" placeholder="Your name.." required>    
+          </div>
+          <div>
+            <label for="email">email</label>
+            <input type="text" id="email" name="email" placeholder="Your last name.." required>
+          </div>
+          <div>
+            <label for="subject"> Subjects </label>
+            <textarea id="subject" name="subject" placeholder="add any question or query" required></textarea>
+          </div>
+          <div>
+            <input type="submit" value="Submit" onclick="contactValidation()">
+          </div> 
         </form>
       </div>
       <div class="contactTitle">

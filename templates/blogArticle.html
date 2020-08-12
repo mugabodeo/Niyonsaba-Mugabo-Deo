@@ -8,25 +8,25 @@
     <meta name="keywords" content="Tech Blog,Rwanda,East Africa">
     <meta name="author" content="Niyonsaba Mugabo Deo">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="blogArticle.css">
+  <link rel="stylesheet" href="../css/blogArticle.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Poppins'>
 </head>
 <body>
   <!-- nvagiation system-->
   <div id="navBar" class="navBarFixed">
-    <div> <a href="./index.html"><img class="Logo" src="./img/Logo.png"></a> </div>  
+    <div> <a href="../index.html"><img class="Logo" src="../img/Logo.png"></a> </div>  
     <div class="topnav" id="myTopnav">
-      <a href="./index.html" class="active">Home</a>
-      <a href="./blog.html">Blog</a>
+      <a href="../index.html" class="active">Home</a>
+      <a href="../templates/blog.html">Blog</a>
     </div>
   </div>
 
   <div class="container">
 
     <div class="hiddenSection">
-      <a href="./newArticle.html"> <i class="fa fa-pencil-square-o" aria-hidden="true" > Edit </i> </a>&nbsp;&nbsp;&nbsp;
-      <a href="./newArticle.html"> <i class="fa fa-minus-circle" aria-hidden="true"></i>Delete </a>
+      <a href="../templates/newArticle.html"> <i class="fa fa-pencil-square-o" aria-hidden="true" > Edit </i> </a>&nbsp;&nbsp;&nbsp;
+      <a href="#"> <i class="fa fa-minus-circle" aria-hidden="true"></i>Delete </a>
     </div>
 
     <div class="blogCover">
@@ -36,7 +36,7 @@
     </div>
   
    
-      <div class="blogSection">
+    <div class="blogSection">
       Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium nesciunt ratione officiis. Eum placeat tenetur, magni, quod suscipit, ad molestias blanditiis ullam sint recusandae perspiciatis hic molestiae beatae ducimus optio. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Et recusandae rem ipsum amet veniam ullam placeat quaerat nihil cum, laudantium, iste eaque quos labore, voluptatum nulla ex vel optio nesciunt. Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque illum corporis mollitia, sed commodi dolores illo nihil consequuntur optio porro rerum. Rerum id sint nesciunt impedit temporibus voluptas, autem adipisci. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur, tempore molestiae consequuntur itaque voluptatibus iusto, natus quaerat repellendus architecto sunt nemo nobis doloremque. Sequi repellendus harum illum nulla possimus laborum. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eum dolores eius doloremque quaerat suscipit labore, quas, dolorem at totam architecto nobis aliquid sapiente nam! Ratione eius laborum magnam soluta ipsum? Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis omnis debitis doloremque deleniti corporis, doloribus ipsa vero nam, libero numquam possimus iste quia ipsum repellendus alias dolor dolore odit sit.
       Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam eligendi fugiat aut voluptatibus voluptates libero molestias enim. Assumenda dolore excepturi vitae maiores laboriosam, quisquam nobis optio molestias, debitis obcaecati recusandae.
       Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga, ex. Labore recusandae vitae fugiat praesentium dolore sequi impedit asperiores placeat odit, eligendi ducimus consequuntur animi dolores iure beatae rem expedita?
@@ -52,24 +52,26 @@
       Lorem ipsum dolor, sit amet consectetur adipisicing elit. Beatae accusamus expedita quo rerum dolor. Incidunt dolore quae voluptas consectetur pariatur ad quia, ipsam beatae culpa accusamus facere, ipsa quibusdam tempora?  
     </div>
 
-      <div class="comments">
-        <div class="commentForm"> 
-          <form id="form" action="#">
-            <span id="commentError"> </span>
-            <div class="row">
+    <div class="comments">
+      <div class="commentForm"> 
+        <form id="form" action="#">
+          <span id="commentError"> </span>
+          <div class="row">
             <label for="fname">name</label> 
             <input  type="text" id="fullName" name="full name" placeholder="Your name.." required> 
-            </div>
-            <div>
-             <label  for="lname">E-mail</label> 
-              <input  type="text" id="email" name="email" placeholder="YourEmail.." required> 
-            </div>  
-            <div>
-               <label  for="comment"> Comment</label>
-              <textarea  id="comment" name="comment" placeholder="put you comment here.." required></textarea>
-            </div>     
+          </div>
+            
+          <div>
+            <label  for="lname">E-mail</label> 
+            <input  type="text" id="email" name="email" placeholder="YourEmail.." required> 
+          </div>  
+            
+          <div>
+            <label  for="comment"> Comment</label>
+            <textarea  id="comment" name="comment" placeholder="put you comment here.." required></textarea>
+          </div>     
               <div><input type="submit" value="Submit" onclick="commentValidation()"> </div> 
-          </form>
+        </form>
         </div>
         <div class="commentList">
           <span class="smallTitle">comments(1)</span>
