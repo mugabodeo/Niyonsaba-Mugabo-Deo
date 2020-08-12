@@ -1,0 +1,279 @@
+<!doctype html>
+<html len="en">
+<head>
+    <title>myBlog</title>
+    <meta charset="utf-8">
+    <meta charset="utf-8">
+    <meta name="description" content="">
+    <meta name="keywords" content="Tech Blog,Rwanda,East Africa">
+    <meta name="author" content="Niyonsaba Mugabo Deo">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Poppins'>
+</head>
+<body onload="getLocation()"> 
+  <div>
+    <!-- navagiation system-->
+    <nav id="navBar" class="navBarFixed">
+      <div> <a href="./index.html"><img class="Logo" src="./img/Logo.png"></a> </div>  
+      <div class="topnav" id="myTopnav">
+        <a href="./index.html" class="active">Home</a>
+        <a href="#2">Projects</a>
+        <a href="#3">Services</a>
+        <a href="#4">Education</a>
+        <a href="#5">Contact me</a>
+        <a href="./blog.html">Blog</a>
+        <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+          <i class="fa fa-bars"></i>
+        </a>
+      </div>
+    </nav>
+
+    <!-- overalay navigation system-->
+    <nav id="myNav" class="overlay">
+      <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+      <div class="overlay-content">
+        <a href="./index.html" class="active" onclick="closeNav()">Home</a>
+        <a href="#2" onclick="closeNav()">Projects</a>
+        <a href="#3" onclick="closeNav()">Services</a>
+        <a href="#4" onclick="closeNav()">Education</a>
+        <a href="#5" onclick="closeNav()">Contact me</a>
+        <a href="./blog.html" onclick="closeNav()">Blog</a>
+      </div>
+    </nav>
+
+    <!-- Intro section-->
+    <header class="firstSection"  id="1">
+      <div class="wordPart"> 
+        <div><img  class="me" src="./img/me.png"></div>
+        <div class="myName">
+          <span class="fName">Niyonsaba</span> <br> Mugabo Deo <br>                    
+          <span class="fullStck">a Fullstack </span><br>  Web  <span class="dev">Developer</span>
+        </div>  
+        <div>
+          <a href="something" class="button4" style="background-color:#f14e4e">Hire me</a>
+        </div> 
+      </div>               
+    </header>   
+    <!-- Project-->
+    <section class="secondSection" id="2">
+      <div class="sectionTitle">
+        <span class="title"> Projects</span><br>
+        Lorem ipsum dolor sit amet consectetur adipisicing; elit. 
+        Sapiente aut, quo, facere amet enim, ullam reprehenderit    
+      </div>
+        
+      <div class="projectCard__wrapper">
+        <div class="projectCard">
+          <div class="innerProjectCard">
+            <div class="frontInnerProjectCard">
+              <div> <img style="width: 33.3%" src="https://cdn.pixabay.com/photo/2019/10/09/07/28/development-4536630_960_720.png"> </div>  
+              <div class="title"> Consular card</div>
+              <div class="small_title"> Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique vero quos maiores sed consectetur illo earum cum perferendis voluptatem?</div>
+            </div>
+            <div class="backInnerProjectCard">
+              <div class="title">Some description</div>
+              <div class="small_title"> Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique vero quos maiores sed consectetur illo earum cum perferendis voluptatem?</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="projectCard">
+          <div class="innerProjectCard">
+            <div class="frontInnerProjectCard">
+              <div> <img style="width: 33.3%" src="https://cdn.pixabay.com/photo/2019/10/09/07/28/development-4536630_960_720.png"> </div>  
+              <div class="title"> Consular card</div>
+              <div class="small_title"> Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique vero quos maiores sed consectetur illo earum cum perferendis voluptatem?</div>
+            </div>
+            <div class="backInnerProjectCard">
+              <div class="title">Some description</div>
+              <div class="small_title"> Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique vero quos maiores sed consectetur illo earum cum perferendis voluptatem?</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="projectCard">
+          <div class="innerProjectCard">
+            <div class="frontInnerProjectCard">
+              <div> <img style=" width: 33.3%" src="https://cdn.pixabay.com/photo/2019/10/09/07/28/development-4536630_960_720.png"> </div>  
+              <div class="title"> Consular card</div>
+              <div class="small_title"> Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique vero quos maiores sed consectetur illo earum cum perferendis voluptatem?</div>
+            </div>
+            <div class="backInnerProjectCard">
+              <div class="title">Some description</div>
+              <div class="small_title"> Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique vero quos maiores sed consectetur illo earum cum perferendis voluptatem?</div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+   
+    
+    <!-- Service offers and skills -->
+    <section class="thirdSection" id="3">
+      <div class="titleServices">
+        <span class="title"> Services</span><br>
+        Lorem ipsum dolor sit amet consectetur adipisicing; elit. 
+        Sapiente aut, quo, facere amet enim, ullam reprehenderit 
+      </div>
+      
+      <div class="serviceCard__wrapper">
+        <div class="card">
+          <div class="title">Web Design</div>         
+          <div class="icon">
+            <img src="https://img.icons8.com/color/96/000000/imac.png"/>
+          </div><!--/icon-->  
+          <div class="features">
+              UX/UI<br>
+              User stories<br>
+              Brainstorming<br>
+              Free consulatation<br>
+          </div><!--/features-->         
+        </div><!--/card-->
+
+        <div class="card">
+          <div class="title">Full Stack Web Development</div>   
+            <div class="icon">
+              <img src="https://www.offshoreitstaffing.com/images/meanstack.png" width="45%" height="100%">
+            </div><!--/icon-->  
+          <div class="features">
+              Database Design<br>
+              Deployment<br>
+              Hosting<br>
+          </div><!--/features-->
+        </div><!--/card-->
+
+        <div class="card">
+          <div class="title">Graphic Design</div>
+            <div class="icon">
+              <img style="width:45%;height:100%" src="https://suntechit.lk/wp-content/uploads/elementor/thumbs/outsource-icon-obovod2rdwcalu4vfo5sntb1qqhqpsln1ugpr4z8es.png">
+            </div><!--/icon-->  
+          <div class="features">
+              Logo Design<br>
+              Image Processing<br>
+            </ul>
+          </div><!--/features-->
+        </div><!--/card-->      
+      </div>
+    </section>
+  
+    <!--Education-->
+    <section class="fourthSection" id="4">
+      <div class="titlePro">
+        <span class="title"> Education & Training</span><br>
+        Lorem ipsum dolor sit amet consectetur adipisicing; elit. 
+        Sap
+      </div>
+
+      <div class="educationCardWrapper">
+        <div class="educationCard">        
+          <div class="educationCardImg">
+            <img src="https://storage.googleapis.com/chydlx/codepen/blog-cards/image-1.jpg" width="100%" height="100%"/>
+          </div>
+          <div class="projectCard__data">
+            <div class="">Andela Technical Leadership<br>
+            2020-Current</div> 
+            <div class="educationLine"></div> 
+            <div class="educationWord"> <p> Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nihil eaque laborum explicabo adipisci provident ex consectetur odit quos, enim repellendus. Atque, possimus? Quo ullam cupiditate, repudiandae modi est facilis! Molestiae!</p></div>  
+          </div>       
+        </div>
+        <div class="educationCard">        
+          <div class="educationCardImg">
+            <img src="https://storage.googleapis.com/chydlx/codepen/blog-cards/image-1.jpg" width="100%" height="100%"/>
+          </div>
+          <div class="projectCard__data">
+            <div class="smalltitle">Bachelor of Computer Engineering<br>
+           2016-2020</div> 
+            <div class="educationLine"></div> 
+            <div class=""> <p> Lorem ipsum, dolor sit amet consectetur adipisicing elit. Minima voluptates inventore dignissimos officia ipsa molestias fugit voluptatum rem magni corporis illum, quos doloremque nihil architecto hic molestiae. Voluptas, quasi labore.</p></div>  
+          </div>       
+        </div>           
+      </div>         
+    </section>
+
+            
+    <!-- contact me-->
+    <section class="fifthSection" id="5">
+      <div class="title"> 
+        Contact me
+      </div>
+      <div class="container">
+        
+        <form id="contactForm"  action=""> 
+          <div id="contactError"></div>
+          <label for="fullname">Name</label>
+          <input type="text" id="name" name="name" placeholder="Your name.." required> <br>       
+          <label for="email">email</label>
+          <input type="text" id="email" name="email" placeholder="Your last name.." required>  <br>       
+          <label for="subject"> Subjects &NonBreakingSpace; &NonBreakingSpace;</label>
+          <input  type="text" id="subject" name="subject" placeholder="Write something.." ><br> 
+          <input type="submit" value="Submit" onclick="contactValidation()">
+        </form>
+      </div>
+      <div class="contactTitle">
+        <div>
+          <ul class="social-icons">
+            <li><a class="facebook" href="https://web.facebook.com/niyonsabamugabo.deo"><i class="fa fa-facebook"></i></a></li>
+            <li><a class="github" href="https://github.com/mugabodeo"><i class="fa fa-github"></i></a></li>
+            <li><a class="linkedin" href="#"><i class="fa fa-linkedin"></i></a></li>   
+          </ul>
+         </div>
+        <div class="title">  <i class="fa fa-envelope-o fa-lg" aria-hidden="true"></i> &nbsp;mugabodeo6@gmail.com &nbsp;&nbsp;   <i class="fa fa-phone-square" aria-hidden="true"></i>&nbsp; +250 782 296 231 &nbsp;&nbsp;<i class="fa fa-map-marker large" aria-hidden="true"></i>&nbsp; Kigali,Rwanda </div>    
+      </div>
+    </section> 
+    <script>
+      // navbar magic spell
+window.onscroll = function() {scrollFunction()};
+var navbar = document.getElementById("navBar");
+var sticky = navbar.offsetTop;
+
+function scrollFunction() {
+    if (window.pageYOffset >= sticky) {
+            navbar.classList.add("sticky")
+        }
+    else {
+        navbar.classList.remove("sticky");
+          }
+}  
+
+
+  function myFunction() {
+    var x = document.querySelector("#myTopnav");
+      if (x.className === "topnav") {
+        x.className += " responsive";
+        document.querySelector("#myNav").style.width = "100%";
+      }
+      else {
+        x.className = "topnav";
+      }
+  }
+
+function closeNav() {
+    document.querySelector("#myNav").style.width = "0%";
+}
+    </script>
+  <!-- The core Firebase JS SDK is always required and must be listed first -->
+  <script src="https://www.gstatic.com/firebasejs/7.17.2/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.17.2/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.17.2/firebase-firestore.js"></script>
+  <script>
+    var firebaseConfig = {
+      apiKey: "AIzaSyCdtOQhoms2I52-tW1E_b-9c75yMaknUeo",
+      authDomain: "niyonsaba-blog.firebaseapp.com",
+      databaseURL: "https://niyonsaba-blog.firebaseio.com",
+      projectId: "niyonsaba-blog",
+      storageBucket: "niyonsaba-blog.appspot.com",
+      messagingSenderId: "99333250588",
+      appId: "1:99333250588:web:52bdccf2770739045dc9d9",
+      measurementId: "G-H9F0CN2HYG"
+    };
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+    const db=firebase.firestore();
+  </script>
+  <script src="app.js">
+  </script>
+</body>
+</html>

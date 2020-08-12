@@ -1,0 +1,51 @@
+body {font-family: 'Poppins'}
+
+input[type=text], input[type=password] {
+
+  padding: 12px;
+  margin: 25px 0px;
+  display: inline-block;
+}
+
+
+.container {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;  
+  align-content: center;
+  justify-content: center;
+}
+
+label{
+  padding: 20px;
+}
+
+input[type=text],input[type=password]{
+  padding: 12px;
+  width: 90%;
+}
+
+
+input[type=submit]{
+  background-color: #7f99c7;
+  padding: 20px;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  width: 150px;
+}
+
+
+
+ #Error{
+  color: red;
+}
+
+/* Change styles for span and cancel button on extra small screens */
+@media screen and (max-width: 450px) {
+
+  input[type=text], input[type=password] ,input[type=submit]{
+   width: 100%;
+  }
+}

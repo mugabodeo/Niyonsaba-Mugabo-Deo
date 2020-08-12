@@ -12,29 +12,43 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Poppins'>
 </head>
-<body>
+<body onload="signInStatus()">
   <div class="container">
-    <div>
+
       <h2>Login</h2>    
-      <form class="modal-content animate" action="/" method="post">
-      <div class="container">
-        <label for="uname"><b>Username</b></label>
-        <input type="text" placeholder="Enter Username" name="uname" required>
+      <form id="formLogin" action="/" >
+        <div id="Error"> </div>
+        <label for="email"><b>email</b></label>
+        <input type="text" placeholder="Enter email" name="email" required>
         <label for="psw"><b>Password</b></label>
-        <input type="password" placeholder="Enter Password" name="psw" required>
-        <button type="submit">Login</button>
+        <input type="password" placeholder="Enter Password" id="password" name="password" required>
+        <input type="submit" value="Login"/>
         <label>
           <input type="checkbox" checked="checked" name="remember"> Remember me
-        </label>
-      </div>      
-               
+        </label>  
         <span class="psw">Forgot <a href="#">password?</a></span>
      
       </form>
-    </div>
   </div>    
-    
+  <script src="https://www.gstatic.com/firebasejs/7.17.2/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.17.2/firebase-auth.js"></script>
+ 
   <script>
-   </script>
+    var firebaseConfig = {
+      apiKey: "AIzaSyCdtOQhoms2I52-tW1E_b-9c75yMaknUeo",
+      authDomain: "niyonsaba-blog.firebaseapp.com",
+      databaseURL: "https://niyonsaba-blog.firebaseio.com",
+      projectId: "niyonsaba-blog",
+      storageBucket: "niyonsaba-blog.appspot.com",
+      messagingSenderId: "99333250588",
+      appId: "1:99333250588:web:52bdccf2770739045dc9d9",
+      measurementId: "G-H9F0CN2HYG"
+    };
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+    const auth=firebase.auth()
+  
+  </script>  
+  <script src="app.js"></script>
 </body>
 </html>
