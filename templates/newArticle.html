@@ -23,63 +23,56 @@
   </div>
 
   <div class="wrapper">
-    <form action="/firebase_action">
+    <form id="newArticleForm" action="">
       <div class="row">
+        <div id="errorMessage"></div>
         <div class="col-25">
           <label for="articleTitle">article title</label>
         </div>
         <div class="col-75">
-          <input type="text" id="articleTitle" name="articleTitle" placeholder="article title ..">
+          <input type="text" id="articleTitle" name="articleTitle" placeholder="article title .." required>
         </div>
       </div>
       <div class="row">
+      
         <div class="col-25">
           <label for="articleCover">article cover</label>
         </div>
         <div class="col-75">
-          <input type="file" id="filetoUpload" name="filetoUpload">
+          <input type="file" id="articleCover" name="articleCover" required>
+          <progress id="uploader" value="0" max="100">0%</progress>
         </div>
       </div>
       <div class="row">
         <div class="col-25">
-          <label for="category">Category</label>
+          <label for="articleCategory">Category</label>
         </div>
         <div class="col-75">
-          <select id="category" name="category">
-            <option value="australia">frontend dev</option>
-            <option value="canada">backend dev</option>
-            <option value="usa">UX/UI</option>
+          <select id="articleCategory" name="articleCategory" required>
+            <option value="Startup">Startup</option>
+            <option value="DevOps">DevOps</option>
+            <option value="Tech">Tech</option>
           </select>
         </div>
       </div>
       <div class="row">
         <div class="col-25">
-          <label for="subject">description</label>
+          <label for="articleBody">article body</label>
         </div>
         <div class="col-75">
-          <textarea id="description" name="description" placeholder="Write something about an article .."></textarea>
+          <textarea id="articleBody" name="articleBody" placeholder="Write something about an article .." required></textarea>
         </div>
       </div>
       <div class="row">
-        <input type="submit" value="Publish">
-        <input type="submit" value="Edit">
+        <input type="submit" value="Publish / Edit">
       </div>
     </form>
   </div>
-  <script>
-      window.onscroll = function() {scrollFunction()};
-      var navbar = document.getElementById("navBar");
-      var sticky = navbar.offsetTop;
-
-      function scrollFunction() {
-          if (window.pageYOffset >= sticky) {
-            navbar.classList.add("sticky")
-          } else {
-            navbar.classList.remove("sticky");
-          }
-        }  
-
-       
-</script>
+  <script src="https://www.gstatic.com/firebasejs/7.17.2/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.17.2/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.17.2/firebase-firestore.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.17.2/firebase-storage.js"></script>       
+  <script src="../scripts/helper.js"></script>
+  <script src="../scripts/newArticle.js"></script>
 </body>
 </html>

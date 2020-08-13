@@ -34,6 +34,7 @@ commentForm.addEventListener('submit',(e)=>{
             createdAt:timestamp
         })
         .then(function (res) {
+            commentError.innerHTML="";
             commentForm.reset()
         })
         .catch(function (err) {
