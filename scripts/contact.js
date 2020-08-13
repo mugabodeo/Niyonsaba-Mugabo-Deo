@@ -7,12 +7,14 @@ contactForm.addEventListener('submit',function(e){
     const email= contactForm['email'].value;
     const name=contactForm['name'].value;
     const subject=contactForm['subject'].value;
-    const contactError=document.querySelector("#contactError");
+    const timestamp=firebase.firestore.FieldValue.serverTimestamp();
+    let contactError=document.querySelector("#contactError");
     if(email.match(pattern)){
         db.collection("queries").add({
             email:email,
             name:name,
-            subject:subject
+            subject:subject,
+            createdAt:timestamp
         })
         .then(function (res) {
             contactForm.reset()

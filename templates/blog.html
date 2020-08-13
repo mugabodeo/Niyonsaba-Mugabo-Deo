@@ -126,37 +126,8 @@
 <!-- The core Firebase JS SDK is always required and must be listed first -->
 <script src="https://www.gstatic.com/firebasejs/7.17.2/firebase-app.js"></script>
 <script src="https://www.gstatic.com/firebasejs/7.17.2/firebase-auth.js"></script>
-<script>
-  var firebaseConfig = {
-    apiKey: "AIzaSyCdtOQhoms2I52-tW1E_b-9c75yMaknUeo",
-    authDomain: "niyonsaba-blog.firebaseapp.com",
-    databaseURL: "https://niyonsaba-blog.firebaseio.com",
-    projectId: "niyonsaba-blog",
-    storageBucket: "niyonsaba-blog.appspot.com",
-    messagingSenderId: "99333250588",
-    appId: "1:99333250588:web:52bdccf2770739045dc9d9",
-    measurementId: "G-H9F0CN2HYG"
-  };
-  // Initialize Firebase
-  firebase.initializeApp(firebaseConfig);
-
-</script>
-<script>
-  // navbar magic spell
-window.onscroll = function() {scrollFunction()};
-var navbar = document.getElementById("navBar");
-var sticky = navbar.offsetTop;
-
-function scrollFunction() {
-if (window.pageYOffset >= sticky) {
-        navbar.classList.add("sticky")
-    }
-else {
-    navbar.classList.remove("sticky");
-      }
-} 
-</script>
-<script src="../scripts/blog.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.17.2/firebase-firestore.js"></script>
 <script src="../scripts/helper.js"></script>
+<script src="../scripts/blog.js"></script>
 </body>
 </html>
