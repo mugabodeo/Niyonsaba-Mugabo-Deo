@@ -11,16 +11,17 @@ function signInStatus(){
 }
 
 
-db.collection("articles")
+db.collection("articles").orderBy("timestamp", "asc")
     .onSnapshot(function(snapshot) {
-        var allArticles=[];
-        let x
+        let allArticles=[];
         snapshot.forEach(function(doc){
             allArticles.push(doc.data());
         })
-
+        
+        if(allArticles !== null && allArticles.length>0){ //check if articles are null
+            
         let highlightArticles=allArticles.slice(0,4);
-        let otherArticles=allArticles.slice(3,(allArticles.length -1));
+        let otherArticles=allArticles.slice(4,(allArticles.length));
         const divA=document.querySelector('#a')
         divA.innerHTML+=`
             <a href="./blogArticle.html">
@@ -29,7 +30,8 @@ db.collection("articles")
                     <div class="contentDetails">    
                         <p class="smallTitle">${highlightArticles[0]['articleCategory']}</p>
                         <div class="title">${highlightArticles[0]['articleTitle']}</div>
-                        <div class="smallTitle">${highlightArticles[0]['timestamp'].toDate()}</div>
+                        <div class="smallDescription">${highlightArticles[0]['articleHeadline']}</div>
+                        <div class="smallTitle">${highlightArticles[0]['timestamp'].toDate().toDateString()}</div>
                     </div>
                 </div>
             </a>    
@@ -42,9 +44,9 @@ db.collection("articles")
                 <div class="content">
                     <div class="contentDetails_1">
                         <p class="smallTitle">${highlightArticles[1]['articleCategory']}</p>
-                        <span class="title">${highlightArticles[1]['articleTitle']}</span>
-                        <p> onsequuntur dolore aperiam eveniet recusandae accusantium.</p>
-                        <span class="smallTitle">${highlightArticles[1]['timestamp'].toDate()}</span>
+                        <div class="title">${highlightArticles[1]['articleTitle']}</div>
+                        <div class="smallDescription">${highlightArticles[1]['articleHeadline']}</div>
+                        <div class="smallTitle">${highlightArticles[1]['timestamp'].toDate().toDateString()}</div>
                     </div>
                 </div> 
             </a>
@@ -56,9 +58,9 @@ db.collection("articles")
                 <div class="content">
                     <div class="contentDetails_2">
                         <p class="smallTitle">${highlightArticles[2]['articleCategory']}</p>
-                        <span class="title">${highlightArticles[2]['articleTitle']}</span>
-                        <p> onsequuntur dolore aperiam eveniet recusandae accusantium.</p>
-                        <span class="smallTitle">${highlightArticles[2]['timestamp'].toDate()}</span>
+                        <div class="title">${highlightArticles[2]['articleTitle']}</div>
+                        <div class="smallDescription">${highlightArticles[2]['articleHeadline']}</div>
+                        <div class="smallTitle">${highlightArticles[2]['timestamp'].toDate().toDateString()}</div>
                     </div>
                 </div> 
             </a>  
@@ -70,9 +72,9 @@ db.collection("articles")
                 <div class="content">
                     <div class="contentDetails_3">
                         <p class="smallTitle">${highlightArticles[3]['articleCategory']}</p>
-                        <span class="title">${highlightArticles[3]['articleTitle']}</span>
-                        <p> onsequuntur dolore aperiam eveniet recusandae accusantium.</p>
-                        <span class="smallTitle">${highlightArticles[3]['timestamp'].toDate()}</span>
+                        <div class="title">${highlightArticles[3]['articleTitle']}</div>
+                        <div class="smallDescription">${highlightArticles[3]['articleHeadline']}</div>
+                        <div class="smallTitle">${highlightArticles[3]['timestamp'].toDate().toDateString()}</div>
                     </div>
                 </div> 
             </a>
@@ -83,13 +85,19 @@ db.collection("articles")
             divInner.innerHTML+=` 
             <figure>
                 <img src='${doc.articleCover}'>
+                <figcaption>${doc.timestamp.toDate().toDateString()}</figcaption>
                 <figcaption class="title">${doc.articleTitle}</figcaption>
                 <figcaption>${doc.articleCategory}</figcaption>
-                <figcaption>${doc.timestamp.toDate()}</figcaption>
-                <figcaption>${doc.articleBody}</figcaption>
+                <figcaption>${doc.articleHeadline}</figcaption>
           </figure>`
         
         })
+        }
+        
+        else{
+            let errorMessage=document.querySelector('#errorMessage');
+            errorMessage.innerHTML="No articles to display"
+        }
 
     
        /* snapshot.docChanges().forEach(function(change) {

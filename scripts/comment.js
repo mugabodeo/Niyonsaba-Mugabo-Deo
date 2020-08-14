@@ -2,6 +2,8 @@
 let navDiv=document.querySelector("#myTopnav"); 
 let hiddenDiv=document.querySelector("#hiddenSection");
 const commentForm= document.querySelector('#commentForm');
+let commentList= document.querySelector('#commentList');
+let commentsNumber=document.querySelector('#commentsNumber');
 const pattern=/^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
 
 function signInStatus(){
@@ -16,7 +18,34 @@ function signInStatus(){
         }
     });
 }
- 
+
+db.collection("comments").orderBy("createdAt", "asc")
+    .onSnapshot(function(snapshot){
+        let comments=[];
+        snapshot.forEach(function(doc){
+            comments.push(doc.data())
+        })
+        if(comments !==null && comments.length >0){
+            console.log(comments)
+            commentsNumber.innerHTML+=comments.length
+            comments.forEach(function(doc){
+                commentList.innerHTML+=`
+                <div class="eachComment">
+                    <div class="commentName"> 
+                    ${doc.name} &nbsp; &nbsp;  ${doc.createdAt.toDate().toDateString()} 
+                    </div>  
+                    <div class="commentDescription">
+                    ${doc.comment} 
+                    </div>
+                </div> `
+            })     
+
+        }
+        else{
+            commentError+="Be first to comment"
+        }
+    }) 
+
 commentForm.addEventListener('submit',(e)=>{
     e.preventDefault();
     e.stopPropagation();
@@ -48,3 +77,4 @@ commentForm.addEventListener('submit',(e)=>{
        
 })
 
+ 

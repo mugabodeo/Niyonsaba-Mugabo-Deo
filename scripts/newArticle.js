@@ -8,6 +8,7 @@ newArticleForm.addEventListener('submit',(e) =>{
     const articleTitle=newArticleForm['articleTitle'].value;
     const articleCategory=newArticleForm['articleCategory'].value;
     const articleCover=newArticleForm['articleCover'].files[0];
+    const articleHeadline=newArticleForm['articleHeadline'].value;
     const articleBody=newArticleForm['articleBody'].value;
     const timestamp=firebase.firestore.FieldValue.serverTimestamp();
     const allowedExtensions = /(\.jpg|\.jpeg|\.png|\.gif)$/i;
@@ -30,6 +31,7 @@ newArticleForm.addEventListener('submit',(e) =>{
                     articleCategory:articleCategory,
                     timestamp:timestamp,
                     articleCover:downloadURL,
+                    articleHeadline:articleHeadline,
                     articleBody:articleBody
                 })
                 

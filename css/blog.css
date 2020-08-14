@@ -204,8 +204,9 @@ i{
 }
 
 .contentDetails{
-  margin-top: 95%;
+  margin-top: 60%;
   margin-left: 4%;
+  word-wrap: break-word;
   text-align: start;
 }
  a{
@@ -217,16 +218,23 @@ i{
   opacity: 0.8;
 }
 .contentDetails_1{
-  margin-top: 25%;
+  margin-top: 13%;
   margin-left: 4%;
+  word-wrap: break-word;
   text-align: start;
 }
 .contentDetails_2{
   margin-top: 10%;
   margin-left: 4%;
+  word-wrap: break-word;
   text-align: start;
 }
-
+.contentDetails_3{
+  padding-top: 10%;
+  margin-left: 4%;
+  word-wrap: break-word;
+  text-align: start;
+}
 
 .SecondWrapper {
   display: flex;
@@ -235,6 +243,9 @@ i{
   
 }
 
+#errorMessage{
+  color: red;
+}
 
 #inner figure  {
   box-shadow: -6px 6px 2px -3px rgba(100, 100, 100, 0.1);
@@ -243,8 +254,6 @@ i{
   margin-bottom:20px
 
 } 
-
-
 
 #inner img {
   height: 20em;
@@ -261,17 +270,17 @@ i{
     grid-column: auto;
    
   }
-  .contentDetails,.contentDetails_1{
+  .contentDetails,.contentDetails_1,.contentDetails_2,.contentDetails_3{
   margin-top: 15%;
   margin-left: 4%;
+  word-wrap: break-word;
   text-align: start;
+  
   }
-  .contentDetails_2{
-  margin-top: 15%;
-  margin-left: 4%;
-  text-align: start;
+  .highlightContent img{
+    width: 100%;
+    
   }
-
   .wrapper {
     grid-template-columns: repeat(1,100%);
     grid-template-rows:repeat(4,300px);
