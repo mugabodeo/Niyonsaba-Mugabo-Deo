@@ -236,7 +236,7 @@ i{
 }
 
 
-.inner figure  {
+#inner figure  {
   box-shadow: -6px 6px 2px -3px rgba(100, 100, 100, 0.1);
   width: 70%;
   margin:auto;
@@ -246,7 +246,7 @@ i{
 
 
 
-.inner img {
+#inner img {
   height: 20em;
   width: 100%;
   object-fit: cover;
@@ -276,7 +276,7 @@ i{
     grid-template-columns: repeat(1,100%);
     grid-template-rows:repeat(4,300px);
   }
-  .inner figure{
+  #inner figure{
     width: 100%;
   }
   
