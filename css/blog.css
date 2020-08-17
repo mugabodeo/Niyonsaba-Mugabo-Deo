@@ -288,5 +288,8 @@ i{
   #inner figure{
     width: 100%;
   }
+  #inner figcaption{
+    word-wrap: break-word;
+  }
   
  }
