@@ -30,10 +30,6 @@ if(docID!==null){
 }
 
 else{
-    let articleTitle=newArticleForm['articleTitle'].value;
-    let articleCategory=newArticleForm['articleCategory'].value;
-    let articleHeadline=newArticleForm['articleHeadline'].value;
-    let articleBody=newArticleForm['articleBody'].value;  
     
     newArticleForm.addEventListener('submit',(e)=>{
         e.preventDefault();
