@@ -59,7 +59,7 @@ text-align: center;
 padding:5rem 0px
 }
 
-input[type=text], input[type=password] {
+input[type=email], input[type=password] {
   width: 30%;
   padding: 12px;
   margin: 13px 0px;
@@ -84,13 +84,13 @@ input[type=submit]:hover{
   background-color: #f14e4e;
 }
 
-#Error{
+#loginError{
   color: red;
 }
 
 /* Change styles for span and cancel button on extra small screens */
 @media screen and (max-width: 450px) {
-  input[type=text], input[type=password]{
+  input[type=email], input[type=password]{
    width: 85%;
   }
   input[type=submit]{

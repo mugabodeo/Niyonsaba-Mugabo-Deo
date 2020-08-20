@@ -271,5 +271,8 @@ i{
     grid-template-columns: repeat(1,100%);
     grid-template-rows:repeat(4,300px);
   }
+  .inner figure{
+    width: 100%;
+  }
   
  }
