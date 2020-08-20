@@ -66,7 +66,7 @@ function saveFile(){
     }
 
     else{
-        errorMessage.innerHTML+='please fill form and only images are allowed to upload'
+        errorMessage.innerHTML+=' please fill form and only images are allowed to upload'
     }
     
 }
