@@ -87,10 +87,10 @@ body{
   color: red;
 }
 
-.blogCover{
+#blogCover{
   text-align: center;
 }
-.blogCover img{
+#blogCover img{
   width: 100%;
   height: 24rem;
   object-fit: cover;
