@@ -84,7 +84,7 @@ input[type=submit]:hover{
   background-color: #f14e4e;
 }
 
-#loginError{
+#errorMessage{
   color: red;
 }
 

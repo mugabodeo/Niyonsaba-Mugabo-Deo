@@ -12,7 +12,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Poppins'>
 </head>
-<body>
+<body onload="signInStatus()">
   <!-- nvagiation system-->
   <div id="navBar" class="navBarFixed">
     <div> <a href="../index.html"><img class="Logo" src="../img/Logo.png"></a> </div>  
@@ -24,9 +24,8 @@
 
   <div class="container">
 
-    <div class="hiddenSection">
-      <a href="../templates/newArticle.html"> <i class="fa fa-pencil-square-o" aria-hidden="true" > Edit </i> </a>&nbsp;&nbsp;&nbsp;
-      <a href="#"> <i class="fa fa-minus-circle" aria-hidden="true"></i>Delete </a>
+    <div id="hiddenSection">
+    
     </div>
 
     <div class="blogCover">
@@ -54,23 +53,23 @@
 
     <div class="comments">
       <div class="commentForm"> 
-        <form id="form" action="#">
-          <span id="commentError"> </span>
-          <div class="row">
+        <form id="commentForm" action="">
+          <div id="commentError"> </div>
+          <div>
             <label for="fname">name</label> 
-            <input  type="text" id="fullName" name="full name" placeholder="Your name.." required> 
+            <input  type="text" id="fullName" name="name" placeholder="Your name.." required> 
           </div>
             
           <div>
             <label  for="lname">E-mail</label> 
-            <input  type="text" id="email" name="email" placeholder="YourEmail.." required> 
+            <input  type="email" id="email" name="email" placeholder="YourEmail.." required> 
           </div>  
             
           <div>
             <label  for="comment"> Comment</label>
             <textarea  id="comment" name="comment" placeholder="put you comment here.." required></textarea>
           </div>     
-              <div><input type="submit" value="Submit" onclick="commentValidation()"> </div> 
+              <div><input type="submit" value="Submit"> </div> 
         </form>
         </div>
         <div class="commentList">
@@ -90,24 +89,12 @@
         </div>
         
       </div> 
-  
-   
-  </div>       
-  <script>
-    window.onscroll = function() {scrollFunction()};
-    var navbar = document.getElementById("navBar");
-    var sticky = navbar.offsetTop;
-
-    function scrollFunction() {
-      if (window.pageYOffset >= sticky) {
-            navbar.classList.add("sticky")
-          } 
-      else {
-            navbar.classList.remove("sticky");
-          }
-    }  
-
-    </script>
-    <script src="../scripts/helper.js"></script> 
+  </div> 
+   <!-- The core Firebase JS SDK is always required and must be listed first -->
+   <script src="https://www.gstatic.com/firebasejs/7.17.2/firebase-app.js"></script>
+   <script src="https://www.gstatic.com/firebasejs/7.17.2/firebase-auth.js"></script>
+   <script src="https://www.gstatic.com/firebasejs/7.17.2/firebase-firestore.js"></script>      
+  <script src="../scripts/helper.js"></script> 
+  <script src="../scripts/comment.js"></script> 
 </body>
 </html>
