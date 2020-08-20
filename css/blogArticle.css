@@ -65,7 +65,9 @@ body{
      
     }
     
-    
+#errorMessage{
+  color:red
+}    
 .container{
     display: flex;
     flex-direction: column; 
@@ -138,17 +140,21 @@ input[type=submit] {
   background-color: #d83c37;
   color: white;
   padding: 10px;
-  width: 25%;
+  width: 100%;
   border-radius: 17px 1px;
   text-align: center;
  
 }
-
-.commentDescripton{
+#commentList{
+  max-height:25rem;
+  overflow-x: scroll;
+ 
+}
+.commentDescription{
   text-align: center;
   border: 1px solid black;
   padding: 10px;
-  width: 75%;
+  width: 100%;
 }
 /* When moving the mouse over the submit button, add a darker green color */
 input[type=submit]:hover {
@@ -163,7 +169,7 @@ input[type=submit]:hover {
     width: 85%;
   }
   .commentName{
-    width: 55%;
+    width: 75%;
   }
   .commentDescripton{
     width: 85%;

@@ -17,6 +17,7 @@ contactForm.addEventListener('submit',function(e){
             createdAt:timestamp
         })
         .then(function (res) {
+            contactError.innerHTML="";
             contactForm.reset()
         })
         .catch(function (err) {
