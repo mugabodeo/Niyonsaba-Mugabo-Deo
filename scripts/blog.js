@@ -32,7 +32,7 @@ db.collection("articles").orderBy("timestamp", "asc")
 
         //4 special cards 
         divA.innerHTML+=`
-            <a id="articleCard1">
+            <a href="./blogArticle.html?articleId=${highlightArticles[1]['id']}">
                 <img src='${highlightArticles[0]['articleCover']}'>
                 <div class="content">
                     <div class="contentDetails">    
@@ -45,14 +45,9 @@ db.collection("articles").orderBy("timestamp", "asc")
             </a>    
            
         `
-        const articleCard1=document.querySelector('#articleCard1')
-        articleCard1.addEventListener('click',function(e){
-        document.location.href='/templates/blogArticle.html?articleId=' + highlightArticles[1]['id']
-         })
-
         const divB=document.querySelector('#b')
         divB.innerHTML+=`
-            <a href="#" id="articleCard2">
+            <a href="./blogArticle.html?articleId=${highlightArticles[2]['id']}" >
                 <img src='${highlightArticles[1]['articleCover']}' >
                 <div class="content">
                     <div class="contentDetails_1">
@@ -64,14 +59,9 @@ db.collection("articles").orderBy("timestamp", "asc")
                 </div> 
             </a>
         `
-        const articleCard2=document.querySelector('#articleCard2')
-        articleCard2.addEventListener('click',function(e){
-        document.location.href='/templates/blogArticle.html?articleId=' + highlightArticles[2]['id']
-         })
-
         const divC=document.querySelector('#c')
         divC.innerHTML+=`
-            <a id='articleCard3'>
+            <a href="./blogArticle.html?articleId=${highlightArticles[2]['id']}">
                 <img src='${highlightArticles[2]['articleCover']}' >
                 <div class="content">
                     <div class="contentDetails_2">
@@ -83,14 +73,9 @@ db.collection("articles").orderBy("timestamp", "asc")
                 </div> 
             </a>  
         `
-        const articleCard3=document.querySelector('#articleCard3')
-        articleCard3.addEventListener('click',function(e){
-        document.location.href='/templates/blogArticle.html?articleId=' + highlightArticles[2]['id']
-         })
-
         const divD=document.querySelector('#d')
         divD.innerHTML+=`
-            <a id="articleCard4">
+            <a href="./blogArticle.html?articleId=${highlightArticles[3]['id']}">
                 <img src='${highlightArticles[3]['articleCover']}' >
                 <div class="content">
                     <div class="contentDetails_3">
@@ -102,36 +87,26 @@ db.collection("articles").orderBy("timestamp", "asc")
                 </div> 
             </a>
         `
-        const articleCard4=document.querySelector('#articleCard4')
-        
-        articleCard4.addEventListener('click',function(e){
-        document.location.href='/templates/blogArticle.html?articleId=' + highlightArticles[3]['id']
-         })
+
         const divInner=document.querySelector('#inner')
-        const figure=document.getElementsByClassName('figureId')
         
         otherArticles.forEach(function(doc){
             divInner.innerHTML+=`
-            <figure class="figureId" data-id="${doc.id}">
-                <img src='${doc.articleCover}'>
-                <figcaption>${doc.timestamp.toDate().toDateString()}</figcaption>
-                <figcaption class="title">${doc.articleTitle}</figcaption>
-                <figcaption>${doc.articleCategory}</figcaption>
-                <figcaption>${doc.articleHeadline}</figcaption>
+            <figure>
+               
+      
+                     
+            <a href="./blogArticle.html?articleId=${doc.id}">
+            <img src='${doc.articleCover}'>
+            </a>
+            <figcaption><a href="./blogArticle.html?articleId=${doc.id}">${doc.timestamp.toDate().toDateString()}</a></figcaption>
+            <figcaption class="title"><a href="./blogArticle.html?articleId=${doc.id}">${doc.articleTitle}</a></figcaption>
+            <figcaption><a href="./blogArticle.html?articleId=${doc.id}">${doc.articleCategory}</a></figcaption>
+            <figcaption><a href="./blogArticle.html?articleId=${doc.id}">${doc.articleHeadline}</a></figcaption>
             </figure>
-            ` 
-            getId()
+           
+            `
         })
-        
-        function  getId(){
-            for(const figures of figure){
-                figures.addEventListener('click',function (e){
-                    e.preventDefault();
-                    const id=figures.getAttribute('data-id')
-                    document.location.href='../blogArticle.html?articleId=' + id
-                })
-            }
-        }
 
         }
  
