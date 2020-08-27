@@ -131,8 +131,10 @@ function updateData(downloadURL){
         serviceTitle:document.querySelector('#serviceTitle').value,
         serviceFeatures:document.querySelector('#serviceFeatures').value,
         serviceImg:downloadURL,
+    }).then(res=>{
+        window.location.reload()
     })
-    window.location.reload()
+    
 }
 
 function updateDataWithoutFile(){

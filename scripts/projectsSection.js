@@ -131,8 +131,9 @@ function updateData(downloadURL){
         projectTitle:document.querySelector('#projectTitle').value,
         projectBody:document.querySelector('#projectBody').value,
         projectImg:downloadURL,
+    }).then(res=>{
+        window.location.reload()
     })
-    window.location.reload()
 }
 
 function updateDataWithoutFile(){

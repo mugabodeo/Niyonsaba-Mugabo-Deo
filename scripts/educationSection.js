@@ -135,8 +135,10 @@ function updateData(downloadURL){
         educationPeriod:document.querySelector('#educationPeriod').value,
         educationBody:document.querySelector('#educationBody').value,
         educationImg:downloadURL,
+    }).then(res=>{
+        window.location.reload()
     })
-    window.location.reload()
+    
 }
 
 function updateDataWithoutFile(){
