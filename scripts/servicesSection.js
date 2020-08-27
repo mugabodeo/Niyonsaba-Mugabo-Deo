@@ -44,6 +44,9 @@ if(docID){
 
         selectedElement.addEventListener('change',function(e){
                 optionId=selectedElement.options[selectedElement.selectedIndex].value
+                if(optionId=='DefaultSelect'){
+                    window.location.reload()
+                }
                 cardRef=db.collection('landingPage').doc('servicesSection').collection('cards').doc(optionId)
                 console.log(optionId)
                 cardRef
