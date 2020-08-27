@@ -74,7 +74,8 @@ function saveData(downloadURL){
         timestamp:timestamp,
         articleCover:downloadURL,
         articleHeadline:document.querySelector('#articleHeadline').value,
-        articleBody:document.querySelector('#articleBody').value
+        articleBody:document.querySelector('#articleBody').value,
+        articleUpdate:false
     })
 }
 
@@ -85,6 +86,7 @@ function updateData(downloadURL){
         timestamp:timestamp,
         articleCover:downloadURL,
         articleHeadline:document.querySelector('#articleHeadline').value,
-        articleBody:document.querySelector('#articleBody').value
+        articleBody:document.querySelector('#articleBody').value,
+        articleUpdate:true
     })
 }

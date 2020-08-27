@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>userProfile</title>
+</head>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Poppins'>
+<link rel="stylesheet" href="../../css/adminPanel.css">
+<body>
+    <!-- nvagiation system-->
+    <div id="navBar" class="navBarFixed">
+        <div> <a href="../../index.html"><img class="Logo" src="../../img/Logo.png"></a> </div>  
+        <div class="topnav" id="myTopnav">
+            <a href="../../index.html" class="active">Home</a>
+            <a href="../blog.html">Blog</a>
+            <a href="../adminPanel.html">adminPanel</a>
+        </div>
+    </div>
+
+    <div class="container">    
+        <div id="wrapper">
+             <!-- contactMe Section-->
+             <h2> edit contactMe section</h2>
+              <div id="errorMessage"></div>
+             <form id="contactMeForm" action="">
+             <div class="row">
+                     <div class="col-25">
+                         <label for="contactEmail">email</label>
+                     </div>
+                     <div class="col-75">
+                         <input type="text" id="contactEmail" name="contactEmail" placeholder="contact email ..." required>
+                     </div>
+             </div>
+             <div class="row">
+                     <div class="col-25">
+                         <label for="contactNumber">phone number</label>
+                     </div>
+                     <div class="col-75">
+                         <input type="text" id="contactNumber" name="contactNumber" placeholder="add phone number ..." required>
+                     </div>
+             </div>
+                <div class="row">
+                    <input type="submit" id="updateContactMeSection" value="Update">
+                </div>
+             </form>
+        </div>
+    </div>
+       
+  <!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/7.17.2/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.17.2/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.17.2/firebase-firestore.js"></script>    
+<script src="../../scripts/helper.js"></script>
+<script src="../../scripts/contactMeSection.js"></script>    
+</body>
+</html>

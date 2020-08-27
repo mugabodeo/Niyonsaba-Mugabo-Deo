@@ -63,6 +63,5 @@ if(docID!==null){
 else{
   
     errorMessage.innerHTML+="article can't be found";
-    console.log('not found')
 }
 

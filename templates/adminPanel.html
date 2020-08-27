@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>userProfile</title>
+</head>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Poppins'>
+<link rel="stylesheet" href="../css/adminPanel.css">
+<body onload="signInStatus()">
+    <!-- nvagiation system-->
+    <div id="navBar" class="navBarFixed">
+        <div> <a href="../index.html"><img class="Logo" src="../img/Logo.png"></a> </div>  
+        <div class="topnav" id="myTopnav">
+            <a href="../index.html" class="active">Home</a>
+            <a href="../templates/blog.html">Blog</a>
+        </div>
+    </div>
+    <div class="container">    
+        <div id="wrapper">
+            <div class="main-section">
+                <h1> Admin panel </h1>
+                <h2> choose action to perform </h2>
+                <div id="dashboard__wrapper">
+                <div class="dashbord">
+                    <div class="icon-section">
+                        <i class="fa fa-edit" aria-hidden="true"></i><br>
+                    </div>
+                    <div id="selectdiv">
+                        <label>edit landing page</label>
+                        <label>
+                            <select id="selectedElement">
+                                <option value="DefaultSelect" selected>select a section to edit</option> 
+                                <option value="landingSection" > landing Section </option>
+                                <option value="projectsSection" > projects Section </option>
+                                <option value="servicesSection" > services Section </option>
+                                <option value="educationSection" > education Section </option>
+                                <option value="contactMeSection" > contactMe Section </option>
+                            </select>
+                        </label>
+                      </div>
+                </div>        
+            </div>
+            </div>
+        
+        </div>
+    </div>
+       
+  <!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/7.17.2/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.17.2/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.17.2/firebase-firestore.js"></script>    
+<script src="../scripts/helper.js"></script>
+<script src="../scripts/adminPanel.js"></script>    
+</body>
+</html>

@@ -18,7 +18,7 @@ var firebaseConfig = {
 // navbar magic spell
 window.onscroll = function() {scrollFunction()};
 var navbar = document.getElementById("navBar");
-var sticky = navbar.offsetTop;
+var sticky = navbar.offsetTop+1;
 
 function scrollFunction() {
     if (window.pageYOffset >= sticky) {
@@ -31,10 +31,10 @@ function scrollFunction() {
 
 
   function myFunction() {
-    var x = document.querySelector("#myTopnav");
+    var x = document.getElementById("myTopnav");
       if (x.className === "topnav") {
         x.className += " responsive";
-        document.querySelector("#myNav").style.width = "100%";
+        document.getElementById("myNav").style.width = "100%";
       }
       else {
         x.className = "topnav";
@@ -42,25 +42,13 @@ function scrollFunction() {
   }
  
   function closeNav() {
-    document.querySelector("#myNav").style.width = "0%";
+    document.getElementById("myNav").style.width = "0%";
 }
 
-//signout
+
 function signOut(){
-    firebase.auth().signOut();
+  firebase.auth().signOut().then(function(){
+    console.log('signed out')
+  })
 }
-
-//Get your location
-function getLocation(showPosition) {
-   if(navigator.geolocation){
-       navigator.geolocation.getCurrentPosition( position =>{
-           let latitude=position.coords.latitude;
-           let longitude=position.coords.longitude;
-           console.log(` this is lat : ${latitude} and long is : ${longitude}`)
-       })
-   }
-  
-}
-
-
 

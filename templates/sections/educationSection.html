@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>userProfile</title>
+</head>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Poppins'>
+
+<link rel="stylesheet" href="../../css/adminPanel.css">
+<body>
+    <!-- nvagiation system-->
+    <div id="navBar" class="navBarFixed">
+        <div> <a href="../../index.html"><img class="Logo" src="../../img/Logo.png"></a> </div>  
+        <div class="topnav" id="myTopnav">
+            <a href="../../index.html"class="active">Home</a>
+            <a href="../blog.html">Blog</a>
+            <a href="../adminPanel.html">adminPanel</a>
+        </div>
+    </div>
+
+    <div class="container">    
+        <div id="wrapper">
+             <!--Education section -->
+             <h2 id="actionTitle"> edit education section</h2>
+             <div id="selectdiv">
+               <p><a href="/templates/sections/educationSection.html">click here to create new card</a></p> 
+                <label>
+                    <select id="selectedElement">
+                        <option value="DefaultSelect" selected>select card to a edit</option> 
+                    </select>
+                </label>
+              </div>
+              <div id="deleteCard"></div>
+             <div id="errorMessage"></div>
+             <form id="educationForm" action="">
+             <div class="row">
+                     <div class="col-25">
+                         <label for="educationImg">education image</label>
+                     </div>
+                     <div class="col-75">
+                         <input type="file" id="educationImg" name="educationImg" required><br>
+                         <div id="imageCheck">
+                            <input type="checkbox" id="checkInput" name="checkInput" value="checkInput">
+                            <label for="checkInput"> check to change image</label>
+                            <div id="imgDisplay">
+                            </div>
+                        </div>
+                         <progress id="uploader" value="0" max="100">0%</progress>
+                     </div>
+             </div>
+             <div class="row">
+                     <div class="col-25">
+                         <label for="educationTitle">education title</label>
+                     </div>
+                     <div class="col-75">
+                         <input type="text" id="educationTitle" name="educationTitle" placeholder="education title ..." required>
+                     </div>
+             </div>
+             <div class="row">
+                     <div class="col-25">
+                         <label for="educationPeriod">education period</label>
+                     </div>
+                     <div class="col-75">
+                         <input type="text" id="educationPeriod" name="educationPeriod" placeholder="education period 2012-2015 ..." required>
+                     </div>
+             </div>
+             <div class="row">
+                     <div class="col-25">
+                         <label for="educationBody">education body</label>
+                     </div>
+                     <div class="col-75">
+                         <textarea id="educationBody" name="educationBody" placeholder="Write something about education exprience.." required rows=10></textarea>
+                     </div>
+             </div>
+                <div class="row">
+                    <input type="submit" id="updateEducationSection" value="Update">
+                </div>
+            <form>  
+        </div>
+    </div>
+       
+  <!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/7.17.2/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.17.2/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.17.2/firebase-firestore.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.17.2/firebase-storage.js"></script>      
+<script src="../../scripts/helper.js"></script>
+<script src="../../scripts/educationSection.js"></script>    
+</body>
+</html>

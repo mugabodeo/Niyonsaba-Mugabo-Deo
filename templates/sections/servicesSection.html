@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>userProfile</title>
+</head>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Poppins'>
+<link rel="stylesheet" href="../../css/adminPanel.css">
+<body>
+    <!-- nvagiation system-->
+    <div id="navBar" class="navBarFixed">
+        <div> <a href="../../index.html"><img class="Logo" src="../../img/Logo.png"></a> </div>  
+        <div class="topnav" id="myTopnav">
+            <a href="../../index.html" class="active">Home</a>
+            <a href="../blog.html">Blog</a>
+            <a href="../adminPanel.html">adminPanel</a>
+        </div>
+    </div>
+
+    <div class="container">    
+        <div id="wrapper">
+            <h2 id="actionTitle"> edit service section</h2>
+            <div id="selectdiv">
+               <p> <a href="/templates/sections/servicesSection.html">click here to create new card</a> </p> 
+                <label>
+                    <select id="selectedElement">
+                        <option value="DefaultSelect" selected>select card to a edit</option>
+                    </select>
+                </label>
+              </div>
+              <div id="deleteCard"></div>
+            <div id="errorMessage"></div>
+            <form id="serviceForm" action=""> 
+            <div class="row">
+                    
+                    <div class="col-25">
+                        <label for="serviceTitle">service title</label>
+                    </div>
+                    <div class="col-75">
+                        <input type="text" id="serviceTitle" name="serviceTitle" placeholder="service title ..." required>
+                    </div>
+            </div>
+            <div class="row">
+                    <div class="col-25">
+                        <label for="serviceImg">service image</label>
+                    </div>
+                    <div class="col-75">
+                        <input type="file" id="serviceImg" name="serviceImg" required><br>
+                        <div id="imageCheck">
+                            <input type="checkbox" id="checkInput" name="checkInput" value="checkInput">
+                            <label for="checkInput"> check to change image</label>
+                            <div id="imgDisplay">
+                            </div>
+                        </div>
+                        <progress id="uploader" value="0" max="100">0%</progress>
+                    </div>
+            </div>
+            <div class="row">
+                    <div class="col-25">
+                        <label for="serviceFeatures">service feature</label>
+                    </div>
+                    <div class="col-75">
+                        <input type="text" id="serviceFeatures" name="serviceFeatures" placeholder="add service features add a comma to separate them .." required >
+                    </div>
+            </div>
+                <div class="row">
+                    <input type="submit" id="updateServicesSection" value="Submit">
+                </div>
+            </form>
+        </div>
+    </div>
+       
+  <!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/7.17.2/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.17.2/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.17.2/firebase-firestore.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.17.2/firebase-storage.js"></script>      
+<script src="../../scripts/helper.js"></script>
+<script src="../../scripts/servicesSection.js"></script>    
+</body>
+</html>
