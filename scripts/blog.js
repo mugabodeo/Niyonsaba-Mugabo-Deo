@@ -128,7 +128,7 @@ db.collection("articles").orderBy("timestamp", "asc")
                 figures.addEventListener('click',function (e){
                     e.preventDefault();
                     const id=figures.getAttribute('data-id')
-                    document.location.href='/templates/blogArticle.html?articleId=' + id
+                    document.location.href='../blogArticle.html?articleId=' + id
                 })
             }
         }
