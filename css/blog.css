@@ -251,6 +251,7 @@ i{
   margin-left: 4%;
   word-wrap: break-word;
   text-align: start;
+  
 }
  a{
   color:white;
@@ -265,20 +266,25 @@ i{
   margin-left: 4%;
   word-wrap: break-word;
   text-align: start;
+
 }
 .contentDetails_2{
   margin-top: 10%;
   margin-left: 4%;
   word-wrap: break-word;
   text-align: start;
+
 }
 .contentDetails_3{
   padding-top: 10%;
   margin-left: 4%;
   word-wrap: break-word;
   text-align: start;
-}
 
+}
+figcaption a{
+  color: black;
+}
 .SecondWrapper {
   display: flex;
   flex-direction: column;
@@ -313,13 +319,7 @@ i{
     grid-column: auto;
    
   }
-  .contentDetails,.contentDetails_1,.contentDetails_2,.contentDetails_3{
-  margin-top: 15%;
-  margin-left: 4%;
-  word-wrap: break-word;
-  text-align: start;
-  
-  }
+
   .highlightContent img{
     width: 100%;
     
@@ -333,6 +333,9 @@ i{
   }
   #inner figcaption{
     word-wrap: break-word;
+  }
+  .contentDetails{
+    margin-top: 10%;
   }
   
  }
