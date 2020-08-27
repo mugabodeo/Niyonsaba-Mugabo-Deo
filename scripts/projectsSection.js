@@ -12,7 +12,9 @@ var cardRef=null;
 var optionId=null;
 const selectedElement=document.querySelector('#selectedElement');
 const deleteCard=document.querySelector('#deleteCard');
-
+const selectdiv=document.querySelector('#selectdiv');
+const imageCheck=document.querySelector('#imageCheck')
+const actionTitle=document.querySelector('#actionTitle')
 checkInput.addEventListener('click',function(e){
     if(checkInput.checked == true){
         checked=true
@@ -41,16 +43,21 @@ if(docID){
 
         selectedElement.addEventListener('change',function(e){
                 optionId=selectedElement.options[selectedElement.selectedIndex].value
-                cardRef=db.collection('landingPage').doc('projectsSection').collection('cards').doc(optionId)
-                console.log(optionId)
-                cardRef
-                .onSnapshot(function(doc){
-                    const docData=doc.data();
-                    imgDisplay.innerHTML=`<img src="${docData.projectImg}" height='100px' width='100px'>`
-                    document.querySelector('#projectTitle').value=docData.projectTitle;
-                    document.querySelector('#projectBody').value=docData.projectBody;
-                    deleteCard.innerHTML='<a id="delete" onclick="deleteThisCard()"> Delete this card</a>'
-                })
+                if(optionId=='DefaultSelect'){
+                    window.location.reload()
+                }
+                else{
+                    cardRef=db.collection('landingPage').doc('projectsSection').collection('cards').doc(optionId)
+                    console.log(optionId)
+                    cardRef
+                    .onSnapshot(function(doc){
+                        const docData=doc.data();
+                        imgDisplay.innerHTML=`<img src="${docData.projectImg}" height='100px' width='100px'>`
+                        document.querySelector('#projectTitle').value=docData.projectTitle;
+                        document.querySelector('#projectBody').value=docData.projectBody;
+                        deleteCard.innerHTML='<a id="delete" onclick="deleteThisCard()"> Delete this card</a>'
+                    })
+                }
         })
         
     })
@@ -62,6 +69,7 @@ if(docID){
             db.collection('landingPage').doc('projectsSection').collection('cards').doc(optionId)
                 .delete()
                 .then(res=>{
+                    alert('card has been succesfully deleted');
                     window.location.reload()
                 })
             }
@@ -76,6 +84,9 @@ if(docID){
 }
 
 else{
+    actionTitle.innerHTML="add a card on projects section"
+    selectdiv.innerHTML="";
+    imageCheck.innerHTML="";
     updateProjectsSection.addEventListener('click',function(e){
         e.preventDefault();
         e.stopPropagation();
@@ -121,6 +132,7 @@ function saveData(downloadURL){
         projectBody:document.querySelector('#projectBody').value,
         projectImg:downloadURL,
     }).then(res=>{
+        alert('card has been succesfully added');
         window.location.reload()
     })   
    
@@ -132,6 +144,7 @@ function updateData(downloadURL){
         projectBody:document.querySelector('#projectBody').value,
         projectImg:downloadURL,
     }).then(res=>{
+        alert('card has been succesfully updated');
         window.location.reload()
     })
 }
@@ -143,6 +156,7 @@ function updateDataWithoutFile(){
             projectTitle:document.querySelector('#projectTitle').value,
             projectBody:document.querySelector('#projectBody').value,
         }).then(res=>{
+            alert('card has been succesfully deleted');
             window.location.reload()
         }) 
     }

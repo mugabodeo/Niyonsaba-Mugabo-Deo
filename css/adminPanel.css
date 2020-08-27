@@ -77,6 +77,13 @@ body{
   padding:3rem 0
 }    
 
+#dashboard__wrapper{
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  grid-template-rows: auto;
+  grid-column-gap: 1.5rem;
+  grid-row-gap: 1.5rem;
+}
 input[type=text],input[type=file],textarea {
   width: 90%;
   padding: 12px;
@@ -139,6 +146,38 @@ input[type=submit]:hover {
 #errorMessage{
   color: red;
 }
+
+
+/*admin cards*/
+.main-section{
+width:80%;
+margin:0 auto;
+text-align: center;
+padding: 0px 5px;
+}
+.dashbord{
+width:100%;
+height: 12rem;
+display: inline-block;
+background-color:#E74C3C;
+color:#fff;
+margin-top: 50px; 
+}
+.icon-section i{
+font-size: 30px;
+padding:10px;
+border:1px solid #fff;
+border-radius:50%;
+margin-top:-25px;
+margin-bottom: 10px;
+background-color:#E74C3C;
+}
+.icon-section p{
+margin:0px;
+font-size: 20px;
+padding-bottom: 10px;
+}
+
 /* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */
 @media screen and (max-width: 600px) {
   .col-25, .col-75{
@@ -146,5 +185,17 @@ input[type=submit]:hover {
   }
   input[type=text],textarea,input[type=file],input[type=submit]{
     width: 90%;
+    margin-top: 10px;
+  }
+}
+@media screen and (max-width: 725px) {
+  #dashboard__wrapper{
+    grid-template-columns: repeat(2,1fr);
+  }
+  
+}
+@media screen and (max-width: 500px) {
+  #dashboard__wrapper{
+    grid-template-columns:1fr;
   }
 }

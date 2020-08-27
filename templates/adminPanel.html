@@ -17,21 +17,33 @@
             <a href="../templates/blog.html">Blog</a>
         </div>
     </div>
-
     <div class="container">    
         <div id="wrapper">
-            <div id="selectdiv">
-                <label>select section to edit:</label>
-                <label>
-                    <select id="selectedElement">
-                        <option value="landingSection" > landing Section </option>
-                        <option value="projectsSection" > projects Section </option>
-                        <option value="servicesSection" > services Section </option>
-                        <option value="educationSection" > education Section </option>
-                        <option value="contactMeSection" > contactMe Section </option>
-                    </select>
-                </label>
-              </div>
+            <div class="main-section">
+                <h1> Admin panel </h1>
+                <h2> choose action to perform </h2>
+                <div id="dashboard__wrapper">
+                <div class="dashbord">
+                    <div class="icon-section">
+                        <i class="fa fa-edit" aria-hidden="true"></i><br>
+                    </div>
+                    <div id="selectdiv">
+                        <label>edit landing page</label>
+                        <label>
+                            <select id="selectedElement">
+                                <option value="DefaultSelect" selected>select a section to edit</option> 
+                                <option value="landingSection" > landing Section </option>
+                                <option value="projectsSection" > projects Section </option>
+                                <option value="servicesSection" > services Section </option>
+                                <option value="educationSection" > education Section </option>
+                                <option value="contactMeSection" > contactMe Section </option>
+                            </select>
+                        </label>
+                      </div>
+                </div>        
+            </div>
+            </div>
+        
         </div>
     </div>
        

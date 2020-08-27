@@ -48,8 +48,6 @@ body {
   line-height: 30px;
 }
 
-
-
 header{
   background: url('../img/Bg.png') center;
   background-size: cover;
@@ -65,7 +63,6 @@ header{
   height:9vh
 }
 
-
 .sticky {
   position: fixed;
   top: 0;
@@ -76,7 +73,6 @@ header{
   z-index: 1;
   height:9vh
 }
-
 
 .Logo{
   max-width:  100%;

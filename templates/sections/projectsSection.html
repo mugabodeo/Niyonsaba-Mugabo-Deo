@@ -22,12 +22,12 @@
 
     <div class="container">    
         <div id="wrapper">
-            <span> project Section</span>
+            <h2 id="actionTitle"> edit project section</h2>
             <div id="selectdiv">
-                <a href="/templates/sections/projectsSection.html">click here to create new card</a>
-                <label>select a card to edit:</label>
+                <p> <a href="/templates/sections/projectsSection.html">click here to create new card</a> </p>
                 <label>
                     <select id="selectedElement">
+                        <option value="DefaultSelect" selected>select card to a edit</option>
                     </select>
                 </label>
               </div>
@@ -40,10 +40,13 @@
                     </div>
                     <div class="col-75">
                         <input type="file" id="projectImg" name="projectImg"><br>
-                        <input type="checkbox" id="checkInput" name="checkInput" value="checkInput">
+                        <div id="imageCheck">
+                            <input type="checkbox" id="checkInput" name="checkInput" value="checkInput">
                             <label for="checkInput"> check to change image</label>
                             <div id="imgDisplay">
                             </div>
+                        </div>
+                           
                         <progress id="uploader" value="0" max="100">0%</progress>
                     </div>
             </div>

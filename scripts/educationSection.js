@@ -12,7 +12,9 @@ var cardRef=null;
 var optionId=null;
 const selectedElement=document.querySelector('#selectedElement');
 const deleteCard=document.querySelector('#deleteCard');
-
+const selectdiv=document.querySelector('#selectdiv');
+const imageCheck=document.querySelector('#imageCheck');
+const actionTitle=document.querySelector('#actionTitle')
 checkInput.addEventListener('click',function(e){
     if(checkInput.checked == true){
         checked=true
@@ -64,6 +66,7 @@ if(docID){
             db.collection('landingPage').doc('educationSection').collection('cards').doc(optionId)
                 .delete()
                 .then(res=>{
+                    alert('card has been succesfully deleted');
                     window.location.reload()
                 })
             }
@@ -77,6 +80,9 @@ if(docID){
 }
 
 else{
+    actionTitle.innerHTML="add a card on education section"
+    selectdiv.innerHTML="";
+    imageCheck.innerHTML="";
     updateEducationSection.addEventListener('click',function(e){
         e.preventDefault();
         e.stopPropagation();
@@ -124,6 +130,7 @@ function saveData(downloadURL){
         educationBody:document.querySelector('#educationBody').value,
         educationImg:downloadURL,
     }).then(res=>{
+        alert('card has been succesfully added');
         window.location.reload()
     })   
    
@@ -136,6 +143,7 @@ function updateData(downloadURL){
         educationBody:document.querySelector('#educationBody').value,
         educationImg:downloadURL,
     }).then(res=>{
+        alert('card has been succesfully updated');
         window.location.reload()
     })
     
@@ -149,6 +157,7 @@ function updateDataWithoutFile(){
             educationPeriod:document.querySelector('#educationPeriod').value,
             educationBody:document.querySelector('#educationBody').value,
         }).then(res=>{
+            alert('card has been succesfully updated');
             window.location.reload()
         }) 
     }
