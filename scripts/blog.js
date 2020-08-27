@@ -1,12 +1,15 @@
 let theDiv=document.querySelector("#myTopnav");
+let overlayNav=document.querySelector("#overlayNav");
 
 function signInStatus(){
     firebase.auth().onAuthStateChanged(function (user) {
         if (user) {
-            theDiv.innerHTML +='<a href="" onclick=signOut() > Log out</a>';
+            theDiv.innerHTML +='<a href="../templates/adminPanel.html"> admin panel</a> <a href="" onclick=signOut() > Log out</a>';
+            overlayNav.innerHTML+='<a href="../templates/adminPanel.html" onclick=closeNav()> admin panel</a> <a href="" onclick=signOut() > Log out</a>';
         } 
         else{
-            theDiv.innerHTML +='<a href="../templates/login.html"> sign in</a>'
+            theDiv.innerHTML +='<a href="../templates/login.html"> sign in</a>';
+            overlayNav.innerHTML+='<a href="../templates/login.html"> sign in</a>';
         }
     });
 }
@@ -18,6 +21,7 @@ db.collection("articles").orderBy("timestamp", "asc")
         snapshot.forEach(function(doc){
             const Data=doc.data();
             const id=doc.id
+            console.log(id)
             allArticles.push({id, ...Data});
         })
         if(allArticles !== null && allArticles.length>0){ //check if articles are null
@@ -136,21 +140,6 @@ db.collection("articles").orderBy("timestamp", "asc")
             errorMessage.innerHTML="No articles to display"
         }
 
-    
-       /* snapshot.docChanges().forEach(function(change) {
-            if (change.type === "added") {
-                console.log("New article: ", change.doc.data());
-             
-            }
-            if (change.type === "modified") {
-                console.log("Modified article: ", change.doc.data());
-               
-            }
-            if (change.type === "removed") {
-                console.log("Removed article: ", change.doc.data());
-               
-            }
-        });*/
     });
 
     

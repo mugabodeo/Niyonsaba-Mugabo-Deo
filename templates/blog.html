@@ -1,5 +1,5 @@
 <!doctype html>
-<html len="en">
+<html lang="en">
 <head>
     <title>myBlog</title>
     <meta charset="utf-8">
@@ -12,16 +12,27 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Poppins'>
 </head>
+
 <body onload="signInStatus()">
-  <!-- nvagiation system-->
+  <!-- navagiation system-->
+  
   <div id="navBar" class="navBarFixed">
     <div> <a href="../index.html"><img class="Logo" src="../img/Logo.png"></a> </div>  
     <div class="topnav" id="myTopnav">
       <a href="../index.html" class="active">Home</a>
-      <a href="../templates/blog.html">Blog</a>
+      <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+        <i class="fa fa-bars"></i>
+      </a>
     </div>
   </div>
 
+  <!-- overalay navigation system-->
+  <nav id="myNav" class="overlay">
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+    <div class="overlay-content" id="overlayNav">
+      <a href="../index.html" class="active" onclick="closeNav()">Home</a>
+    </div>
+  </nav>
   <div class="container">
     <div class="titleProjects">
       <span class="title"> My Blog</span><br>
@@ -62,7 +73,7 @@
 </div>
    
   </div>            
-  </div>
+ 
 <!-- The core Firebase JS SDK is always required and must be listed first -->
 <script src="https://www.gstatic.com/firebasejs/7.17.2/firebase-app.js"></script>
 <script src="https://www.gstatic.com/firebasejs/7.17.2/firebase-auth.js"></script>
