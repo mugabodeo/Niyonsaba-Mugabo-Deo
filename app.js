@@ -2,6 +2,7 @@ import express from 'express'
 import bodyParser from 'body-parser'
 
 const app=express();
+const port= process.env.PORT || 8080;
 app.use(bodyParser.json());
 
 app.get('/',(req,res)=>{
@@ -12,6 +13,6 @@ app.get('/blog',(req,res)=>{
     res.send('This is page of Blog')
 })
 
-app.listen(3500,()=>{
+app.listen(port,()=>{
     console.log(` listening at 3500`)
 })
