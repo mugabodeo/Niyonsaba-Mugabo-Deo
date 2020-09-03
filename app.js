@@ -1,18 +1,28 @@
 import express from 'express'
-import bodyParser from 'body-parser'
+import Mongoose from 'mongoose'
+import router from './routes/articles'
+require('dotenv').config()
 
 const app=express();
 const port= process.env.PORT || 8080;
-app.use(bodyParser.json());
+
+
+app.use(express.json())
+app.use('/articles',router)
 
 app.get('/',(req,res)=>{
-    res.send('Hello world')
+    res.send('you are welcome')
 })
 
-app.get('/blog',(req,res)=>{
-    res.send('This is page of Blog')
-})
+
+//connect to database
+Mongoose.connect(process.env.DB_CONNECTION,
+    { useNewUrlParser: true,useUnifiedTopology: true},
+    ()=>{
+    console.log('connected to db')
+    }
+)
 
 app.listen(port,()=>{
-    console.log(` listening at 3500`)
+    console.log(` listening at ${port}`)
 })
