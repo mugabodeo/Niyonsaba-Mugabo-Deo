@@ -1,6 +1,6 @@
 import Mongoose from "mongoose"
 
-const ArticleSchema=Mongoose.Schema({
+const articleSchema=Mongoose.Schema({
     articleTitle:{
         type:String,
         required:true
@@ -33,5 +33,5 @@ const ArticleSchema=Mongoose.Schema({
    
 });
 
-export default Mongoose.model('Article',ArticleSchema)
+export default Mongoose.model('Article',articleSchema,'articles')
 

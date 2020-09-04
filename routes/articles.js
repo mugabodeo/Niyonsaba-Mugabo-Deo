@@ -1,11 +1,12 @@
 import express from 'express'
 import Article from '../models/article' 
+import VerifyToken from './verifyToken'
 
-const router =express.Router();
+const articleRouter =express.Router();
 
 
 //get all articles from mongo database
-router.get('',async (req,res)=>{
+articleRouter.get('',async (req,res)=>{
     try{
         const allArticles=await Article.find()
         res.json(allArticles)
@@ -16,8 +17,8 @@ router.get('',async (req,res)=>{
 
 
 //save an article into mongo db database
-router.post('/',async (req,res)=>{
-
+articleRouter.post('/',VerifyToken,async (req,res)=>{
+ 
     const newArticle=new Article({
         "articleTitle":req.body.articleTitle,
         "articleCover":req.body.articleCover,   
@@ -36,22 +37,21 @@ router.post('/',async (req,res)=>{
 })
 
 //get a specific article with article id
-router.get('/:articleId', async (req,res)=>{
+articleRouter.get('/:articleId', async (req,res)=>{
     try{
         const singleArticle= await Article.findById(req.params.articleId)
         res.json(singleArticle)
     }catch(err){
         res.json({message:err})
     }
-
     
 })
 
 //delete a specific article
 
-router.delete('/:articleId', async(req,res)=>{
+articleRouter.delete('/:articleId',VerifyToken,async(req,res)=>{
     try{
-        const deleteArticle=await Article.remove({_id:req.params.articleId})
+        const deleteArticle=await Article.deleteOne({_id:req.params.articleId})
         res.json(deleteArticle)
     }catch(err){
         res.json({message:err})
@@ -59,7 +59,7 @@ router.delete('/:articleId', async(req,res)=>{
 })
 
 //update a specific article
-router.patch('/:articleId',async (req,res)=>{
+articleRouter.patch('/:articleId',VerifyToken,async (req,res)=>{
     try{
         const updateArticle= await Article.updateOne(
             {_id:req.params.articleId},
@@ -70,4 +70,5 @@ router.patch('/:articleId',async (req,res)=>{
         res.json({message:err})
     }
 })
-export default router
+
+export default articleRouter
