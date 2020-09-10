@@ -10,23 +10,30 @@
     "dev": "nodemon --exec babel-node app.js",
     "build": "babel app.js --out-file app-compiled.js",
     "start": "node app-compiled.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha --timeout 25000 --require @babel/polyfill --require @babel/register --recursive --exit"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@babel/cli": "^7.11.5",
-    "@babel/preset-env": "^7.11.5",
     "bcrypt": "^5.0.0",
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
     "jsonwebtoken": "^8.5.1",
     "mongoose": "^5.10.2",
     "nodemon": "^2.0.4",
+    "remove": "^0.1.5",
     "validator": "^13.1.1"
   },
   "devDependencies": {
+    "@babel/cli": "^7.11.6",
     "@babel/core": "^7.11.5",
-    "@babel/node": "^7.10.5"
+    "@babel/node": "^7.10.5",
+    "@babel/polyfill": "^7.11.5",
+    "@babel/preset-env": "^7.11.5",
+    "@babel/register": "^7.11.5",
+    "chai": "^4.2.0",
+    "chai-http": "^4.3.0",
+    "install": "^0.13.0",
+    "mocha": "^8.1.3"
   }
 }

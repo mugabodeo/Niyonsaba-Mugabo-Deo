@@ -17,14 +17,23 @@ app.get('/',(req,res)=>{
 app.use('/articles',articleRouter)
 app.use('/queries',querieRouter)
 app.use('/auth',authRouter)
+
 //connect to database
 Mongoose.connect(process.env.DB_CONNECTION,
     { useNewUrlParser: true,useUnifiedTopology: true},
-    ()=>{
-    console.log('connected to db')
-    }
-)
+).then((res)=>{
+  console.log('database connnected')
+})
+.catch((err)=>{
+  console.log('failed to connect to database',err)
+})
 
-app.listen(port,()=>{
+//starting a server
+export default app.listen(port,()=>{
     console.log(` listening at ${port}`)
 })
+
+
+
+
+

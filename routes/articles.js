@@ -1,11 +1,12 @@
 import express from 'express'
 import Article from '../models/article' 
-import VerifyToken from './verifyToken'
+import VerifyToken from '../lib/verifyToken'
 
 const articleRouter =express.Router();
 
 
 //get all articles from mongo database
+
 articleRouter.get('',async (req,res)=>{
     try{
         const allArticles=await Article.find()
@@ -17,7 +18,7 @@ articleRouter.get('',async (req,res)=>{
 
 
 //save an article into mongo db database
-articleRouter.post('/',VerifyToken,async (req,res)=>{
+articleRouter.post('',VerifyToken,async (req,res)=>{
  
     const newArticle=new Article({
         "articleTitle":req.body.articleTitle,

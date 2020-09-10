@@ -3,7 +3,7 @@ import User from '../models/user'
 import validator from 'validator'
 import bcrypt from 'bcrypt'
 import jwt from 'jsonwebtoken'
-import VerifyToken from './verifyToken'
+import VerifyToken from '../lib/verifyToken'
 
 const authRouter=express.Router();
 //save new user
@@ -23,6 +23,7 @@ authRouter.post('/register',VerifyToken,async (req,res)=>{
         const savedUser=await newUser.save();
         res.json(savedUser)
     }catch(err){
+        res.status(409)
         res.json({message:err})
     }
 
