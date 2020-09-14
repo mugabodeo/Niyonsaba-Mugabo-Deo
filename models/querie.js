@@ -1,7 +1,6 @@
 import Mongoose from "mongoose"
 import validator from 'validator';
 
-
 const queriesSchema=Mongoose.Schema({
     email:{
         type:String,

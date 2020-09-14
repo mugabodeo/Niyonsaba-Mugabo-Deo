@@ -2,7 +2,8 @@ import express from 'express'
 import Mongoose from 'mongoose'
 import articleRouter from './routes/articles'
 import querieRouter from './routes/queries'
-import authRouter from './routes/auth'
+import userInfoRouter from "./routes/userProfile"
+import adminRouter from "./routes/admin"
 
 require('dotenv').config()
 const app=express();
@@ -11,16 +12,14 @@ const port= process.env.PORT || 8080;
 app.use(express.json())
 
 //defining routes
-app.get('/',(req,res)=>{
-    res.send('you are welcome')
-})
+app.use('/',userInfoRouter)
 app.use('/articles',articleRouter)
 app.use('/queries',querieRouter)
-app.use('/auth',authRouter)
+app.use('/admin',adminRouter)
 
 //connect to database
 Mongoose.connect(process.env.DB_CONNECTION,
-    { useNewUrlParser: true,useUnifiedTopology: true},
+    { useNewUrlParser: true,useUnifiedTopology: true,useCreateIndex: true},
 ).then((res)=>{
   console.log('database connnected')
 })
