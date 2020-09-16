@@ -7,6 +7,9 @@ import User from "../models/user";
 import UserInfo from "../models/userInfo";
 import Article from "../models/article";
 import userInfo from "../models/userInfo";
+import Projects from "../models/projectsSection";
+import Services from "../models/servicesSection";
+import Education from "../models/educationSection"
 
 const adminRouter = express.Router();
 
@@ -53,28 +56,6 @@ adminRouter.post("/saveUserProfile", VerifyToken, async (req, res) => {
     catchLine: req.body.catchLine,
     fullName: req.body.fullName,
     meImg: req.body.meImg,
-    projectsSection: [
-      {
-        projectBody: req.body.projectsSection[0].projectBody,
-        projectImg: req.body.projectsSection[0].projectImg,
-        projectTitle: req.body.projectsSection[0].projectTitle,
-      },
-    ],
-    servicesSection: [
-      {
-        serviceFeatures: req.body.servicesSection[0].serviceFeatures,
-        serviceImg: req.body.servicesSection[0].serviceImg,
-        serviceTitle: req.body.servicesSection[0].serviceTitle,
-      },
-    ],
-    educationSection: [
-      {
-        educationBody: req.body.educationSection[0].educationBody,
-        educationImg: req.body.educationSection[0].educationImg,
-        educationPeriod: req.body.educationSection[0].educationPeriod,
-        educationTitle: req.body.educationSection[0].educationTitle,
-      },
-    ],
     contactEmail: req.body.contactEmail,
     contactNumber: req.body.contactNumber,
   });
@@ -108,84 +89,241 @@ adminRouter.patch("/updateLandingSection", VerifyToken, async (req, res) => {
 });
 
 //add a projectCard
-adminRouter.patch(
+adminRouter.post(
   "/updateProjectsSection/add",
   VerifyToken,
   async (req, res) => {
     try {
-      const getOneDocument = await userInfo.findOne();
-      getOneDocument.projectsSection.push({
+      
+      const newProjectCard= new Projects({
         projectBody: req.body.projectBody,
         projectImg: req.body.projectImg,
-        projectTitle: req.body.projectTitle,
-      });
-      const updatedDoc = await getOneDocument.save();
-      res.json(updatedDoc);
+        projectTitle: req.body.projectTitle
+      })
+   
+      const savedProjectCard = await newProjectCard.save();
+      const getUserInfoDoc = await UserInfo.findOne();
+      getUserInfoDoc.projectsSection.push(savedProjectCard._id);
+      const saveNewDoc = await getUserInfoDoc.save();
+      res.json(savedProjectCard);
     } catch (err) {
       res.json({ message: err });
     }
   }
 );
 
-//update user profile on education section (update a single education card)
-adminRouter.patch(
-  "/updateEducationSection/:educationCardId",
+//getting projects section
+adminRouter.get(
+  "/getProjectsSection",
   VerifyToken,
-  async (req, res) => {
+  async(req, res) => {
     try {
-      const updateEducationSection = await userInfo.updateOne(
-        { _id: req.params.educationCardId },
-        {
-          $addToSet: {
-            educationSection: [
-              {
-                educationBody: req.body.educationBody,
-                educationImg: req.body.educationImg,
-                educationPeriod: req.body.educationPeriod,
-                educationTitle: req.body.educationTitle
-              },
-            ],
-          },
-        }
-      );
-      res.json(updateEducationSection);
+      const getProjectsSection= await Projects.find()
+      res.json(getProjectsSection)
     } catch (err) {
-      res.json({ message: err });
+      res.json({message: err })
     }
   }
-);
-
-//update user profile on services section (delete a single service card)
-adminRouter.delete(
-  "/updateEducationSection/:educationCardId",
-  VerifyToken,
-  async (req, res) => {
-    try {
-      const updateEducationSection = await userInfo.deleteOne({
-        _id: req.params.educationCardId,
-      });
-      res.json(updateEducationSection);
-    } catch (err) {
-      res.json({ message: err });
-    }
-  }
-);
-
-//update user profile on services section (delete a single service card)
+)
+//update a single projectCard
 adminRouter.patch(
   "/updateProjectsSection/:projectCardId",
   VerifyToken,
   async (req, res) => {
     try {
-      const updateProjectsSection = await userInfo.deleteOne({
-        _id: req.params.projectCardId,
-      });
-      res.json(updateContactSection);
+      
+      const updateProjectCard= await Projects.updateOne(
+        { _id: req.params.projectCardId },
+        {
+        projectBody: req.body.projectBody,
+        projectImg: req.body.projectImg,
+        projectTitle: req.body.projectTitle
+      }
+      )
+      res.json(updateProjectCard);
     } catch (err) {
       res.json({ message: err });
     }
   }
 );
+
+//delete a single projectCard
+adminRouter.delete(
+  "/updateProjectsSection/:projectCardId",
+  VerifyToken,
+  async (req, res) => {
+    try {
+      
+      const deleteProjectCard= await Projects.findOneAndRemove(
+        { _id: req.params.projectCardId })
+      const getUserInfoDoc = await UserInfo.findOne();
+      getUserInfoDoc.projectsSection.pull(deleteProjectCard._id)
+      const saveNewDoc = await getUserInfoDoc.save();  
+      res.json(deleteProjectCard);
+    } catch (err) {
+      res.json({ message: err });
+    }
+  }
+);
+
+
+
+//add service card
+adminRouter.post(
+  "/updateServiceSection/add",
+  VerifyToken,
+  async (req, res) => {
+    try {
+      const newServiceCard= new Services({
+        serviceFeatures: req.body.serviceFeatures,
+        serviceImg: req.body.serviceImg,
+        serviceTitle: req.body.serviceTitle
+      })
+   
+      const savedServiceCard = await newServiceCard.save();
+      const getUserInfoDoc = await UserInfo.findOne();
+      getUserInfoDoc.servicesSection.push(savedServiceCard._id);
+      const saveNewDoc = await getUserInfoDoc.save();
+      res.json(savedServiceCard);
+    } catch (err) {
+      res.json({ message: err });
+    }
+  }
+);
+
+//getting  services section
+adminRouter.get(
+  "/getServicesSection",
+  VerifyToken,
+  async(req, res) => {
+    try {
+      const getServicesSection= await Services.find()
+      res.json(getServicesSection)
+    } catch (err) {
+      res.json({message: err })
+    }
+  }
+)
+
+//update a single ServiceCard
+adminRouter.patch(
+  "/updateServiceSection/:serviceCardId",
+  VerifyToken,
+  async (req, res) => {
+    try {
+      
+      const updateServiceCard= await Services.updateOne(
+        { _id: req.params.serviceCardId },
+        {
+        serviceFeatures: req.body.serviceFeatures,
+        serviceImg: req.body.serviceImg,
+        serviceTitle: req.body.serviceTitle
+      }
+      )
+      res.json(updateServiceCard);
+    } catch (err) {
+      res.json({ message: err });
+    }
+  }
+);
+
+//delete a single serviceCard
+adminRouter.delete(
+  "/updateServiceSection/:serviceCardId",
+  VerifyToken,
+  async (req, res) => {
+    try {
+      
+      const deleteServiceCard= await Services.findOneAndRemove(
+        { _id: req.params.serviceCardId })
+      const getUserInfoDoc = await UserInfo.findOne();
+      getUserInfoDoc.servicesSection.pull(deleteServiceCard._id)
+      const saveNewDoc = await getUserInfoDoc.save();  
+      res.json(deleteServiceCard);
+    } catch (err) {
+      res.json({ message: err });
+    }
+  }
+) 
+
+//add education card
+adminRouter.post(
+  "/updateEducationSection/add",
+  VerifyToken,
+  async (req, res) => {
+    try {
+      const newEducationCard= new Education({
+        educationBody: req.body.educationBody,
+        educationImg: req.body.educationImg,
+        educationPeriod: req.body.educationPeriod,
+        educationTitle: req.body.educationTitle
+      })
+      const savedEducationCard = await newEducationCard.save();
+      const getUserInfoDoc = await UserInfo.findOne();
+      getUserInfoDoc.educationSection.push(savedEducationCard._id);
+      const saveNewDoc = await getUserInfoDoc.save();
+      res.json(savedEducationCard);
+    } catch (err) {
+      res.json({ message: err });
+    }
+  }
+);
+
+//getting education section
+adminRouter.get(
+  "/getEducationSection",
+  VerifyToken,
+  async(req, res) => {
+    try {
+      const getEducationSection=await Education.find()
+      res.json(getEducationSection)
+    } catch (err) {
+      res.json({message: err })
+    }
+  }
+)
+
+//update a single educationCard
+adminRouter.patch(
+  "/updateEducationSection/:educationCardId",
+  VerifyToken,
+  async (req, res) => {
+    try {
+      
+      const updateEducationCard= await Education.updateOne(
+        { _id: req.params.educationCardId },
+        {
+          educationBody: req.body.educationBody,
+          educationImg: req.body.educationImg,
+          educationPeriod: req.body.educationPeriod,
+          educationTitle: req.body.educationTitle
+      }
+      )
+      res.json(updateEducationCard);
+    } catch (err) {
+      res.json({ message: err });
+    }
+  }
+);
+
+//delete a single educationCard
+adminRouter.delete(
+  "/updateEducationSection/:educationCardId",
+  VerifyToken,
+  async (req, res) => {
+    try {
+      
+      const deleteEducationCard= await Education.findOneAndRemove(
+        { _id: req.params.educationCardId })
+      const getUserInfoDoc = await UserInfo.findOne();
+      getUserInfoDoc.educationSection.pull(deleteEducationCard._id)
+      const saveNewDoc = await getUserInfoDoc.save();  
+      res.json(deleteEducationCard);
+    } catch (err) {
+      res.json({ message: err });
+    }
+  }
+) 
 
 //update user profile on contact sections
 adminRouter.patch("/updateContactSection", VerifyToken, async (req, res) => {

@@ -35,35 +35,70 @@ let user_profile = {
   fullName: "Niyonsaba Mugabo Deo",
   meImg:
     "https://firebasestorage.googleapis.com/v0/b/niyonsaba-blog.appspot.com/o/landingPage%2Fme.png?alt=media&token=b1eadf4b-e669-4f7e-92e4-81e8eba80361",
-  projectsSection: [
-    {
-      projectBody:
-        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique vero quos maiores sed consectetur illo earum cum perferendis voluptatem?",
-      projectImg:
-        "https://firebasestorage.googleapis.com/v0/b/niyonsaba-blog.appspot.com/o/landingPage%2FroboCop.png?alt=media&token=1ef59086-88d6-4ff1-81cb-710133dc4a69",
-      projectTitle: "Embedded System Design[edited]",
-    },
-  ],
-  servicesSection: [
-    {
-      serviceFeatures: "Database Design,Deployment,Hosting",
-      serviceImg:
-        "https://firebasestorage.googleapis.com/v0/b/niyonsaba-blog.appspot.com/o/landingPage%2Fmeanstack.png?alt=media&token=1be2d852-c3cc-4e56-b8fa-5003d0b27fc2",
-      serviceTitle: "Full Stack Web Development",
-    },
-  ],
-  educationSection: [
-    {
-      educationBody:
-        "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Minima voluptates inventore dignissimos officia ipsa molestias fugit voluptatum rem magni corporis illum, quos doloremque nihil architecto hic molestiae. Voluptas, quasi labore.",
-      educationImg:
-        "https://firebasestorage.googleapis.com/v0/b/niyonsaba-blog.appspot.com/o/landingPage%2Fkeycompetences.png?alt=media&token=feb3dd78-dcea-4ac0-ba67-decc331e0a35",
-      educationPeriod: "2016-2019",
-      educationTitle: "Bachelor of Computer Engineering",
-    },
-  ],
   contactEmail: "mugabodeo6@gmail.com",
   contactNumber: "0782296231",
+};
+
+let landingSectionUpdate = {
+  catchLine: "a FullStack Web Developer[updated]",
+  fullName: "Niyonsaba Mugabo Deo[updated]",
+  meImg:
+    "https://firebasestorage.googleapis.com/v0/b/niyonsaba-blog.appspot.com/o/landingPage%2Fme.png?alt=media&token=b1eadf4b-e669-4f7e-92e4-81e8eba80361",
+};
+
+let contactSectionUpdate = {
+  contactEmail: "mugabodeo6@gmail.com[updated]",
+  contactNumber: "Niyonsaba Mugabo Deo[updated]",
+};
+
+let projectsSectionAdd = {
+  projectBody:
+    "Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique vero quos maiores sed consectetur illo earum cum perferendis voluptatem?",
+  projectImg:
+    "https://firebasestorage.googleapis.com/v0/b/niyonsaba-blog.appspot.com/o/landingPage%2FroboCop.png?alt=media&token=1ef59086-88d6-4ff1-81cb-710133dc4a69",
+  projectTitle: "Embedded System Design",
+};
+
+let servicesSectionAdd = {
+  serviceFeatures:
+    "Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique vero quos maiores sed consectetur illo earum cum perferendis voluptatem?",
+  serviceImg:
+    "https://firebasestorage.googleapis.com/v0/b/niyonsaba-blog.appspot.com/o/landingPage%2FroboCop.png?alt=media&token=1ef59086-88d6-4ff1-81cb-710133dc4a69",
+  serviceTitle: "Embedded System Design",
+};
+
+let educationSectionAdd = {
+  educationBody:
+    "Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique vero quos maiores sed consectetur illo earum cum perferendis voluptatem?",
+  educationImg:
+    "https://firebasestorage.googleapis.com/v0/b/niyonsaba-blog.appspot.com/o/landingPage%2FroboCop.png?alt=media&token=1ef59086-88d6-4ff1-81cb-710133dc4a69",
+  educationPeriod: "2016-2020",
+  educationTitle: "Embedded System Design",
+};
+
+let projectsSectionUpdate = {
+  projectBody:
+    "Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique vero quos maiores sed consectetur illo earum cum perferendis voluptatem?[updated]",
+  projectImg:
+    "https://firebasestorage.googleapis.com/v0/b/niyonsaba-blog.appspot.com/o/landingPage%2FroboCop.png?alt=media&token=1ef59086-88d6-4ff1-81cb-710133dc4a69",
+  projectTitle: "Embedded System Design[updated]",
+};
+
+let servicesSectionUpdate = {
+  serviceFeatures:
+    "Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique vero quos maiores sed consectetur illo earum cum perferendis voluptatem?[updated]",
+  serviceImg:
+    "https://firebasestorage.googleapis.com/v0/b/niyonsaba-blog.appspot.com/o/landingPage%2FroboCop.png?alt=media&token=1ef59086-88d6-4ff1-81cb-710133dc4a69",
+  serviceTitle: "Embedded System Design[updated]",
+};
+
+let educationSectionUpdate = {
+  educationBody:
+    "Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique vero quos maiores sed consectetur illo earum cum perferendis voluptatem?[updated]",
+  educationImg:
+    "https://firebasestorage.googleapis.com/v0/b/niyonsaba-blog.appspot.com/o/landingPage%2FroboCop.png?alt=media&token=1ef59086-88d6-4ff1-81cb-710133dc4a69",
+  educationPeriod: "2016-2020",
+  educationTitle: "Embedded System Design[updated]",
 };
 
 chai.use(chaiHttp);
@@ -118,7 +153,198 @@ describe("auth tests /admin", () => {
         done();
       });
   });
- 
+
+  //testing adding contents to projects section
+  it("added projectCard successfully", (done) => {
+    chai
+      .request(server)
+      .post("/admin/updateProjectsSection/add")
+      .set({ "auth-token": token })
+      .send(projectsSectionAdd)
+      .end((err, res) => {
+        if (err) done(err);
+        res.should.have.status(200);
+        res.body.should.be.a("object");
+        done();
+      });
+  });
+
+  //testing adding contents to services section
+  it("added serviceCard successfully", (done) => {
+    chai
+      .request(server)
+      .post("/admin/updateServiceSection/add")
+      .set({ "auth-token": token })
+      .send(servicesSectionAdd)
+      .end((err, res) => {
+        if (err) done(err);
+        res.should.have.status(200);
+        res.body.should.be.a("object");
+        done();
+      });
+  });
+
+  //testing adding contents to education section
+  it("added educationCard successfully", (done) => {
+    chai
+      .request(server)
+      .post("/admin/updateEducationSection/add")
+      .set({ "auth-token": token })
+      .send(educationSectionAdd)
+      .end((err, res) => {
+        if (err) done(err);
+        res.should.have.status(200);
+        res.body.should.be.a("object");
+        done();
+      });
+  });
+
+  //testing updating landing section
+  it("updated landing section successfully", (done) => {
+    chai
+      .request(server)
+      .patch("/admin/updateLandingSection")
+      .set({ "auth-token": token })
+      .send(landingSectionUpdate)
+      .end((err, res) => {
+        if (err) done(err);
+        res.should.have.status(200);
+        res.body.should.be.a("object");
+        done();
+      });
+  });
+
+  //testing for updating a single projectCard
+  it("Successful, update a single projectCard", function (done) {
+    chai
+      .request(server)
+      .get("/admin/getProjectsSection")
+      .set({ "auth-token": token })
+      .end((err, res) => {
+        chai
+          .request(server)
+          .patch("/admin/updateProjectsSection/" + res.body[0]._id)
+          .set({ "auth-token": token })
+          .send(projectsSectionUpdate)
+          .end((err, res) => {
+            if (err) done(err);
+            res.should.have.status(200);
+            done();
+          });
+      });
+  });
+
+  //testing for deleting a single projectCard
+  it("Successful, delete a single projectCard", function (done) {
+    chai
+      .request(server)
+      .get("/admin/getProjectsSection")
+      .set({ "auth-token": token })
+      .end((err, res) => {
+        chai
+          .request(server)
+          .delete("/admin/updateProjectsSection/" + res.body[0]._id)
+          .set({ "auth-token": token })
+          .end((err, res) => {
+            if (err) done(err);
+            res.should.have.status(200);
+            done();
+          });
+      });
+  });
+
+  //testing for updating a single serviceCard
+  it("Successful, update a single serviceCard", function (done) {
+    chai
+      .request(server)
+      .get("/admin/getServicesSection")
+      .set({ "auth-token": token })
+      .end((err, res) => {
+        chai
+          .request(server)
+          .patch("/admin/updateServiceSection/" + res.body[0]._id)
+          .set({ "auth-token": token })
+          .send(servicesSectionUpdate)
+          .end((err, res) => {
+            if (err) done(err);
+            res.should.have.status(200);
+            done();
+          });
+      });
+  });
+
+  //testing for deleting a single serviceCard
+  it("Successful, delete a single serviceCard", function (done) {
+    chai
+      .request(server)
+      .get("/admin/getServicesSection")
+      .set({ "auth-token": token })
+      .end((err, res) => {
+        chai
+          .request(server)
+          .delete("/admin/updateServiceSection/" + res.body[0]._id)
+          .set({ "auth-token": token })
+          .end((err, res) => {
+            if (err) done(err);
+            res.should.have.status(200);
+            done();
+          });
+      });
+  });
+
+  //testing for updating a single educationCard
+  it("Successful, update a single educationCard", function (done) {
+    chai
+      .request(server)
+      .get("/admin/getEducationSection")
+      .set({ "auth-token": token })
+      .end((err, res) => {
+        chai
+          .request(server)
+          .patch("/admin/updateEducationSection/" + res.body[0]._id)
+          .set({ "auth-token": token })
+          .send(educationSectionUpdate)
+          .end((err, res) => {
+            if (err) done(err);
+            res.should.have.status(200);
+            done();
+          });
+      });
+  });
+
+  //testing for deleting a single educationCard
+  it("Successful, delete a single educationCard", function (done) {
+    chai
+      .request(server)
+      .get("/admin/getEducationSection")
+      .set({ "auth-token": token })
+      .end((err, res) => {
+        chai
+          .request(server)
+          .delete("/admin/updateEducationSection/" + res.body[0]._id)
+          .set({ "auth-token": token })
+          .end((err, res) => {
+            if (err) done(err);
+            res.should.have.status(200);
+            done();
+          });
+      });
+  });
+  //testing updating contact section
+  it("updated contact section successfully", (done) => {
+    chai
+      .request(server)
+      .patch("/admin/updateContactSection")
+      .set({ "auth-token": token })
+      .send(contactSectionUpdate)
+      .end((err, res) => {
+        if (err) done(err);
+        res.should.have.status(200);
+        res.body.should.be.a("object");
+        done();
+      });
+  });
+
   //test for creating an article
   it("Successful, created an article", function (done) {
     chai

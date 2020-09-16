@@ -19,7 +19,7 @@ app.use('/admin',adminRouter)
 
 //connect to database
 Mongoose.connect(process.env.DB_CONNECTION,
-    { useNewUrlParser: true,useUnifiedTopology: true,useCreateIndex: true},
+    { useNewUrlParser: true,useUnifiedTopology: true,useCreateIndex: true,useFindAndModify: false},
 ).then((res)=>{
   console.log('database connnected')
 })

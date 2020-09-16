@@ -7,12 +7,14 @@ const userInfoRouter = express.Router();
 
 userInfoRouter.get("", async (req, res) => {
   try {
-    const allInfo = await UserInfo.find();
+    const allInfo = await UserInfo.find()
+        .populate("projectsSection")
+        .populate("servicesSection")
+        .populate("educationSection")
     res.json(allInfo);
   } catch (err) {
     res.json({ message: err });
   }
 });
-
 
 export default userInfoRouter;
