@@ -1,0 +1,1071 @@
+{
+  "swagger" : "2.0",
+  "info" : {
+    "version" : "1.0",
+    "title" : "myBlog",
+    "description" : "# Introduction\nWhat does your API do?\nthis api is used to server my blog\n\n# Overview\nThings that the developers should know about\n\n\n# Authentication\nWhat is the preferred way of using the API?\nusing normal email and password\n\n# Error Codes\nWhat errors and status codes can a user expect?\n404\n401\n501\n# Rate limit\nIs there a limit to the number of requests an user can send?\nNo",
+    "contact" : { }
+  },
+  "host" : "https://niyonsaba-mugabo-deo-blog.herokuapp.com",
+  "basePath" : "/",
+  "schemes" : [ "https" ],
+  "consumes" : [ "application/json" ],
+  "produces" : [ "application/json" ],
+  "paths" : {
+    "/admin/updateProjectsSection/add" : {
+      "post" : {
+        "summary" : "adding project card",
+        "tags" : [ "project section" ],
+        "operationId" : "addingprojectcard",
+        "deprecated" : false,
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "auth-token",
+          "in" : "header",
+          "required" : true,
+          "type" : "string",
+          "description" : ""
+        }, {
+          "name" : "Body",
+          "in" : "body",
+          "required" : true,
+          "description" : "",
+          "schema" : {
+            "$ref" : "#/definitions/addingprojectcardrequest"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "",
+            "headers" : { }
+          }
+        },
+        "security" : [ ]
+      }
+    },
+    "/admin/updateProjectsSection/5f61f7fd5ba073115f8a5fe2" : {
+      "patch" : {
+        "summary" : "updating a single project card",
+        "tags" : [ "project section" ],
+        "operationId" : "updatingasingleprojectcard",
+        "deprecated" : false,
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "auth-token",
+          "in" : "header",
+          "required" : true,
+          "type" : "string",
+          "description" : ""
+        }, {
+          "name" : "Body",
+          "in" : "body",
+          "required" : true,
+          "description" : "",
+          "schema" : {
+            "$ref" : "#/definitions/updatingasingleprojectcardrequest"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "",
+            "headers" : { }
+          }
+        },
+        "security" : [ ]
+      }
+    },
+    "/admin/updateProjectsSection/5f61fb7019368914c8298f64" : {
+      "delete" : {
+        "summary" : "delete a single project card",
+        "tags" : [ "project section" ],
+        "operationId" : "deleteasingleprojectcard",
+        "deprecated" : false,
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "auth-token",
+          "in" : "header",
+          "required" : true,
+          "type" : "string",
+          "description" : ""
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "",
+            "headers" : { }
+          }
+        }
+      }
+    },
+    "/admin/getProjectsSection" : {
+      "get" : {
+        "summary" : "getting projects sections content",
+        "tags" : [ "project section" ],
+        "operationId" : "gettingprojectssectionscontent",
+        "deprecated" : false,
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "auth-token",
+          "in" : "header",
+          "required" : true,
+          "type" : "string",
+          "description" : ""
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "",
+            "headers" : { }
+          }
+        }
+      }
+    },
+    "/admin/updateEducationSection/add" : {
+      "post" : {
+        "summary" : "adding education card",
+        "tags" : [ "education section" ],
+        "operationId" : "addingeducationcard",
+        "deprecated" : false,
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "auth-token",
+          "in" : "header",
+          "required" : true,
+          "type" : "string",
+          "description" : ""
+        }, {
+          "name" : "Body",
+          "in" : "body",
+          "required" : true,
+          "description" : "",
+          "schema" : {
+            "$ref" : "#/definitions/addingeducationcardrequest"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "",
+            "headers" : { }
+          }
+        },
+        "security" : [ ]
+      }
+    },
+    "/admin/updateEducationSection/5f61fb5719368914c8298f63" : {
+      "patch" : {
+        "summary" : "updating a single  education card",
+        "tags" : [ "education section" ],
+        "operationId" : "updatingasingleeducationcard",
+        "deprecated" : false,
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "auth-token",
+          "in" : "header",
+          "required" : true,
+          "type" : "string",
+          "description" : ""
+        }, {
+          "name" : "Body",
+          "in" : "body",
+          "required" : true,
+          "description" : "",
+          "schema" : {
+            "$ref" : "#/definitions/updatingasingleeducationcardrequest"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "",
+            "headers" : { }
+          }
+        },
+        "security" : [ ]
+      }
+    },
+    "/admin/updateEducationSection/5f61fb7d19368914c8298f66" : {
+      "delete" : {
+        "summary" : "delete a single education card",
+        "tags" : [ "education section" ],
+        "operationId" : "deleteasingleeducationcard",
+        "deprecated" : false,
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "auth-token",
+          "in" : "header",
+          "required" : true,
+          "type" : "string",
+          "description" : ""
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "",
+            "headers" : { }
+          }
+        }
+      }
+    },
+    "/admin/getEducationSection" : {
+      "get" : {
+        "summary" : "getting education sections content",
+        "tags" : [ "education section" ],
+        "operationId" : "gettingeducationsectionscontent",
+        "deprecated" : false,
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "auth-token",
+          "in" : "header",
+          "required" : true,
+          "type" : "string",
+          "description" : ""
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "",
+            "headers" : { }
+          }
+        }
+      }
+    },
+    "/admin/updateServiceSection/add" : {
+      "post" : {
+        "summary" : "adding service card",
+        "tags" : [ "service section" ],
+        "operationId" : "addingservicecard",
+        "deprecated" : false,
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "auth-token",
+          "in" : "header",
+          "required" : true,
+          "type" : "string",
+          "description" : ""
+        }, {
+          "name" : "Body",
+          "in" : "body",
+          "required" : true,
+          "description" : "",
+          "schema" : {
+            "$ref" : "#/definitions/addingservicecardrequest"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "",
+            "headers" : { }
+          }
+        },
+        "security" : [ ]
+      }
+    },
+    "/admin/updateServiceSection/5f61f9dc76c55b13693aaf6c" : {
+      "patch" : {
+        "summary" : "updating a single  service card",
+        "tags" : [ "service section" ],
+        "operationId" : "updatingasingleservicecard",
+        "deprecated" : false,
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "auth-token",
+          "in" : "header",
+          "required" : true,
+          "type" : "string",
+          "description" : ""
+        }, {
+          "name" : "Body",
+          "in" : "body",
+          "required" : true,
+          "description" : "",
+          "schema" : {
+            "$ref" : "#/definitions/updatingasingleservicecardrequest"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "",
+            "headers" : { }
+          }
+        },
+        "security" : [ ]
+      }
+    },
+    "/admin/updateServiceSection/5f61fb7719368914c8298f65" : {
+      "delete" : {
+        "summary" : "delete a single service card",
+        "tags" : [ "service section" ],
+        "operationId" : "deleteasingleservicecard",
+        "deprecated" : false,
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "auth-token",
+          "in" : "header",
+          "required" : true,
+          "type" : "string",
+          "description" : ""
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "",
+            "headers" : { }
+          }
+        }
+      }
+    },
+    "/admin/getServicesSection" : {
+      "get" : {
+        "summary" : "getting services section education",
+        "tags" : [ "service section" ],
+        "operationId" : "gettingservicessectioneducation",
+        "deprecated" : false,
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "auth-token",
+          "in" : "header",
+          "required" : true,
+          "type" : "string",
+          "description" : ""
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "",
+            "headers" : { }
+          }
+        },
+        "security" : [ ]
+      }
+    },
+    "/admin/updateLandingSection" : {
+      "patch" : {
+        "description" : "Update an Article",
+        "summary" : "updating landing section",
+        "tags" : [ "landing section" ],
+        "operationId" : "updatinglandingsection",
+        "deprecated" : false,
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "auth-token",
+          "in" : "header",
+          "required" : true,
+          "type" : "string",
+          "description" : ""
+        }, {
+          "name" : "Body",
+          "in" : "body",
+          "required" : true,
+          "description" : "",
+          "schema" : {
+            "$ref" : "#/definitions/updatinglandingsectionrequest"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "",
+            "headers" : { }
+          }
+        },
+        "security" : [ ]
+      }
+    },
+    "/admin/updateContactSection" : {
+      "patch" : {
+        "description" : "Update an Article",
+        "summary" : "update contact section",
+        "tags" : [ "contact section" ],
+        "operationId" : "updatecontactsection",
+        "deprecated" : false,
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "auth-token",
+          "in" : "header",
+          "required" : true,
+          "type" : "string",
+          "description" : ""
+        }, {
+          "name" : "Body",
+          "in" : "body",
+          "required" : true,
+          "description" : "",
+          "schema" : {
+            "$ref" : "#/definitions/updatecontactsectionrequest"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "",
+            "headers" : { }
+          }
+        },
+        "security" : [ ]
+      }
+    },
+    "/admin/saveUserProfile" : {
+      "post" : {
+        "summary" : "save user profile",
+        "tags" : [ "user profile" ],
+        "operationId" : "saveuserprofile",
+        "deprecated" : false,
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "auth-token",
+          "in" : "header",
+          "required" : true,
+          "type" : "string",
+          "description" : ""
+        }, {
+          "name" : "Body",
+          "in" : "body",
+          "required" : true,
+          "description" : "",
+          "schema" : {
+            "$ref" : "#/definitions/saveuserprofilerequest"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "",
+            "headers" : { }
+          }
+        },
+        "security" : [ ]
+      }
+    },
+    "/admin/register" : {
+      "post" : {
+        "description" : "add new user",
+        "summary" : "registering new user",
+        "tags" : [ "auth" ],
+        "operationId" : "registeringnewuser",
+        "deprecated" : false,
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "auth-token",
+          "in" : "header",
+          "required" : true,
+          "type" : "string",
+          "description" : ""
+        }, {
+          "name" : "Body",
+          "in" : "body",
+          "required" : true,
+          "description" : "",
+          "schema" : {
+            "$ref" : "#/definitions/registeringnewuserrequest"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "",
+            "headers" : { }
+          }
+        },
+        "security" : [ ]
+      }
+    },
+    "/admin/login" : {
+      "post" : {
+        "summary" : "user login",
+        "tags" : [ "auth" ],
+        "operationId" : "userlogin",
+        "deprecated" : false,
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "Body",
+          "in" : "body",
+          "required" : true,
+          "description" : "",
+          "schema" : {
+            "$ref" : "#/definitions/userloginrequest"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "",
+            "headers" : { }
+          }
+        },
+        "security" : [ ]
+      }
+    },
+    "/admin/saveArticle" : {
+      "post" : {
+        "description" : "Post Article",
+        "summary" : "creating new article",
+        "tags" : [ "articles/blogs" ],
+        "operationId" : "creatingnewarticle",
+        "deprecated" : false,
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "auth-token",
+          "in" : "header",
+          "required" : true,
+          "type" : "string",
+          "description" : ""
+        }, {
+          "name" : "Body",
+          "in" : "body",
+          "required" : true,
+          "description" : "",
+          "schema" : {
+            "$ref" : "#/definitions/creatingnewarticlerequest"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "",
+            "headers" : { }
+          }
+        },
+        "security" : [ ]
+      }
+    },
+    "/admin/articles/5f52a302a406fb0a72083c7a" : {
+      "delete" : {
+        "description" : "delete an article\n",
+        "summary" : "delete an article",
+        "tags" : [ "articles/blogs" ],
+        "operationId" : "deleteanarticle",
+        "deprecated" : false,
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "auth-token",
+          "in" : "header",
+          "required" : true,
+          "type" : "string",
+          "description" : ""
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "",
+            "headers" : { }
+          }
+        },
+        "security" : [ ]
+      },
+      "patch" : {
+        "description" : "Update an Article",
+        "summary" : "updating an article",
+        "tags" : [ "articles/blogs" ],
+        "operationId" : "updatinganarticle",
+        "deprecated" : false,
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "auth-token",
+          "in" : "header",
+          "required" : true,
+          "type" : "string",
+          "description" : ""
+        }, {
+          "name" : "Body",
+          "in" : "body",
+          "required" : true,
+          "description" : "",
+          "schema" : {
+            "$ref" : "#/definitions/updatinganarticlerequest"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "",
+            "headers" : { }
+          }
+        },
+        "security" : [ ]
+      }
+    },
+    "/" : {
+      "get" : {
+        "summary" : "get user profile",
+        "tags" : [ "Misc" ],
+        "operationId" : "getuserprofile",
+        "deprecated" : false,
+        "produces" : [ "application/json" ],
+        "parameters" : [ ],
+        "responses" : {
+          "200" : {
+            "description" : "",
+            "headers" : { }
+          }
+        },
+        "security" : [ ]
+      }
+    },
+    "/articles" : {
+      "get" : {
+        "summary" : "get all articles",
+        "tags" : [ "Misc" ],
+        "operationId" : "getallarticles",
+        "deprecated" : false,
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "auth-token",
+          "in" : "header",
+          "required" : true,
+          "type" : "string",
+          "description" : ""
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "",
+            "headers" : { }
+          }
+        },
+        "security" : [ ]
+      }
+    },
+    "/articles/5f5f789f81a0690e9beb150e" : {
+      "get" : {
+        "description" : "Update an Article",
+        "summary" : "get a single article",
+        "tags" : [ "Misc" ],
+        "operationId" : "getasinglearticle",
+        "deprecated" : false,
+        "produces" : [ "application/json" ],
+        "parameters" : [ ],
+        "responses" : {
+          "200" : {
+            "description" : "",
+            "headers" : { }
+          }
+        },
+        "security" : [ ]
+      }
+    },
+    "/queries" : {
+      "post" : {
+        "summary" : "register new querie",
+        "tags" : [ "Misc" ],
+        "operationId" : "registernewquerie",
+        "deprecated" : false,
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "Body",
+          "in" : "body",
+          "required" : true,
+          "description" : "",
+          "schema" : {
+            "$ref" : "#/definitions/registernewquerierequest"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "",
+            "headers" : { }
+          }
+        },
+        "security" : [ ]
+      },
+      "get" : {
+        "summary" : "get all queries",
+        "tags" : [ "Misc" ],
+        "operationId" : "getallqueries",
+        "deprecated" : false,
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "auth-token",
+          "in" : "header",
+          "required" : true,
+          "type" : "string",
+          "description" : ""
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "",
+            "headers" : { }
+          }
+        },
+        "security" : [ ]
+      }
+    },
+    "/articles/5f5f789f81a0690e9beb150e/newComment" : {
+      "post" : {
+        "summary" : "save new comment",
+        "tags" : [ "Misc" ],
+        "operationId" : "savenewcomment",
+        "deprecated" : false,
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "Body",
+          "in" : "body",
+          "required" : true,
+          "description" : "",
+          "schema" : {
+            "$ref" : "#/definitions/savenewcommentrequest"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "",
+            "headers" : { }
+          }
+        },
+        "security" : [ ]
+      }
+    }
+  },
+  "definitions" : {
+    "addingprojectcardrequest" : {
+      "title" : "addingprojectcardrequest",
+      "example" : {
+        "projectBody" : "Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique vero quos maiores sed consectetur illo earum cum perferendis voluptatem?",
+        "projectImg" : "https://firebasestorage.googleapis.com/v0/b/niyonsaba-blog.appspot.com/o/landingPage%2FroboCop.png?alt=media&token=1ef59086-88d6-4ff1-81cb-710133dc4a69",
+        "projectTitle" : "Embedded System Design[edited]"
+      },
+      "type" : "object",
+      "properties" : {
+        "projectBody" : {
+          "type" : "string"
+        },
+        "projectImg" : {
+          "type" : "string"
+        },
+        "projectTitle" : {
+          "type" : "string"
+        }
+      },
+      "required" : [ "projectBody", "projectImg", "projectTitle" ]
+    },
+    "updatingasingleprojectcardrequest" : {
+      "title" : "updatingasingleprojectcardrequest",
+      "example" : {
+        "projectBody" : "Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique vero quos maiores sed consectetur illo earum cum perferendis voluptatem?[updated]",
+        "projectImg" : "https://firebasestorage.googleapis.com/v0/b/niyonsaba-blog.appspot.com/o/landingPage%2FroboCop.png?alt=media&token=1ef59086-88d6-4ff1-81cb-710133dc4a69",
+        "projectTitle" : "Embedded System Design[updated again]"
+      },
+      "type" : "object",
+      "properties" : {
+        "projectBody" : {
+          "type" : "string"
+        },
+        "projectImg" : {
+          "type" : "string"
+        },
+        "projectTitle" : {
+          "type" : "string"
+        }
+      },
+      "required" : [ "projectBody", "projectImg", "projectTitle" ]
+    },
+    "addingeducationcardrequest" : {
+      "title" : "addingeducationcardrequest",
+      "example" : {
+        "educationBody" : "Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique vero quos maiores sed consectetur illo earum cum perferendis voluptatem?",
+        "educationImg" : "https://firebasestorage.googleapis.com/v0/b/niyonsaba-blog.appspot.com/o/landingPage%2FroboCop.png?alt=media&token=1ef59086-88d6-4ff1-81cb-710133dc4a69",
+        "educationPeriod" : "2016-2020",
+        "educationTitle" : "Embedded System Design"
+      },
+      "type" : "object",
+      "properties" : {
+        "educationBody" : {
+          "type" : "string"
+        },
+        "educationImg" : {
+          "type" : "string"
+        },
+        "educationPeriod" : {
+          "type" : "string"
+        },
+        "educationTitle" : {
+          "type" : "string"
+        }
+      },
+      "required" : [ "educationBody", "educationImg", "educationPeriod", "educationTitle" ]
+    },
+    "updatingasingleeducationcardrequest" : {
+      "title" : "updatingasingleeducationcardrequest",
+      "example" : {
+        "educationBody" : "Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique vero quos maiores sed consectetur illo earum cum perferendis voluptatem?[updated]",
+        "educationImg" : "https://firebasestorage.googleapis.com/v0/b/niyonsaba-blog.appspot.com/o/landingPage%2FroboCop.png?alt=media&token=1ef59086-88d6-4ff1-81cb-710133dc4a69",
+        "educationPeriod" : "2016-2020",
+        "educationTitle" : "Embedded System Design[updated on education]"
+      },
+      "type" : "object",
+      "properties" : {
+        "educationBody" : {
+          "type" : "string"
+        },
+        "educationImg" : {
+          "type" : "string"
+        },
+        "educationPeriod" : {
+          "type" : "string"
+        },
+        "educationTitle" : {
+          "type" : "string"
+        }
+      },
+      "required" : [ "educationBody", "educationImg", "educationPeriod", "educationTitle" ]
+    },
+    "addingservicecardrequest" : {
+      "title" : "addingservicecardrequest",
+      "example" : {
+        "serviceFeatures" : "Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique vero quos maiores sed consectetur illo earum cum perferendis voluptatem?",
+        "serviceImg" : "https://firebasestorage.googleapis.com/v0/b/niyonsaba-blog.appspot.com/o/landingPage%2FroboCop.png?alt=media&token=1ef59086-88d6-4ff1-81cb-710133dc4a69",
+        "serviceTitle" : "Embedded System Design[edited]"
+      },
+      "type" : "object",
+      "properties" : {
+        "serviceFeatures" : {
+          "type" : "string"
+        },
+        "serviceImg" : {
+          "type" : "string"
+        },
+        "serviceTitle" : {
+          "type" : "string"
+        }
+      },
+      "required" : [ "serviceFeatures", "serviceImg", "serviceTitle" ]
+    },
+    "updatingasingleservicecardrequest" : {
+      "title" : "updatingasingleservicecardrequest",
+      "example" : {
+        "serviceFeatures" : "Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique vero quos maiores sed consectetur illo earum cum perferendis voluptatem?[updated]",
+        "serviceImg" : "https://firebasestorage.googleapis.com/v0/b/niyonsaba-blog.appspot.com/o/landingPage%2FroboCop.png?alt=media&token=1ef59086-88d6-4ff1-81cb-710133dc4a69",
+        "serviceTitle" : "Embedded System Design[updated]"
+      },
+      "type" : "object",
+      "properties" : {
+        "serviceFeatures" : {
+          "type" : "string"
+        },
+        "serviceImg" : {
+          "type" : "string"
+        },
+        "serviceTitle" : {
+          "type" : "string"
+        }
+      },
+      "required" : [ "serviceFeatures", "serviceImg", "serviceTitle" ]
+    },
+    "updatinglandingsectionrequest" : {
+      "title" : "updatinglandingsectionrequest",
+      "example" : {
+        "catchLine" : "a FullStack Web Developer[updated]",
+        "fullName" : "Niyonsaba Mugabo Deo[updated]",
+        "meImg" : "https://firebasestorage.googleapis.com/v0/b/niyonsaba-blog.appspot.com/o/landingPage%2Fme.png?alt=media&token=b1eadf4b-e669-4f7e-92e4-81e8eba80361"
+      },
+      "type" : "object",
+      "properties" : {
+        "catchLine" : {
+          "type" : "string"
+        },
+        "fullName" : {
+          "type" : "string"
+        },
+        "meImg" : {
+          "type" : "string"
+        }
+      },
+      "required" : [ "catchLine", "fullName", "meImg" ]
+    },
+    "updatecontactsectionrequest" : {
+      "title" : "updatecontactsectionrequest",
+      "example" : {
+        "contactEmail" : "mugabodeo6@gmail.com[updated]",
+        "contactNumber" : "Niyonsaba Mugabo Deo[updated]"
+      },
+      "type" : "object",
+      "properties" : {
+        "contactEmail" : {
+          "type" : "string"
+        },
+        "contactNumber" : {
+          "type" : "string"
+        }
+      },
+      "required" : [ "contactEmail", "contactNumber" ]
+    },
+    "saveuserprofilerequest" : {
+      "title" : "saveuserprofilerequest",
+      "example" : {
+        "catchLine" : "a FullStack Web Developer",
+        "fullName" : "Niyonsaba Mugabo Deo",
+        "meImg" : "https://firebasestorage.googleapis.com/v0/b/niyonsaba-blog.appspot.com/o/landingPage%2Fme.png?alt=media&token=b1eadf4b-e669-4f7e-92e4-81e8eba80361",
+        "contactEmail" : "mugabodeo6@gmail.com",
+        "contactNumber" : 7.82296231E8
+      },
+      "type" : "object",
+      "properties" : {
+        "catchLine" : {
+          "type" : "string"
+        },
+        "fullName" : {
+          "type" : "string"
+        },
+        "meImg" : {
+          "type" : "string"
+        },
+        "contactEmail" : {
+          "type" : "string"
+        },
+        "contactNumber" : {
+          "type" : "string"
+        }
+      },
+      "required" : [ "catchLine", "fullName", "meImg", "contactEmail", "contactNumber" ]
+    },
+    "registeringnewuserrequest" : {
+      "title" : "registeringnewuserrequest",
+      "example" : {
+        "name" : "hope alexis",
+        "email" : "hopealexis@gmail.com",
+        "password" : "123pass"
+      },
+      "type" : "object",
+      "properties" : {
+        "name" : {
+          "type" : "string"
+        },
+        "email" : {
+          "type" : "string"
+        },
+        "password" : {
+          "type" : "string"
+        }
+      },
+      "required" : [ "name", "email", "password" ]
+    },
+    "userloginrequest" : {
+      "title" : "userloginrequest",
+      "example" : {
+        "email" : "mugabodeo6@gmail.com",
+        "password" : "pass123"
+      },
+      "type" : "object",
+      "properties" : {
+        "email" : {
+          "type" : "string"
+        },
+        "password" : {
+          "type" : "string"
+        }
+      },
+      "required" : [ "email", "password" ]
+    },
+    "creatingnewarticlerequest" : {
+      "title" : "creatingnewarticlerequest",
+      "example" : {
+        "articleTitle" : "article",
+        "articleCover" : "cover",
+        "articleHeadline" : " new  app",
+        "articleCategory" : "devops",
+        "articleBody" : "WElcome",
+        "articleUpdate" : "true"
+      },
+      "type" : "object",
+      "properties" : {
+        "articleTitle" : {
+          "type" : "string"
+        },
+        "articleCover" : {
+          "type" : "string"
+        },
+        "articleHeadline" : {
+          "type" : "string"
+        },
+        "articleCategory" : {
+          "type" : "string"
+        },
+        "articleBody" : {
+          "type" : "string"
+        },
+        "articleUpdate" : {
+          "type" : "string"
+        }
+      },
+      "required" : [ "articleTitle", "articleCover", "articleHeadline", "articleCategory", "articleBody", "articleUpdate" ]
+    },
+    "updatinganarticlerequest" : {
+      "title" : "updatinganarticlerequest",
+      "example" : {
+        "articleTitle" : "new article",
+        "articleCover" : " file cover",
+        "articleHeadline" : " new headline app",
+        "articleCategory" : "Tech",
+        "articleBody" : "WElcome to postMan",
+        "articleUpdate" : "true"
+      },
+      "type" : "object",
+      "properties" : {
+        "articleTitle" : {
+          "type" : "string"
+        },
+        "articleCover" : {
+          "type" : "string"
+        },
+        "articleHeadline" : {
+          "type" : "string"
+        },
+        "articleCategory" : {
+          "type" : "string"
+        },
+        "articleBody" : {
+          "type" : "string"
+        },
+        "articleUpdate" : {
+          "type" : "string"
+        }
+      },
+      "required" : [ "articleTitle", "articleCover", "articleHeadline", "articleCategory", "articleBody", "articleUpdate" ]
+    },
+    "registernewquerierequest" : {
+      "title" : "registernewquerierequest",
+      "example" : {
+        "name" : "hope alexis",
+        "email" : "hopealexis@gmail.com",
+        "subject" : "123pass"
+      },
+      "type" : "object",
+      "properties" : {
+        "name" : {
+          "type" : "string"
+        },
+        "email" : {
+          "type" : "string"
+        },
+        "subject" : {
+          "type" : "string"
+        }
+      },
+      "required" : [ "name", "email", "subject" ]
+    },
+    "savenewcommentrequest" : {
+      "title" : "savenewcommentrequest",
+      "example" : {
+        "name" : "Niyonsaba Deo",
+        "email" : "mugabodeo6@gmail.com",
+        "comment" : "testing new comment"
+      },
+      "type" : "object",
+      "properties" : {
+        "name" : {
+          "type" : "string"
+        },
+        "email" : {
+          "type" : "string"
+        },
+        "comment" : {
+          "type" : "string"
+        }
+      },
+      "required" : [ "name", "email", "comment" ]
+    }
+  },
+  "tags" : [ {
+    "name" : "project section"
+  }, {
+    "name" : "education section"
+  }, {
+    "name" : "service section"
+  }, {
+    "name" : "landing section"
+  }, {
+    "name" : "contact section"
+  }, {
+    "name" : "user profile"
+  }, {
+    "name" : "auth"
+  }, {
+    "name" : "articles/blogs"
+  }, {
+    "name" : "Misc",
+    "description" : ""
+  } ]
+}

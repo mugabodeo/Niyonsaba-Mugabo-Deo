@@ -11,7 +11,7 @@ describe("CRUD tests for /index", () => {
   it("Successful, get assets for landing page", function (done) {
     chai
       .request(server)
-      .get("/")
+      .get("/api")
       .end((err, res) => {
         if (err) done(err);
         res.should.have.status(200);
