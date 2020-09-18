@@ -7,3 +7,4 @@ after_success: npm run coverage
 
 services :
   - mongodb
+os: osx
