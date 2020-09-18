@@ -13,7 +13,7 @@ const port = process.env.PORT || 8080;
 
 app.use(express.json());
 
-//defining routes
+// defining routes
 
 app.use("/", userInfoRouter);
 app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerDocument));
