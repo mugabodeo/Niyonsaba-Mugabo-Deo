@@ -22,7 +22,7 @@ app.use('/queries',querieRouter)
 app.use('/admin',adminRouter)
 
 //connect to database
-Mongoose.connect(process.env.DB_CONNECTION,
+Mongoose.connect("mongodb+srv://admin:admin1234@niyonsaba-blog.4zgkw.mongodb.net/MyBlogDb?retryWrites=true&w=majority",
     { useNewUrlParser: true,useUnifiedTopology: true,useCreateIndex: true,useFindAndModify: false},
 ).then((res)=>{
   console.log('database connnected')
