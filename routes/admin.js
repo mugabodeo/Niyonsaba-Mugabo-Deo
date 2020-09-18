@@ -34,7 +34,7 @@ adminRouter.post("/register", VerifyToken, async (req, res) => {
 });
 
 //login for already registered user
-adminRouter.post("/login", VerifyToken, async (req, res) => {
+adminRouter.post("/login", async (req, res) => {
   const checkEmail = validator.isEmail(req.body.email);
   if (!checkEmail) return res.json("invalid email"); //validate email from input
   const currentUser = await User.findOne({ email: req.body.email });
