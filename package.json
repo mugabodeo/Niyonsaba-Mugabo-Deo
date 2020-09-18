@@ -10,7 +10,7 @@
     "dev": "nodemon --exec babel-node app.js",
     "build": "babel app.js --out-file app-compiled.js",
     "start": "babel-node app-compiled.js ",
-    "test": "mocha --timeout 25000 --require @babel/polyfill --require @babel/register --recursive --exit",
+    "test": "mocha --timeout 35000 --require @babel/polyfill --require @babel/register --recursive --exit",
     "coverage": "nyc report --reporter=text-lcov | coveralls"
   },
   "author": "",
