@@ -3,10 +3,10 @@
   "info" : {
     "version" : "1.0",
     "title" : "myBlog",
-    "description" : "# Introduction\nWhat does your API do?\nthis api is used to server my blog\n\n# Overview\nThings that the developers should know about\n\n\n# Authentication\nWhat is the preferred way of using the API?\nusing normal email and password\n\n# Error Codes\nWhat errors and status codes can a user expect?\n404\n401\n501\n# Rate limit\nIs there a limit to the number of requests an user can send?\nNo",
+    "description" : "# Introduction\nWhat does your API do?\nthis api is used to serve my blog\n# Overview\nThings that the developers should know about\n\n# Authentication\nWhat is the preferred way of using the API?\nusing normal email and password plus token\n# Error Codes\nWhat errors and status codes can a user expect?\n401 - access denied\n400 - invalid token\n409 - user email already exist\n# Rate limit\nIs there a limit to the number of requests an user can send?",
     "contact" : { }
   },
-  "host" : "https://niyonsaba-mugabo-deo-blog.herokuapp.com",
+  "host" : "niyonsaba-mugabo-deo-blog.herokuapp.com",
   "basePath" : "/",
   "schemes" : [ "https" ],
   "consumes" : [ "application/json" ],
@@ -43,7 +43,7 @@
         "security" : [ ]
       }
     },
-    "/admin/updateProjectsSection/5f61f7fd5ba073115f8a5fe2" : {
+    "/admin/updateProjectsSection/5f64843611ea050a348f71ec" : {
       "patch" : {
         "summary" : "updating a single project card",
         "tags" : [ "project section" ],
@@ -74,7 +74,7 @@
         "security" : [ ]
       }
     },
-    "/admin/updateProjectsSection/5f61fb7019368914c8298f64" : {
+    "/admin/updateProjectsSection/5f6489d28c37f50bbb72a6d4" : {
       "delete" : {
         "summary" : "delete a single project card",
         "tags" : [ "project section" ],
@@ -255,7 +255,7 @@
         "security" : [ ]
       }
     },
-    "/admin/updateServiceSection/5f61f9dc76c55b13693aaf6c" : {
+    "/admin/updateServiceSection/5f62256e0bc1b32838119c21" : {
       "patch" : {
         "summary" : "updating a single  service card",
         "tags" : [ "service section" ],
@@ -286,7 +286,7 @@
         "security" : [ ]
       }
     },
-    "/admin/updateServiceSection/5f61fb7719368914c8298f65" : {
+    "/admin/updateServiceSection/5f624101c6e2f932590b6a47" : {
       "delete" : {
         "summary" : "delete a single service card",
         "tags" : [ "service section" ],
@@ -426,6 +426,94 @@
         "security" : [ ]
       }
     },
+    "/admin/saveArticle" : {
+      "post" : {
+        "description" : "Post Article",
+        "summary" : "creating new article",
+        "tags" : [ "articles/blogs" ],
+        "operationId" : "creatingnewarticle",
+        "deprecated" : false,
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "auth-token",
+          "in" : "header",
+          "required" : true,
+          "type" : "string",
+          "description" : ""
+        }, {
+          "name" : "Body",
+          "in" : "body",
+          "required" : true,
+          "description" : "",
+          "schema" : {
+            "$ref" : "#/definitions/creatingnewarticlerequest"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "",
+            "headers" : { }
+          }
+        },
+        "security" : [ ]
+      }
+    },
+    "/admin/articles/5f648ba58c37f50bbb72a6d6" : {
+      "delete" : {
+        "description" : "delete an article\n",
+        "summary" : "delete an article",
+        "tags" : [ "articles/blogs" ],
+        "operationId" : "deleteanarticle",
+        "deprecated" : false,
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "auth-token",
+          "in" : "header",
+          "required" : true,
+          "type" : "string",
+          "description" : ""
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "",
+            "headers" : { }
+          }
+        },
+        "security" : [ ]
+      }
+    },
+    "/admin/articles/5f6214f482b364220eff435f" : {
+      "patch" : {
+        "description" : "Update an Article",
+        "summary" : "updating an article",
+        "tags" : [ "articles/blogs" ],
+        "operationId" : "updatinganarticle",
+        "deprecated" : false,
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "auth-token",
+          "in" : "header",
+          "required" : true,
+          "type" : "string",
+          "description" : ""
+        }, {
+          "name" : "Body",
+          "in" : "body",
+          "required" : true,
+          "description" : "",
+          "schema" : {
+            "$ref" : "#/definitions/updatinganarticlerequest"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "",
+            "headers" : { }
+          }
+        },
+        "security" : [ ]
+      }
+    },
     "/admin/register" : {
       "post" : {
         "description" : "add new user",
@@ -483,44 +571,11 @@
         "security" : [ ]
       }
     },
-    "/admin/saveArticle" : {
-      "post" : {
-        "description" : "Post Article",
-        "summary" : "creating new article",
-        "tags" : [ "articles/blogs" ],
-        "operationId" : "creatingnewarticle",
-        "deprecated" : false,
-        "produces" : [ "application/json" ],
-        "parameters" : [ {
-          "name" : "auth-token",
-          "in" : "header",
-          "required" : true,
-          "type" : "string",
-          "description" : ""
-        }, {
-          "name" : "Body",
-          "in" : "body",
-          "required" : true,
-          "description" : "",
-          "schema" : {
-            "$ref" : "#/definitions/creatingnewarticlerequest"
-          }
-        } ],
-        "responses" : {
-          "200" : {
-            "description" : "",
-            "headers" : { }
-          }
-        },
-        "security" : [ ]
-      }
-    },
-    "/admin/articles/5f52a302a406fb0a72083c7a" : {
-      "delete" : {
-        "description" : "delete an article\n",
-        "summary" : "delete an article",
-        "tags" : [ "articles/blogs" ],
-        "operationId" : "deleteanarticle",
+    "/queries" : {
+      "get" : {
+        "summary" : "get all queries",
+        "tags" : [ "admin" ],
+        "operationId" : "getallqueries",
         "deprecated" : false,
         "produces" : [ "application/json" ],
         "parameters" : [ {
@@ -538,26 +593,19 @@
         },
         "security" : [ ]
       },
-      "patch" : {
-        "description" : "Update an Article",
-        "summary" : "updating an article",
-        "tags" : [ "articles/blogs" ],
-        "operationId" : "updatinganarticle",
+      "post" : {
+        "summary" : "register new querie",
+        "tags" : [ "Misc" ],
+        "operationId" : "registernewquerie",
         "deprecated" : false,
         "produces" : [ "application/json" ],
         "parameters" : [ {
-          "name" : "auth-token",
-          "in" : "header",
-          "required" : true,
-          "type" : "string",
-          "description" : ""
-        }, {
           "name" : "Body",
           "in" : "body",
           "required" : true,
           "description" : "",
           "schema" : {
-            "$ref" : "#/definitions/updatinganarticlerequest"
+            "$ref" : "#/definitions/registernewquerierequest"
           }
         } ],
         "responses" : {
@@ -569,7 +617,7 @@
         "security" : [ ]
       }
     },
-    "/" : {
+    "/api" : {
       "get" : {
         "summary" : "get user profile",
         "tags" : [ "Misc" ],
@@ -593,13 +641,7 @@
         "operationId" : "getallarticles",
         "deprecated" : false,
         "produces" : [ "application/json" ],
-        "parameters" : [ {
-          "name" : "auth-token",
-          "in" : "header",
-          "required" : true,
-          "type" : "string",
-          "description" : ""
-        } ],
+        "parameters" : [ ],
         "responses" : {
           "200" : {
             "description" : "",
@@ -609,7 +651,7 @@
         "security" : [ ]
       }
     },
-    "/articles/5f5f789f81a0690e9beb150e" : {
+    "/articles/5f6482eb0537ce09575dd405" : {
       "get" : {
         "description" : "Update an Article",
         "summary" : "get a single article",
@@ -627,53 +669,7 @@
         "security" : [ ]
       }
     },
-    "/queries" : {
-      "post" : {
-        "summary" : "register new querie",
-        "tags" : [ "Misc" ],
-        "operationId" : "registernewquerie",
-        "deprecated" : false,
-        "produces" : [ "application/json" ],
-        "parameters" : [ {
-          "name" : "Body",
-          "in" : "body",
-          "required" : true,
-          "description" : "",
-          "schema" : {
-            "$ref" : "#/definitions/registernewquerierequest"
-          }
-        } ],
-        "responses" : {
-          "200" : {
-            "description" : "",
-            "headers" : { }
-          }
-        },
-        "security" : [ ]
-      },
-      "get" : {
-        "summary" : "get all queries",
-        "tags" : [ "Misc" ],
-        "operationId" : "getallqueries",
-        "deprecated" : false,
-        "produces" : [ "application/json" ],
-        "parameters" : [ {
-          "name" : "auth-token",
-          "in" : "header",
-          "required" : true,
-          "type" : "string",
-          "description" : ""
-        } ],
-        "responses" : {
-          "200" : {
-            "description" : "",
-            "headers" : { }
-          }
-        },
-        "security" : [ ]
-      }
-    },
-    "/articles/5f5f789f81a0690e9beb150e/newComment" : {
+    "/articles/5f6482eb0537ce09575dd405/newComment" : {
       "post" : {
         "summary" : "save new comment",
         "tags" : [ "Misc" ],
@@ -726,7 +722,7 @@
       "example" : {
         "projectBody" : "Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique vero quos maiores sed consectetur illo earum cum perferendis voluptatem?[updated]",
         "projectImg" : "https://firebasestorage.googleapis.com/v0/b/niyonsaba-blog.appspot.com/o/landingPage%2FroboCop.png?alt=media&token=1ef59086-88d6-4ff1-81cb-710133dc4a69",
-        "projectTitle" : "Embedded System Design[updated again]"
+        "projectTitle" : "Embedded System Design enhanced"
       },
       "type" : "object",
       "properties" : {
@@ -797,7 +793,7 @@
       "example" : {
         "serviceFeatures" : "Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique vero quos maiores sed consectetur illo earum cum perferendis voluptatem?",
         "serviceImg" : "https://firebasestorage.googleapis.com/v0/b/niyonsaba-blog.appspot.com/o/landingPage%2FroboCop.png?alt=media&token=1ef59086-88d6-4ff1-81cb-710133dc4a69",
-        "serviceTitle" : "Embedded System Design[edited]"
+        "serviceTitle" : "Embedded System Design"
       },
       "type" : "object",
       "properties" : {
@@ -818,7 +814,7 @@
       "example" : {
         "serviceFeatures" : "Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique vero quos maiores sed consectetur illo earum cum perferendis voluptatem?[updated]",
         "serviceImg" : "https://firebasestorage.googleapis.com/v0/b/niyonsaba-blog.appspot.com/o/landingPage%2FroboCop.png?alt=media&token=1ef59086-88d6-4ff1-81cb-710133dc4a69",
-        "serviceTitle" : "Embedded System Design[updated]"
+        "serviceTitle" : "Hosting"
       },
       "type" : "object",
       "properties" : {
@@ -837,7 +833,7 @@
     "updatinglandingsectionrequest" : {
       "title" : "updatinglandingsectionrequest",
       "example" : {
-        "catchLine" : "a FullStack Web Developer[updated]",
+        "catchLine" : "a FullStack Web Developer[edited]",
         "fullName" : "Niyonsaba Mugabo Deo[updated]",
         "meImg" : "https://firebasestorage.googleapis.com/v0/b/niyonsaba-blog.appspot.com/o/landingPage%2Fme.png?alt=media&token=b1eadf4b-e669-4f7e-92e4-81e8eba80361"
       },
@@ -858,7 +854,7 @@
     "updatecontactsectionrequest" : {
       "title" : "updatecontactsectionrequest",
       "example" : {
-        "contactEmail" : "mugabodeo6@gmail.com[updated]",
+        "contactEmail" : "mugabodeo6@gmail.com[edited]",
         "contactNumber" : "Niyonsaba Mugabo Deo[updated]"
       },
       "type" : "object",
@@ -901,44 +897,6 @@
       },
       "required" : [ "catchLine", "fullName", "meImg", "contactEmail", "contactNumber" ]
     },
-    "registeringnewuserrequest" : {
-      "title" : "registeringnewuserrequest",
-      "example" : {
-        "name" : "hope alexis",
-        "email" : "hopealexis@gmail.com",
-        "password" : "123pass"
-      },
-      "type" : "object",
-      "properties" : {
-        "name" : {
-          "type" : "string"
-        },
-        "email" : {
-          "type" : "string"
-        },
-        "password" : {
-          "type" : "string"
-        }
-      },
-      "required" : [ "name", "email", "password" ]
-    },
-    "userloginrequest" : {
-      "title" : "userloginrequest",
-      "example" : {
-        "email" : "mugabodeo6@gmail.com",
-        "password" : "pass123"
-      },
-      "type" : "object",
-      "properties" : {
-        "email" : {
-          "type" : "string"
-        },
-        "password" : {
-          "type" : "string"
-        }
-      },
-      "required" : [ "email", "password" ]
-    },
     "creatingnewarticlerequest" : {
       "title" : "creatingnewarticlerequest",
       "example" : {
@@ -947,7 +905,7 @@
         "articleHeadline" : " new  app",
         "articleCategory" : "devops",
         "articleBody" : "WElcome",
-        "articleUpdate" : "true"
+        "articleUpdate" : "false"
       },
       "type" : "object",
       "properties" : {
@@ -1005,6 +963,44 @@
       },
       "required" : [ "articleTitle", "articleCover", "articleHeadline", "articleCategory", "articleBody", "articleUpdate" ]
     },
+    "registeringnewuserrequest" : {
+      "title" : "registeringnewuserrequest",
+      "example" : {
+        "name" : "new user",
+        "email" : "userFriday@gmail.com",
+        "password" : "passPass"
+      },
+      "type" : "object",
+      "properties" : {
+        "name" : {
+          "type" : "string"
+        },
+        "email" : {
+          "type" : "string"
+        },
+        "password" : {
+          "type" : "string"
+        }
+      },
+      "required" : [ "name", "email", "password" ]
+    },
+    "userloginrequest" : {
+      "title" : "userloginrequest",
+      "example" : {
+        "email" : "userFriday@gmail.com",
+        "password" : "passPass"
+      },
+      "type" : "object",
+      "properties" : {
+        "email" : {
+          "type" : "string"
+        },
+        "password" : {
+          "type" : "string"
+        }
+      },
+      "required" : [ "email", "password" ]
+    },
     "registernewquerierequest" : {
       "title" : "registernewquerierequest",
       "example" : {
@@ -1061,9 +1057,11 @@
   }, {
     "name" : "user profile"
   }, {
+    "name" : "articles/blogs"
+  }, {
     "name" : "auth"
   }, {
-    "name" : "articles/blogs"
+    "name" : "admin"
   }, {
     "name" : "Misc",
     "description" : ""
