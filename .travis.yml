@@ -9,8 +9,6 @@ cache: npm
 install:
   - npm install
   
-services: mongodb
-
 script:
   - npm test
 after_success: npm run coverage
