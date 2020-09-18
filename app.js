@@ -21,7 +21,7 @@ app.use("/articles", articleRouter);
 app.use("/queries", querieRouter);
 app.use("/admin", adminRouter);
 
-//connect to database
+// connect to database
 Mongoose.connect(process.env.DB_CONNECTION, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
