@@ -23,30 +23,30 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">36% </span>
+                <span class="strong">88% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>9/25</span>
+                <span class='fraction'>22/25</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">82.35% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>0/17</span>
+                <span class='fraction'>14/17</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">50% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>3/6</span>
+                <span class='fraction'>6/6</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">40.91% </span>
+                <span class="strong">86.36% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>9/22</span>
+                <span class='fraction'>19/22</span>
             </div>
         
             
@@ -55,7 +55,7 @@
             Press <em>n</em> or <em>j</em> to go to the next uncovered block, <em>b</em>, <em>p</em> or <em>k</em> for the previous block.
         </p>
     </div>
-    <div class='status-line low'></div>
+    <div class='status-line high'></div>
     <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -119,23 +119,10 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">60x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">3x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-yes">5x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -143,20 +130,33 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">12x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">3x</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">20x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -172,10 +172,10 @@ const articleRouter = express.Router();
 &nbsp;
 //get all articles from mongo database
 &nbsp;
-articleRouter.get("", <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >async (r</span></span>eq, res) =&gt; {
+articleRouter.get("", <span class="branch-2 cbranch-no" title="branch not covered" >async (req, res) =&gt; {</span>
   try {
-    const <span class="cstat-no" title="statement not covered" >allArticles = await Article.find();</span>
-<span class="cstat-no" title="statement not covered" >    res.</span>json(allArticles);
+    const allArticles = await Article.find();
+    res.json(allArticles);
   } catch (err) {
 <span class="cstat-no" title="statement not covered" >    res.</span>json({ message: err });
   }
@@ -183,12 +183,12 @@ articleRouter.get("", <span class="cstat-no" title="statement not covered" ><spa
 &nbsp;
 &nbsp;
 //get a specific article with article id and get all comments
-articleRouter.get("/:articleId", <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >async (r</span></span>eq, res) =&gt; {
+articleRouter.get("/:articleId", <span class="branch-2 cbranch-no" title="branch not covered" >async (req, res) =&gt; {</span>
   try {
-    const <span class="cstat-no" title="statement not covered" >singleArticle = await Article.findOne({</span>
+    const singleArticle = await Article.findOne({
       _id: req.params.articleId,
     }).populate("comments");
-<span class="cstat-no" title="statement not covered" >    res.</span>json(singleArticle);
+    res.json(singleArticle);
   } catch (err) {
 <span class="cstat-no" title="statement not covered" >    res.</span>json({ message: err });
   }
@@ -197,19 +197,19 @@ articleRouter.get("/:articleId", <span class="cstat-no" title="statement not cov
 &nbsp;
 &nbsp;
 //add new comment to an specific article
-articleRouter.post("/:articleId/newComment", <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >async (r</span></span>eq, res) =&gt; {
-  const <span class="cstat-no" title="statement not covered" >newComment = new Comment({</span>
+articleRouter.post("/:articleId/newComment", <span class="branch-4 cbranch-no" title="branch not covered" >async (req, res) =&gt; {</span>
+  const newComment = new Comment({
     name: req.body.name,
     email: req.body.email,
     comment: req.body.comment,
   });
 &nbsp;
   try {
-    const <span class="cstat-no" title="statement not covered" >savedComment = await newComment.save();</span>
-    const <span class="cstat-no" title="statement not covered" >getArticle = await Article.findOne({ _id: req.params.articleId });</span>
-<span class="cstat-no" title="statement not covered" >    getArticle.</span>comments.push(savedComment._id);
-    const <span class="cstat-no" title="statement not covered" >saveComment = await getArticle.save();</span>
-<span class="cstat-no" title="statement not covered" >    res.</span>json(savedComment);
+    const savedComment = await newComment.save();
+    const getArticle = await Article.findOne({ _id: req.params.articleId });
+    getArticle.comments.push(savedComment._id);
+    const saveComment = await getArticle.save();
+    res.json(savedComment);
   } catch (err) {
 <span class="cstat-no" title="statement not covered" >    res.</span>json({ message: err });
   }
@@ -223,7 +223,7 @@ export default articleRouter;
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank">istanbul</a>
-                at Fri Sep 18 2020 14:44:12 GMT+0200 (Central Africa Time)
+                at Fri Sep 18 2020 15:39:08 GMT+0200 (Central Africa Time)
             </div>
         </div>
         <script src="../../prettify.js"></script>
