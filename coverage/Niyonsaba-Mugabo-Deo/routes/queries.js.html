@@ -23,30 +23,30 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">87.5% </span>
+                <span class="strong">43.75% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>14/16</span>
+                <span class='fraction'>7/16</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">80% </span>
+                <span class="strong">0% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>8/10</span>
+                <span class='fraction'>0/10</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">100% </span>
+                <span class="strong">50% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>4/4</span>
+                <span class='fraction'>2/4</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">85.71% </span>
+                <span class="strong">50% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>12/14</span>
+                <span class='fraction'>7/14</span>
             </div>
         
             
@@ -55,7 +55,7 @@
             Press <em>n</em> or <em>j</em> to go to the next uncovered block, <em>b</em>, <em>p</em> or <em>k</em> for the previous block.
         </p>
     </div>
-    <div class='status-line high'></div>
+    <div class='status-line low'></div>
     <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -97,10 +97,10 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">12x</span>
+<span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -108,15 +108,15 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">12x</span>
-<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -130,10 +130,10 @@ import VerifyToken from "../lib/verifyToken";
 const querieRouter = express.Router();
 &nbsp;
 //view all queries
-querieRouter.get("/", VerifyToken, <span class="branch-2 cbranch-no" title="branch not covered" >async (req, res) =&gt; {</span>
+querieRouter.get("/", VerifyToken, <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >async (r</span></span>eq, res) =&gt; {
   try {
-    const allQueries = await Querie.find();
-    res.json(allQueries);
+    const <span class="cstat-no" title="statement not covered" >allQueries = await Querie.find();</span>
+<span class="cstat-no" title="statement not covered" >    res.</span>json(allQueries);
   } catch (err) {
 <span class="cstat-no" title="statement not covered" >    res.</span>json({ message: err });
   }
@@ -141,15 +141,15 @@ querieRouter.get("/", VerifyToken, <span class="branch-2 cbranch-no" title="bran
 &nbsp;
 //save a querie to Db
 &nbsp;
-querieRouter.post("/", <span class="branch-2 cbranch-no" title="branch not covered" >async (req, res) =&gt; {</span>
-  const newQuery = new Querie({
+querieRouter.post("/", <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >async (r</span></span>eq, res) =&gt; {
+  const <span class="cstat-no" title="statement not covered" >newQuery = new Querie({</span>
     email: req.body.email,
     name: req.body.name,
     subject: req.body.subject,
   });
   try {
-    const savedQuery = await newQuery.save();
-    res.json(savedQuery);
+    const <span class="cstat-no" title="statement not covered" >savedQuery = await newQuery.save();</span>
+<span class="cstat-no" title="statement not covered" >    res.</span>json(savedQuery);
   } catch (err) {
 <span class="cstat-no" title="statement not covered" >    res.</span>json({ message: err });
   }
@@ -163,7 +163,7 @@ export default querieRouter;
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank">istanbul</a>
-                at Fri Sep 18 2020 12:33:29 GMT+0200 (Central Africa Time)
+                at Fri Sep 18 2020 14:44:12 GMT+0200 (Central Africa Time)
             </div>
         </div>
         <script src="../../prettify.js"></script>

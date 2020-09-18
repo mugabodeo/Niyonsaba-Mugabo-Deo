@@ -26,17 +26,16 @@ Mongoose.connect(process.env.DB_CONNECTION,
     { useNewUrlParser: true,useUnifiedTopology: true,useCreateIndex: true,useFindAndModify: false},
 ).then((res)=>{
   console.log('database connnected')
+   //starting a server
+  app.listen(port,()=>{
+    console.log(` listening at ${port}`)
+  })
 })
 .catch((err)=>{
   console.log('failed to connect to database',err)
 })
 
-//starting a server
-export default app.listen(port,()=>{
-    console.log(` listening at ${port}`)
-})
-
-
+export default app
 
 
 
