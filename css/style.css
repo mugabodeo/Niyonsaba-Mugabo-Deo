@@ -240,10 +240,15 @@ a.hireMeButton{
   height: 100%;
   transition: all .6s ease;;
   transform-style: preserve-3d;
-
 }
 #projectImg{
-  width:85%
+  width:100%;
+  object-fit: cover;
+  height: 80%;
+}
+
+#projectTitle{
+  height: 20%;
 }
 .projectCard:hover .innerProjectCard {
   transform: rotateY(180deg);
@@ -251,6 +256,9 @@ a.hireMeButton{
 
 .frontInnerProjectCard, .backInnerProjectCard {
   position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   width: 100%;
   height: 100%;
   -webkit-backface-visibility: hidden;
@@ -260,28 +268,17 @@ a.hireMeButton{
   overflow: hidden;
 }
 
-
-.frontInnerProjectCard,.backInnerProjectCard{
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  color: black;
-}
-.frontInnerProjectCard > div{
-  margin-bottom: 25px;
-}
-
 .frontInnerProjectCard .title{
-  font-size:30px;
+  font-weight: 700;
+  font-size:1.5rem;
+  line-height: 30px;
 }
 
-.frontInnerProjectCard .small_title{
-
-}
-.backInnerProjectCard > div{
-  margin-bottom: 50px;
+.backInnerProjectCard .small_title{
+  font-weight: 700;
+  font-size:1rem;
+  line-height: 30px;
+  text-align: center;
 }
 
 .backInnerProjectCard {
