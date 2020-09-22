@@ -11,7 +11,8 @@
     "build": "babel app.js --out-file app-compiled.js",
     "start": "babel-node app-compiled.js ",
     "test": "nyc  --reporter=html --reporter=text mocha --timeout 35000 --require @babel/polyfill --require @babel/register --recursive --exit",
-    "coverage": "nyc report --reporter=text-lcov | coveralls"
+    "coveralls": "cat ./coverage/lcov.info | ./node_modules/.bin/coveralls",
+    "coverage": "nyc report --reporter=text-lcov | coveralls && nyc report --reporter=lcov"
   },
   "author": "",
   "license": "ISC",

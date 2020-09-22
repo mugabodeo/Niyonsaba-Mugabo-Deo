@@ -4,4 +4,4 @@ node_modules/
 #hide keys
 .env
 .nyc_output
-coverages/
+coverage/
