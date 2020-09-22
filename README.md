@@ -6,4 +6,3 @@ this is m blog repos
 
 [![Maintainability](https://api.codeclimate.com/v1/badges/b762777df081c5d03a4c/maintainability)](https://codeclimate.com/github/mugabodeo/Niyonsaba-Mugabo-Deo/maintainability)
 
-[![Test Coverage](https://api.codeclimate.com/v1/badges/b762777df081c5d03a4c/test_coverage)](https://codeclimate.com/github/mugabodeo/Niyonsaba-Mugabo-Deo/test_coverage)
