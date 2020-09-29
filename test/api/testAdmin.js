@@ -223,7 +223,7 @@ describe("auth tests /admin", () => {
       .end((err, res) => {
         chai
           .request(server)
-          .patch("/admin/updateProjectsSection/" + res.body[0]._id)
+          .patch("/admin/ProjectsSection/update/" + res.body[0]._id)
           .set({ "auth-token": token })
           .send(projectsSectionUpdate)
           .end((err, res) => {
@@ -243,7 +243,7 @@ describe("auth tests /admin", () => {
       .end((err, res) => {
         chai
           .request(server)
-          .delete("/admin/updateProjectsSection/" + res.body[0]._id)
+          .delete("/admin/ProjectsSection/delete/" + res.body[0]._id)
           .set({ "auth-token": token })
           .end((err, res) => {
             if (err) done(err);
@@ -262,7 +262,7 @@ describe("auth tests /admin", () => {
       .end((err, res) => {
         chai
           .request(server)
-          .patch("/admin/updateServiceSection/" + res.body[0]._id)
+          .patch("/admin/ServicesSection/update/" + res.body[0]._id)
           .set({ "auth-token": token })
           .send(servicesSectionUpdate)
           .end((err, res) => {
@@ -282,7 +282,7 @@ describe("auth tests /admin", () => {
       .end((err, res) => {
         chai
           .request(server)
-          .delete("/admin/updateServiceSection/" + res.body[0]._id)
+          .delete("/admin/ServicesSection/delete/" + res.body[0]._id)
           .set({ "auth-token": token })
           .end((err, res) => {
             if (err) done(err);
@@ -301,7 +301,7 @@ describe("auth tests /admin", () => {
       .end((err, res) => {
         chai
           .request(server)
-          .patch("/admin/updateEducationSection/" + res.body[0]._id)
+          .patch("/admin/EducationSection/update/" + res.body[0]._id)
           .set({ "auth-token": token })
           .send(educationSectionUpdate)
           .end((err, res) => {
@@ -321,7 +321,7 @@ describe("auth tests /admin", () => {
       .end((err, res) => {
         chai
           .request(server)
-          .delete("/admin/updateEducationSection/" + res.body[0]._id)
+          .delete("/admin/EducationSection/delete/" + res.body[0]._id)
           .set({ "auth-token": token })
           .end((err, res) => {
             if (err) done(err);
@@ -369,7 +369,7 @@ describe("auth tests /admin", () => {
       .end((err, res) => {
         chai
           .request(server)
-          .patch("/admin/articles/" + res.body[0]._id)
+          .patch("/admin/article/update/" + res.body[0]._id)
           .set({ "auth-token": token })
           .send(update_article)
           .end((err, res) => {
@@ -388,7 +388,7 @@ describe("auth tests /admin", () => {
       .end((err, res) => {
         chai
           .request(server)
-          .delete("/admin/articles/" + res.body[0]._id)
+          .delete("/admin/article/delete/" + res.body[0]._id)
           .set({ "auth-token": token })
           .end((err, res) => {
             if (err) done(err);

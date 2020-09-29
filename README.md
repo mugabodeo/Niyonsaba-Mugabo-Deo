@@ -1,4 +1,4 @@
-this is m blog repos 
+this is my blog repos 
 
 [![Build Status](https://travis-ci.org/mugabodeo/Niyonsaba-Mugabo-Deo.svg?branch=Develop)](https://travis-ci.org/mugabodeo/Niyonsaba-Mugabo-Deo)
 

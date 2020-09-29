@@ -9,7 +9,7 @@ import Article from "../models/article";
 import userInfo from "../models/userInfo";
 import Projects from "../models/projectsSection";
 import Services from "../models/servicesSection";
-import Education from "../models/educationSection"
+import Education from "../models/educationSection";
 
 const adminRouter = express.Router();
 
@@ -94,13 +94,12 @@ adminRouter.post(
   VerifyToken,
   async (req, res) => {
     try {
-      
-      const newProjectCard= new Projects({
+      const newProjectCard = new Projects({
         projectBody: req.body.projectBody,
         projectImg: req.body.projectImg,
-        projectTitle: req.body.projectTitle
-      })
-   
+        projectTitle: req.body.projectTitle,
+      });
+
       const savedProjectCard = await newProjectCard.save();
       const getUserInfoDoc = await UserInfo.findOne();
       getUserInfoDoc.projectsSection.push(savedProjectCard._id);
@@ -113,33 +112,28 @@ adminRouter.post(
 );
 
 //getting projects section
-adminRouter.get(
-  "/getProjectsSection",
-  VerifyToken,
-  async(req, res) => {
-    try {
-      const getProjectsSection= await Projects.find()
-      res.json(getProjectsSection)
-    } catch (err) {
-      res.json({message: err })
-    }
+adminRouter.get("/getProjectsSection", VerifyToken, async (req, res) => {
+  try {
+    const getProjectsSection = await Projects.find();
+    res.json(getProjectsSection);
+  } catch (err) {
+    res.json({ message: err });
   }
-)
+});
 //update a single projectCard
 adminRouter.patch(
-  "/updateProjectsSection/:projectCardId",
+  "/ProjectsSection/update/:projectCardId",
   VerifyToken,
   async (req, res) => {
     try {
-      
-      const updateProjectCard= await Projects.updateOne(
+      const updateProjectCard = await Projects.updateOne(
         { _id: req.params.projectCardId },
         {
-        projectBody: req.body.projectBody,
-        projectImg: req.body.projectImg,
-        projectTitle: req.body.projectTitle
-      }
-      )
+          projectBody: req.body.projectBody,
+          projectImg: req.body.projectImg,
+          projectTitle: req.body.projectTitle,
+        }
+      );
       res.json(updateProjectCard);
     } catch (err) {
       res.json({ message: err });
@@ -149,16 +143,16 @@ adminRouter.patch(
 
 //delete a single projectCard
 adminRouter.delete(
-  "/updateProjectsSection/:projectCardId",
+  "/ProjectsSection/delete/:projectCardId",
   VerifyToken,
   async (req, res) => {
     try {
-      
-      const deleteProjectCard= await Projects.findOneAndRemove(
-        { _id: req.params.projectCardId })
+      const deleteProjectCard = await Projects.findOneAndRemove({
+        _id: req.params.projectCardId,
+      });
       const getUserInfoDoc = await UserInfo.findOne();
-      getUserInfoDoc.projectsSection.pull(deleteProjectCard._id)
-      const saveNewDoc = await getUserInfoDoc.save();  
+      getUserInfoDoc.projectsSection.pull(deleteProjectCard._id);
+      const saveNewDoc = await getUserInfoDoc.save();
       res.json(deleteProjectCard);
     } catch (err) {
       res.json({ message: err });
@@ -166,60 +160,49 @@ adminRouter.delete(
   }
 );
 
-
-
 //add service card
-adminRouter.post(
-  "/updateServiceSection/add",
-  VerifyToken,
-  async (req, res) => {
-    try {
-      const newServiceCard= new Services({
-        serviceFeatures: req.body.serviceFeatures,
-        serviceImg: req.body.serviceImg,
-        serviceTitle: req.body.serviceTitle
-      })
-   
-      const savedServiceCard = await newServiceCard.save();
-      const getUserInfoDoc = await UserInfo.findOne();
-      getUserInfoDoc.servicesSection.push(savedServiceCard._id);
-      const saveNewDoc = await getUserInfoDoc.save();
-      res.json(savedServiceCard);
-    } catch (err) {
-      res.json({ message: err });
-    }
+adminRouter.post("/updateServiceSection/add", VerifyToken, async (req, res) => {
+  try {
+    const newServiceCard = new Services({
+      serviceFeatures: req.body.serviceFeatures,
+      serviceImg: req.body.serviceImg,
+      serviceTitle: req.body.serviceTitle,
+    });
+
+    const savedServiceCard = await newServiceCard.save();
+    const getUserInfoDoc = await UserInfo.findOne();
+    getUserInfoDoc.servicesSection.push(savedServiceCard._id);
+    const saveNewDoc = await getUserInfoDoc.save();
+    res.json(savedServiceCard);
+  } catch (err) {
+    res.json({ message: err });
   }
-);
+});
 
 //getting  services section
-adminRouter.get(
-  "/getServicesSection",
-  VerifyToken,
-  async(req, res) => {
-    try {
-      const getServicesSection= await Services.find()
-      res.json(getServicesSection)
-    } catch (err) {
-      res.json({message: err })
-    }
+adminRouter.get("/getServicesSection", VerifyToken, async (req, res) => {
+  try {
+    const getServicesSection = await Services.find();
+    res.json(getServicesSection);
+  } catch (err) {
+    res.json({ message: err });
   }
-)
+});
 
 //update a single ServiceCard
 adminRouter.patch(
-  "/updateServiceSection/:serviceCardId",
+  "/ServicesSection/update/:serviceCardId",
   VerifyToken,
   async (req, res) => {
     try {
-      
-      const updateServiceCard= await Services.updateOne(
+      const updateServiceCard = await Services.updateOne(
         { _id: req.params.serviceCardId },
         {
-        serviceFeatures: req.body.serviceFeatures,
-        serviceImg: req.body.serviceImg,
-        serviceTitle: req.body.serviceTitle
-      }
-      )
+          serviceFeatures: req.body.serviceFeatures,
+          serviceImg: req.body.serviceImg,
+          serviceTitle: req.body.serviceTitle,
+        }
+      );
       res.json(updateServiceCard);
     } catch (err) {
       res.json({ message: err });
@@ -229,22 +212,22 @@ adminRouter.patch(
 
 //delete a single serviceCard
 adminRouter.delete(
-  "/updateServiceSection/:serviceCardId",
+  "/ServicesSection/delete/:serviceCardId",
   VerifyToken,
   async (req, res) => {
     try {
-      
-      const deleteServiceCard= await Services.findOneAndRemove(
-        { _id: req.params.serviceCardId })
+      const deleteServiceCard = await Services.findOneAndRemove({
+        _id: req.params.serviceCardId,
+      });
       const getUserInfoDoc = await UserInfo.findOne();
-      getUserInfoDoc.servicesSection.pull(deleteServiceCard._id)
-      const saveNewDoc = await getUserInfoDoc.save();  
+      getUserInfoDoc.servicesSection.pull(deleteServiceCard._id);
+      const saveNewDoc = await getUserInfoDoc.save();
       res.json(deleteServiceCard);
     } catch (err) {
       res.json({ message: err });
     }
   }
-) 
+);
 
 //add education card
 adminRouter.post(
@@ -252,12 +235,12 @@ adminRouter.post(
   VerifyToken,
   async (req, res) => {
     try {
-      const newEducationCard= new Education({
+      const newEducationCard = new Education({
         educationBody: req.body.educationBody,
         educationImg: req.body.educationImg,
         educationPeriod: req.body.educationPeriod,
-        educationTitle: req.body.educationTitle
-      })
+        educationTitle: req.body.educationTitle,
+      });
       const savedEducationCard = await newEducationCard.save();
       const getUserInfoDoc = await UserInfo.findOne();
       getUserInfoDoc.educationSection.push(savedEducationCard._id);
@@ -270,35 +253,30 @@ adminRouter.post(
 );
 
 //getting education section
-adminRouter.get(
-  "/getEducationSection",
-  VerifyToken,
-  async(req, res) => {
-    try {
-      const getEducationSection=await Education.find()
-      res.json(getEducationSection)
-    } catch (err) {
-      res.json({message: err })
-    }
+adminRouter.get("/getEducationSection", VerifyToken, async (req, res) => {
+  try {
+    const getEducationSection = await Education.find();
+    res.json(getEducationSection);
+  } catch (err) {
+    res.json({ message: err });
   }
-)
+});
 
 //update a single educationCard
 adminRouter.patch(
-  "/updateEducationSection/:educationCardId",
+  "/EducationSection/update/:educationCardId",
   VerifyToken,
   async (req, res) => {
     try {
-      
-      const updateEducationCard= await Education.updateOne(
+      const updateEducationCard = await Education.updateOne(
         { _id: req.params.educationCardId },
         {
           educationBody: req.body.educationBody,
           educationImg: req.body.educationImg,
           educationPeriod: req.body.educationPeriod,
-          educationTitle: req.body.educationTitle
-      }
-      )
+          educationTitle: req.body.educationTitle,
+        }
+      );
       res.json(updateEducationCard);
     } catch (err) {
       res.json({ message: err });
@@ -308,22 +286,22 @@ adminRouter.patch(
 
 //delete a single educationCard
 adminRouter.delete(
-  "/updateEducationSection/:educationCardId",
+  "/EducationSection/delete/:educationCardId",
   VerifyToken,
   async (req, res) => {
     try {
-      
-      const deleteEducationCard= await Education.findOneAndRemove(
-        { _id: req.params.educationCardId })
+      const deleteEducationCard = await Education.findOneAndRemove({
+        _id: req.params.educationCardId,
+      });
       const getUserInfoDoc = await UserInfo.findOne();
-      getUserInfoDoc.educationSection.pull(deleteEducationCard._id)
-      const saveNewDoc = await getUserInfoDoc.save();  
+      getUserInfoDoc.educationSection.pull(deleteEducationCard._id);
+      const saveNewDoc = await getUserInfoDoc.save();
       res.json(deleteEducationCard);
     } catch (err) {
       res.json({ message: err });
     }
   }
-) 
+);
 
 //update user profile on contact sections
 adminRouter.patch("/updateContactSection", VerifyToken, async (req, res) => {
@@ -363,7 +341,7 @@ adminRouter.post("/saveArticle", VerifyToken, async (req, res) => {
 });
 
 //delete a specific article and delete all comment
-adminRouter.delete("/articles/:articleId", VerifyToken, async (req, res) => {
+adminRouter.delete("/article/delete/:articleId", VerifyToken, async (req, res) => {
   try {
     const deleteArticle = await Article.deleteOne({
       _id: req.params.articleId,
@@ -375,7 +353,7 @@ adminRouter.delete("/articles/:articleId", VerifyToken, async (req, res) => {
 });
 
 //update a specific article
-adminRouter.patch("/articles/:articleId", VerifyToken, async (req, res) => {
+adminRouter.patch("/article/update/:articleId", VerifyToken, async (req, res) => {
   try {
     const updateArticle = await Article.updateOne(
       { _id: req.params.articleId },

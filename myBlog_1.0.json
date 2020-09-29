@@ -3,7 +3,7 @@
   "info" : {
     "version" : "1.0",
     "title" : "myBlog",
-    "description" : "# Introduction\nWhat does your API do?\nthis api is used to serve my blog\n# Overview\nThings that the developers should know about\n\n# Authentication\nWhat is the preferred way of using the API?\nusing normal email and password plus token\n# Error Codes\nWhat errors and status codes can a user expect?\n401 - access denied\n400 - invalid token\n409 - user email already exist\n# Rate limit\nIs there a limit to the number of requests an user can send?",
+    "description" : "# Introduction\nWhat does your API do?\nthis api is used to serve my blog\n# Overview\nThings that the developers should know about\n\n# Authentication\nWhat is the preferred way of using the API?\nusing normal email and password plus token\n# Error Codes\nWhat errors and status codes can a user expect?\n401 - access denied\n400 - invalid token\n409 - user email already exist\n\n# Rate limit\nIs there a limit to the number of requests an user can send?",
     "contact" : { }
   },
   "host" : "niyonsaba-mugabo-deo-blog.herokuapp.com",
@@ -43,7 +43,7 @@
         "security" : [ ]
       }
     },
-    "/admin/updateProjectsSection/5f64843611ea050a348f71ec" : {
+    "/admin/ProjectsSection/update/{docId}" : {
       "patch" : {
         "summary" : "updating a single project card",
         "tags" : [ "project section" ],
@@ -51,6 +51,12 @@
         "deprecated" : false,
         "produces" : [ "application/json" ],
         "parameters" : [ {
+          "in" : "path",
+          "name" : "docId",
+          "type" : "string",
+          "required" : true,
+          "description" : "add projectsection document id"
+        }, {
           "name" : "auth-token",
           "in" : "header",
           "required" : true,
@@ -74,7 +80,7 @@
         "security" : [ ]
       }
     },
-    "/admin/updateProjectsSection/5f6489d28c37f50bbb72a6d4" : {
+    "/admin/ProjectsSection/delete/{docId}" : {
       "delete" : {
         "summary" : "delete a single project card",
         "tags" : [ "project section" ],
@@ -82,6 +88,12 @@
         "deprecated" : false,
         "produces" : [ "application/json" ],
         "parameters" : [ {
+          "in" : "path",
+          "name" : "docId",
+          "type" : "string",
+          "required" : true,
+          "description" : "add projectsection document id"
+        }, {
           "name" : "auth-token",
           "in" : "header",
           "required" : true,
@@ -149,7 +161,7 @@
         "security" : [ ]
       }
     },
-    "/admin/updateEducationSection/5f61fb5719368914c8298f63" : {
+    "/admin/EducationSection/update/{docId}" : {
       "patch" : {
         "summary" : "updating a single  education card",
         "tags" : [ "education section" ],
@@ -157,6 +169,12 @@
         "deprecated" : false,
         "produces" : [ "application/json" ],
         "parameters" : [ {
+          "in" : "path",
+          "name" : "docId",
+          "type" : "string",
+          "required" : true,
+          "description" : "add educationSection document id"
+        }, {
           "name" : "auth-token",
           "in" : "header",
           "required" : true,
@@ -180,7 +198,7 @@
         "security" : [ ]
       }
     },
-    "/admin/updateEducationSection/5f61fb7d19368914c8298f66" : {
+    "/admin/EducationSection/delete/{docId}" : {
       "delete" : {
         "summary" : "delete a single education card",
         "tags" : [ "education section" ],
@@ -188,6 +206,12 @@
         "deprecated" : false,
         "produces" : [ "application/json" ],
         "parameters" : [ {
+          "in" : "path",
+          "name" : "docId",
+          "type" : "string",
+          "required" : true,
+          "description" : "add educationSection document id"
+        }, {
           "name" : "auth-token",
           "in" : "header",
           "required" : true,
@@ -255,7 +279,7 @@
         "security" : [ ]
       }
     },
-    "/admin/updateServiceSection/5f62256e0bc1b32838119c21" : {
+    "/admin/ServicesSection/update/{docId}" : {
       "patch" : {
         "summary" : "updating a single  service card",
         "tags" : [ "service section" ],
@@ -263,6 +287,12 @@
         "deprecated" : false,
         "produces" : [ "application/json" ],
         "parameters" : [ {
+          "in" : "path",
+          "name" : "docId",
+          "type" : "string",
+          "required" : true,
+          "description" : "add servicesSection document id"
+        }, {
           "name" : "auth-token",
           "in" : "header",
           "required" : true,
@@ -286,7 +316,7 @@
         "security" : [ ]
       }
     },
-    "/admin/updateServiceSection/5f624101c6e2f932590b6a47" : {
+    "/admin/ServicesSection/delete/{docId}" : {
       "delete" : {
         "summary" : "delete a single service card",
         "tags" : [ "service section" ],
@@ -294,6 +324,12 @@
         "deprecated" : false,
         "produces" : [ "application/json" ],
         "parameters" : [ {
+          "in" : "path",
+          "name" : "docId",
+          "type" : "string",
+          "required" : true,
+          "description" : "add servicesSection document id"
+        }, {
           "name" : "auth-token",
           "in" : "header",
           "required" : true,
@@ -458,7 +494,7 @@
         "security" : [ ]
       }
     },
-    "/admin/articles/5f648ba58c37f50bbb72a6d6" : {
+    "/admin/article/delete/{docId}" : {
       "delete" : {
         "description" : "delete an article\n",
         "summary" : "delete an article",
@@ -467,6 +503,12 @@
         "deprecated" : false,
         "produces" : [ "application/json" ],
         "parameters" : [ {
+          "in" : "path",
+          "name" : "docId",
+          "type" : "string",
+          "required" : true,
+          "description" : "add article document id"
+        }, {
           "name" : "auth-token",
           "in" : "header",
           "required" : true,
@@ -482,7 +524,7 @@
         "security" : [ ]
       }
     },
-    "/admin/articles/5f6214f482b364220eff435f" : {
+    "/admin/article/update/{docId}" : {
       "patch" : {
         "description" : "Update an Article",
         "summary" : "updating an article",
@@ -491,6 +533,12 @@
         "deprecated" : false,
         "produces" : [ "application/json" ],
         "parameters" : [ {
+          "in" : "path",
+          "name" : "docId",
+          "type" : "string",
+          "required" : true,
+          "description" : "add article document id"
+        }, {
           "name" : "auth-token",
           "in" : "header",
           "required" : true,
@@ -651,7 +699,7 @@
         "security" : [ ]
       }
     },
-    "/articles/5f6482eb0537ce09575dd405" : {
+    "/articles/{docId}" : {
       "get" : {
         "description" : "Update an Article",
         "summary" : "get a single article",
@@ -659,7 +707,13 @@
         "operationId" : "getasinglearticle",
         "deprecated" : false,
         "produces" : [ "application/json" ],
-        "parameters" : [ ],
+        "parameters" : [ {
+          "in" : "path",
+          "name" : "docId",
+          "type" : "string",
+          "required" : true,
+          "description" : "add article document id"
+        } ],
         "responses" : {
           "200" : {
             "description" : "",
@@ -669,7 +723,7 @@
         "security" : [ ]
       }
     },
-    "/articles/5f6482eb0537ce09575dd405/newComment" : {
+    "/articles/{docId}/newComment" : {
       "post" : {
         "summary" : "save new comment",
         "tags" : [ "Misc" ],
@@ -677,6 +731,12 @@
         "deprecated" : false,
         "produces" : [ "application/json" ],
         "parameters" : [ {
+          "in" : "path",
+          "name" : "docId",
+          "type" : "string",
+          "required" : true,
+          "description" : "add article document id"
+        }, {
           "name" : "Body",
           "in" : "body",
           "required" : true,
@@ -722,7 +782,7 @@
       "example" : {
         "projectBody" : "Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique vero quos maiores sed consectetur illo earum cum perferendis voluptatem?[updated]",
         "projectImg" : "https://firebasestorage.googleapis.com/v0/b/niyonsaba-blog.appspot.com/o/landingPage%2FroboCop.png?alt=media&token=1ef59086-88d6-4ff1-81cb-710133dc4a69",
-        "projectTitle" : "Embedded System Design enhanced"
+        "projectTitle" : "Embedded System Design "
       },
       "type" : "object",
       "properties" : {
@@ -769,7 +829,7 @@
         "educationBody" : "Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique vero quos maiores sed consectetur illo earum cum perferendis voluptatem?[updated]",
         "educationImg" : "https://firebasestorage.googleapis.com/v0/b/niyonsaba-blog.appspot.com/o/landingPage%2FroboCop.png?alt=media&token=1ef59086-88d6-4ff1-81cb-710133dc4a69",
         "educationPeriod" : "2016-2020",
-        "educationTitle" : "Embedded System Design[updated on education]"
+        "educationTitle" : "Embedded System on education]"
       },
       "type" : "object",
       "properties" : {
@@ -814,7 +874,7 @@
       "example" : {
         "serviceFeatures" : "Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique vero quos maiores sed consectetur illo earum cum perferendis voluptatem?[updated]",
         "serviceImg" : "https://firebasestorage.googleapis.com/v0/b/niyonsaba-blog.appspot.com/o/landingPage%2FroboCop.png?alt=media&token=1ef59086-88d6-4ff1-81cb-710133dc4a69",
-        "serviceTitle" : "Hosting"
+        "serviceTitle" : "Hosting[updated]"
       },
       "type" : "object",
       "properties" : {
@@ -933,11 +993,11 @@
     "updatinganarticlerequest" : {
       "title" : "updatinganarticlerequest",
       "example" : {
-        "articleTitle" : "new article",
+        "articleTitle" : "new",
         "articleCover" : " file cover",
-        "articleHeadline" : " new headline app",
+        "articleHeadline" : " new  app",
         "articleCategory" : "Tech",
-        "articleBody" : "WElcome to postMan",
+        "articleBody" : "WElcome to ",
         "articleUpdate" : "true"
       },
       "type" : "object",
